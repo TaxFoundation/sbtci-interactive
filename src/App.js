@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Header from './components/Header';
 import USMap from './components/USMap';
+import State from './components/State';
+import Footer from './components/Footer';
+import SBTCIData from './data/SBTCI.json';
+import './App.css';
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <Router>
+        <div>
+          <Header />
+            <Route eaxct path="/" component={USMap} />
+            <Route path="/state/:stateId" component={State} />
+          <Footer />
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <USMap />
-      </div>
+      </Router>
     );
   }
 }
