@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import USMap from './components/USMap';
-import State from './components/State';
+import USState from './components/USState';
 import Footer from './components/Footer';
 import FourOhFour from './components/FourOhFour'
 import SBTCIData from './data/SBTCI.json';
@@ -17,7 +17,7 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path="/" component={USMap} />
-            <Route path="/state/:stateId" component={State} />
+            <Route path="/state/:stateId" component={USState} />
             <Route component={FourOhFour} />
           </Switch>
           <Footer />
