@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { geoAlbersUsa, geoPath } from 'd3-geo';
 import { feature } from 'topojson-client';
+import SBTCIData from '../data/SBTCI.json';
 import USData from '../data/us.json';
 
 class USMap extends React.Component {
   constructor() {
     super();
     this.state = {
-      USData: feature(USData, USData.objects.states).features
+      USData: feature(USData, USData.objects.states).features,
+      SBTCIData
     };
   }
 
@@ -20,14 +23,24 @@ class USMap extends React.Component {
   render() {
     const path = geoPath().projection(this.projection);
     const states = this.state.USData.map((d, i) => {
-      return <path
-              key={ `path-${ i }` }
-              d={ geoPath().projection(this.projection())(d) }
-              className='state'
-              fill='transparent'
-              stroke='#000000'
-              strokeWidth={ 1 }
-            />
+      let stateData = this.state.SBTCIData.filter((s) => {
+        return s.id === +d.id;
+      })[0];
+
+      let routePath = '';
+      if (stateData) {
+        routePath = `/state/${stateData.name.replace(/\s/g, '-').toLowerCase()}`;
+      }
+
+      return <Link key={ `path-${ d.id }` } to={routePath}>
+        <path
+          d={ geoPath().projection(this.projection())(d) }
+          className='state'
+          fill='transparent'
+          stroke='#000000'
+          strokeWidth={ 1 }
+        />
+      </Link>
     });
 
     return (

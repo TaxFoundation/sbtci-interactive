@@ -19,7 +19,7 @@ class App extends Component {
             <Route exact path="/" component={USMap} />
             {SBTCIData.map((s) => {
               const r = `/state/${s.name.replace(/\s/g, '-').toLowerCase()}`;
-              return ( <Route path={r} render={() => <USState stateData={s} />} /> );
+              return ( <Route key={ `route-${s.id}` } path={r} render={() => <USState stateData={s} />} /> );
             })}
             <Route component={FourOhFour} />
           </Switch>
