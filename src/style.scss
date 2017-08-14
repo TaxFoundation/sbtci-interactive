@@ -1,3 +1,5 @@
-@import 'styles/global.scss';
-@import 'styles/Box.scss';
-@import 'styles/Header.scss';
+@import 'styles/global/global.scss';
+@import 'styles/global/mixins.scss';
+@import 'styles/components/Box.scss';
+@import 'styles/components/Header.scss';
+@import 'styles/components/State.scss';

@@ -1,0 +1,17 @@
+.sbtci-state {
+  &-header {
+    align-items: center;
+    background-color: $tf-blue;
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    width: 100%;
+
+    h1 {
+      color: #ffffff;
+      display: block;
+      font-size: 3rem;
+      margin: 0;
+    }
+  }
+}

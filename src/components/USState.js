@@ -8,9 +8,15 @@ class USState extends Component {
 
   render() {
     return (
-      <div>
-        <h1>{this.state.name}</h1>
-        <p>A place.</p>
+      <div className="sbtci-state">
+        <div
+          className="sbtci-state-header"
+        >
+          <h1>{this.state.name}</h1>
+        </div>
+        <div className="sbtci-state-content">
+
+        </div>
       </div>
     );
   }
