@@ -5,6 +5,7 @@
   "dependencies": {
     "d3-geo": "^1.6.4",
     "fixed-data-table": "^0.6.4",
+    "normalize.css": "^7.0.0",
     "npm-run-all": "^4.0.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -12,10 +13,12 @@
     "topojson-client": "^3.0.0"
   },
   "devDependencies": {
+    "node-sass": "^4.5.3",
+    "postcss": "^6.0.9",
     "react-scripts": "1.0.10"
   },
   "scripts": {
-    "watch-sass": "node-sass ./src/style.scss ./src/style.css -w",
+    "watch-sass": "node-sass src/style.scss src/style.css -w --source-map=src/style.css.map",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-sass start-js",
     "build-sass": "node-sass src/style.scss src/style.css --output-style=compressed",
