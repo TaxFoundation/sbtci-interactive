@@ -5,6 +5,7 @@
   "dependencies": {
     "d3-geo": "^1.6.4",
     "fixed-data-table": "^0.6.4",
+    "npm-run-all": "^4.0.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.2",
@@ -14,8 +15,12 @@
     "react-scripts": "1.0.10"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "watch-sass": "node-sass ./src/style.scss ./src/style.css -w",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-sass start-js",
+    "build-sass": "node-sass src/style.scss src/style.css --output-style=compressed",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all -p build-sass build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

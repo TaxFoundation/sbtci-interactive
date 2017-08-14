@@ -6,8 +6,6 @@ import USState from './components/USState';
 import Footer from './components/Footer';
 import FourOhFour from './components/FourOhFour'
 import SBTCIData from './data/SBTCI.json';
-import './App.css';
-
 
 class App extends Component {
   render() {

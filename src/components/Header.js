@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header>
+    <header className="sbtci-header">
       <h1>SBTCI</h1>
       <nav>
         <Link to="/">Overview</Link>
