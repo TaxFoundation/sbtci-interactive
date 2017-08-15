@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import USStateTable from './USStateTable';
 
 class USState extends Component {
   constructor(props) {
@@ -13,25 +14,26 @@ class USState extends Component {
         <div
           className="sbtci-state-header"
         >
-          <h1>{this.state.name}</h1>
+          <h1>#{this.state.total.rank} {this.state.name}</h1>
         </div>
         <div className="sbtci-state-content container">
           <div className="sbtci-box sbtci-state-table">
-            <h2 className="sbtci-box-heading">Dummy Box Content</h2>
-            <p>Blah blah blah</p>
-            <Link to="/" className="sbtci-box-footer">See More Dummy Content</Link>
+            <USStateTable stateData={this.state} />
           </div>
           <div className="sbtci-state-social sbtci-box">
             <p>Stuff and things</p>
           </div>
           <div className="sbtci-state-neighbors sbtci-box">
             <h2 className="sbtci-box-heading">Neighboring States</h2>
+            <Link to="/" className="sbtci-box-footer">See Full Map</Link>
           </div>
           <div className="sbtci-state-top sbtci-box">
             <h2 className="sbtci-box-heading">Top States</h2>
+            <Link to="/" className="sbtci-box-footer">See Rankings</Link>
           </div>
           <div className="sbtci-state-bottom sbtci-box">
             <h2 className="sbtci-box-heading">Bottom States</h2>
+            <Link to="/" className="sbtci-box-footer">See Rankings</Link>
           </div>
         </div>
       </div>
