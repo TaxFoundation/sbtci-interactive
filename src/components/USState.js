@@ -15,11 +15,23 @@ class USState extends Component {
         >
           <h1>{this.state.name}</h1>
         </div>
-        <div className="sbtci-state-content">
-          <div className="sbtci-box">
+        <div className="sbtci-state-content container">
+          <div className="sbtci-box sbtci-state-table">
             <h2 className="sbtci-box-heading">Dummy Box Content</h2>
             <p>Blah blah blah</p>
             <Link to="/" className="sbtci-box-footer">See More Dummy Content</Link>
+          </div>
+          <div className="sbtci-state-social sbtci-box">
+            <p>Stuff and things</p>
+          </div>
+          <div className="sbtci-state-neighbors sbtci-box">
+            <h2 className="sbtci-box-heading">Neighboring States</h2>
+          </div>
+          <div className="sbtci-state-top sbtci-box">
+            <h2 className="sbtci-box-heading">Top States</h2>
+          </div>
+          <div className="sbtci-state-bottom sbtci-box">
+            <h2 className="sbtci-box-heading">Bottom States</h2>
           </div>
         </div>
       </div>

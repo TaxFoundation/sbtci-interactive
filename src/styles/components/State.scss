@@ -5,7 +5,9 @@
     display: flex;
     justify-content: center;
     height: 120px;
+    margin-bottom: 2rem;
     width: 100%;
+
 
     h1 {
       color: #ffffff;
@@ -13,5 +15,32 @@
       font-size: 3rem;
       margin: 0;
     }
+  }
+
+  &-content {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+  }
+
+  &-table {
+    grid-column: span 3;
+    grid-row: span 1;
+  }
+
+  &-social {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  &-neighbors {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  &-bottom,
+  &-top {
+    grid-column: span 1;
+    grid-row: span 1;
   }
 }
