@@ -1,0 +1,36 @@
+.sbtci-table {
+  border-collapse: collapse;
+  height: 100%;
+  width: 100%;
+
+  td,
+  th {
+    border: 1px solid $gray;
+    padding: 10px 6px;
+
+    &:first-of-type {
+      border-left: none;
+    }
+
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+
+  th {
+    border-top: none;
+    text-align: center;
+  }
+
+  td {
+    text-align: center;
+
+    &:first-of-type {
+      text-align: left;
+    }
+  }
+
+  tbody tr:last-of-type td {
+    border-bottom: none;
+  }
+}

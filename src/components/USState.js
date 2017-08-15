@@ -21,18 +21,22 @@ class USState extends Component {
             <USStateTable stateData={this.state} />
           </div>
           <div className="sbtci-state-social sbtci-box">
-            <p>Stuff and things</p>
+            <h2>Spread the Word!</h2>
+            <p>How does your state rank? Brag (or complain) to your friends!</p>
           </div>
           <div className="sbtci-state-neighbors sbtci-box">
             <h2 className="sbtci-box-heading">Neighboring States</h2>
+            <div>Placeholder</div>
             <Link to="/" className="sbtci-box-footer">See Full Map</Link>
           </div>
           <div className="sbtci-state-top sbtci-box">
             <h2 className="sbtci-box-heading">Top States</h2>
+            <div>Placeholder</div>
             <Link to="/" className="sbtci-box-footer">See Rankings</Link>
           </div>
           <div className="sbtci-state-bottom sbtci-box">
             <h2 className="sbtci-box-heading">Bottom States</h2>
+            <div>Placeholder</div>
             <Link to="/" className="sbtci-box-footer">See Rankings</Link>
           </div>
         </div>

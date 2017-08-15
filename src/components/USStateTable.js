@@ -8,36 +8,36 @@ class USStateTable extends Component {
 
   render() {
     return (
-      <table>
+      <table className="sbtci-table">
         <thead>
           <tr>
-            <td>&nbsp;</td>
-            <td>Overall Rank</td>
-            <td>Corporate Taxes</td>
-            <td>Individual Taxes</td>
-            <td>Sales Taxes</td>
-            <td>UI Taxes</td>
-            <td>Property Taxes</td>
+            <th>&nbsp;</th>
+            <th>Overall Rank</th>
+            <th>Corporate Taxes</th>
+            <th>Individual Taxes</th>
+            <th>Sales Taxes</th>
+            <th>UI Taxes</th>
+            <th>Property Taxes</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th>Rank</th>
-            <th>{ this.state.total.rank }</th>
-            <th>{ this.state.corporate.rank }</th>
-            <th>{ this.state.individual.rank }</th>
-            <th>{ this.state.sales.rank }</th>
-            <th>{ this.state.unemployment.rank }</th>
-            <th>{ this.state.propertyTax.rank }</th>
+            <td>Rank</td>
+            <td>{ this.state.total.rank }</td>
+            <td>{ this.state.corporate.rank }</td>
+            <td>{ this.state.individual.rank }</td>
+            <td>{ this.state.sales.rank }</td>
+            <td>{ this.state.unemployment.rank }</td>
+            <td>{ this.state.propertyTax.rank }</td>
           </tr>
           <tr>
-            <th>Score</th>
-            <th>{ this.state.total.value }</th>
-            <th>{ this.state.corporate.value }</th>
-            <th>{ this.state.individual.value }</th>
-            <th>{ this.state.sales.value }</th>
-            <th>{ this.state.unemployment.value }</th>
-            <th>{ this.state.propertyTax.value }</th>
+            <td>Score</td>
+            <td>{ this.state.total.value }</td>
+            <td>{ this.state.corporate.value }</td>
+            <td>{ this.state.individual.value }</td>
+            <td>{ this.state.sales.value }</td>
+            <td>{ this.state.unemployment.value }</td>
+            <td>{ this.state.propertyTax.value }</td>
           </tr>
         </tbody>
       </table>
