@@ -1,0 +1,19 @@
+.sbtci-home {
+  &-map-section {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template: 2fr 1fr / 3fr 1fr;
+    margin-top: 2rem;
+  }
+
+  &-map {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  &-data-summary,
+  &-social {
+    grid-column: 2 /3;
+    grid-row: span 1;
+  }
+}
