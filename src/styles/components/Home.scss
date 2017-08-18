@@ -1,20 +1,60 @@
 .sbtci-home {
   &-map-section {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template: 2fr 1fr / 3fr 1fr;
+    @include tablet-up {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template: 2fr 1fr / 3fr 1fr;
+    }
+
     margin-bottom: 2rem;
     margin-top: 2rem;
   }
 
   &-map {
-    grid-column: span 1;
-    grid-row: span 2;
+    @include tablet-up {
+      grid-column: span 1;
+      grid-row: span 2;
+    }
   }
 
   &-data-summary,
   &-social {
-    grid-column: 2 /3;
-    grid-row: span 1;
+    @include tablet-up {
+      grid-column: 2 /3;
+      grid-row: span 1;
+    }
+
+    &-text {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    &-buttons {
+      display: flex;
+      flex-direction: row;
+      margin: 0 -1px -1px;
+    }
+
+    &-button {
+      color: #ffffff;
+      display: block;
+      flex: 1 0 auto;
+      text-align: center;
+      text-decoration: none;
+
+      &:active,
+      &:hover,
+      &:visited {
+        color: #ffffff;
+      }
+
+      &:first-of-type {
+        border-radius: 0 0 0 $radius;
+      }
+
+      &:last-of-type {
+        border-radius: 0 0 $radius 0;
+      }
+    }
   }
 }

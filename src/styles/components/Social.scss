@@ -1,17 +1,21 @@
 .sbtci-social {
   &--twitter {
     background-color: $twitter;
+    border: 1px solid $twitter;
   }
 
   &--facebook {
     background-color: $facebook;
+    border: 1px solid $facebook;
   }
 
   &--linkedin {
     background-color: $linkedin;
+    border: 1px solid $linkedin;
   }
 
   &--email {
     background-color: $email;
+    border: 1px solid $email;
   }
 }
