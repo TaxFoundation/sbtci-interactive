@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import USStateTable from './USStateTable';
+import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
 
 class USState extends Component {
   constructor(props) {
@@ -26,10 +27,21 @@ class USState extends Component {
               <p>How does your state rank? Brag (or complain) to your friends!</p>
             </div>
             <div className="sbtci-state-social-buttons">
-              <a href="" className="sbtci-state-social-button sbtci-social--twitter">Twitter</a>
-              <a href="" className="sbtci-state-social-button sbtci-social--facebook">Facebook</a>
-              <a href="" className="sbtci-state-social-button sbtci-social--linkedin">LinkedIn</a>
-              <a href="" className="sbtci-state-social-button sbtci-social--email">Email a Friend</a>
+              <a href="" className="sbtci-state-social-button sbtci-social--twitter">
+                <IconTwitter fill="#ffffff" />Twitter
+              </a>
+              <a href="" className="sbtci-state-social-button sbtci-social--facebook">
+                <IconFacebook fill="#ffffff" />
+                Facebook
+              </a>
+              <a href="" className="sbtci-state-social-button sbtci-social--linkedin">
+                <IconLinkedIn fill="#ffffff" />
+                LinkedIn
+              </a>
+              <a href="" className="sbtci-state-social-button sbtci-social--email">
+                <IconEmail fill="#ffffff" />
+                Email a Friend
+              </a>
             </div>
           </div>
           <div className="sbtci-state-neighbors sbtci-box">
