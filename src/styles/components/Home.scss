@@ -42,6 +42,11 @@
       text-align: center;
       text-decoration: none;
 
+      svg {
+        padding: 12px;
+        width: 20px;
+      }
+
       &:active,
       &:hover,
       &:visited {
