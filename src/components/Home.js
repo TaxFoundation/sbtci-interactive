@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import USMap from './USMap';
+import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
 
 class Home extends Component {
   render() {
@@ -18,10 +19,18 @@ class Home extends Component {
               <p>How does your state rank? Brag (or complain) to your friends!</p>
             </div>
             <div className="sbtci-home-social-buttons">
-              <a href="" className="sbtci-home-social-button sbtci-social--twitter">T</a>
-              <a href="" className="sbtci-home-social-button sbtci-social--facebook">F</a>
-              <a href="" className="sbtci-home-social-button sbtci-social--linkedin">L</a>
-              <a href="" className="sbtci-home-social-button sbtci-social--email">E</a>
+              <a href="" className="sbtci-home-social-button sbtci-social--twitter">
+                <IconTwitter fill="#ffffff" />
+              </a>
+              <a href="" className="sbtci-home-social-button sbtci-social--facebook">
+                <IconFacebook fill="#ffffff" />
+              </a>
+              <a href="" className="sbtci-home-social-button sbtci-social--linkedin">
+                <IconLinkedIn fill="#ffffff" />
+              </a>
+              <a href="" className="sbtci-home-social-button sbtci-social--email">
+                <IconEmail fill="#ffffff" />
+              </a>
             </div>
           </div>
         </div>
