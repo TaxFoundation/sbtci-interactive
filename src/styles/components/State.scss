@@ -12,8 +12,14 @@
     h1 {
       color: #ffffff;
       display: block;
+      font-family: 'Oswald', sans-serif;
       font-size: 3rem;
+      font-weight: 400;
       margin: 0;
+    }
+
+    &-rank {
+      font-weight: 300;
     }
   }
 
@@ -31,6 +37,31 @@
   &-social {
     grid-column: span 1;
     grid-row: span 1;
+
+    &-text {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    &-button {
+      color: #ffffff;
+      display: block;
+      margin: 0 -1px;
+      padding: 0.5rem;
+      text-decoration: none;
+
+      &:last-of-type {
+        border: none;
+        border-radius: 0 0 4px 4px;
+        margin-bottom: -1px;
+      }
+
+      &:active,
+      &:hover,
+      &:visited {
+        color: #ffffff;
+      }
+    }
   }
 
   &-neighbors {
