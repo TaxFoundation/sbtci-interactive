@@ -13,6 +13,11 @@ $email: #df4a32;
 $font-size: 16px;
 $radius: 4px;
 
+// Screen Sizes
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$max-width: 1200px;
+
 html,
 body {
   font-family: 'Lato', sans-serif;
