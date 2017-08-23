@@ -13,8 +13,8 @@ class USMap extends React.Component {
 
   projection() {
     return geoAlbersUsa()
-      .scale(1000)
-      .translate([400/2, 600/2]);
+      .scale(800)
+      .translate([600/2, 400/2]);
   }
 
   updateHoverData(stateId) {
@@ -47,7 +47,7 @@ class USMap extends React.Component {
     });
 
     return (
-      <svg height={400} width={600} viewBox="0 0 400 600">
+      <svg width="100%" viewBox="0 0 600 400">
         <g className='states'>
           { states }
         </g>
