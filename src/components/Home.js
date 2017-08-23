@@ -1,18 +1,39 @@
 import React, { Component } from 'react';
 import USMap from './USMap';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
+import SBTCIData from '../data/SBTCI.json';
 
 class Home extends Component {
+  constructor() {
+    super();
+    this.state = {
+      SBTCIData,
+      activeUSState: {}
+    }
+
+    this.updateActiveState = this.updateActiveState.bind(this);
+  }
+
+  updateActiveState(stateId) {
+    const newActiveState = this.state.SBTCIData.filter((USState) => {
+      return USState.id === stateId;
+    })[0];
+    this.setState({ activeUSState: newActiveState});
+  }
+
   render() {
     const domain = 'localhost'; //TODO update with actual domain when known
     return (
       <div className="sbtci-home">
         <div className="sbtci-home-map-section container">
           <div className="sbtci-home-map">
-            <USMap />
+            <USMap
+              SBTCIData={this.state.SBTCIData}
+              updateActiveState={this.updateActiveState}
+            />
           </div>
           <div className="sbtci-home-data-summary sbtci-box">
-            <p>Filler</p>
+            <p>{this.state.activeUSState.name ? this.state.activeUSState.name : 'State'}</p>
           </div>
           <div className="sbtci-home-social sbtci-box">
             <div className="sbtci-home-social-text">
