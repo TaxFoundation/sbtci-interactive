@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import USMap from './USMap';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
 import SBTCIData from '../data/SBTCI.json';
@@ -40,17 +41,46 @@ class Home extends Component {
               {this.state.activeUSState.name ? this.state.activeUSState.name : 'Rankings Summary'}
             </div>
             {this.state.activeUSState.total ? (
-              <ul className="sbtci-box-text">
-                <li>Overall Rank {this.state.activeUSState.total.rank}</li>
-                <li>Individual Rank {this.state.activeUSState.individual.rank}</li>
-                <li>Corporate Rank {this.state.activeUSState.corporate.rank}</li>
-                <li>Sales Rank {this.state.activeUSState.sales.rank}</li>
-                <li>UI Rank {this.state.activeUSState.unemployment.rank}</li>
-                <li>Property Rank {this.state.activeUSState.propertyTax.rank}</li>
-              </ul>
+              <table className="sbtci-box-text">
+                <tbody>
+                  <tr className="sbtci-home-data-summary-ranks">
+                    <td>Overall Rank</td>
+                    <td>{this.state.activeUSState.total.rank}</td>
+                  </tr>
+                  <tr className="sbtci-home-data-summary-ranks">
+                    <td>Individual Rank</td>
+                    <td>{this.state.activeUSState.individual.rank}</td>
+                  </tr>
+                  <tr className="sbtci-home-data-summary-ranks">
+                    <td>Corporate Rank</td>
+                    <td>{this.state.activeUSState.corporate.rank}</td>
+                  </tr>
+                  <tr className="sbtci-home-data-summary-ranks">
+                    <td>Sales Rank</td>
+                    <td>{this.state.activeUSState.sales.rank}</td>
+                  </tr>
+                  <tr className="sbtci-home-data-summary-ranks">
+                    <td>UI Rank</td>
+                    <td>{this.state.activeUSState.unemployment.rank}</td>
+                  </tr>
+                  <tr className="sbtci-home-data-summary-ranks">
+                    <td>Property Rank</td>
+                    <td>{this.state.activeUSState.propertyTax.rank}</td>
+                  </tr>
+                </tbody>
+              </table>
             ) : (
               <p className="sbtci-box-text">Hover over a state in the map to see its rankings.</p>
             )}
+            <div className="sbtci-box-footer">
+              {this.state.activeUSState.name ? (
+                <Link to={`/state/${this.state.activeUSState.name.replace(/\s/g, '-').toLowerCase()}`}>
+                  See more about {this.state.activeUSState.name}.
+                </Link>
+              ) : (
+                <p>Please select a state.</p>
+              )}
+            </div>
           </div>
 
           <div className="sbtci-home-social sbtci-box">
