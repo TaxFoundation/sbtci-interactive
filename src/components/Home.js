@@ -35,23 +35,23 @@ class Home extends Component {
           </div>
 
 
-            <div className="sbtci-home-data-summary sbtci-box">
-              <div className="sbtci-box-heading">
-                {this.state.activeUSState.name ? this.state.activeUSState.name : 'Rankings Summary'}
-              </div>
-              {this.state.activeUSState.total ? (
-                <ul>
-                  <li>{this.state.activeUSState.total.rank}</li>
-                  <li>{this.state.activeUSState.individual.rank}</li>
-                  <li>{this.state.activeUSState.corporate.rank}</li>
-                  <li>{this.state.activeUSState.sales.rank}</li>
-                  <li>{this.state.activeUSState.unemployment.rank}</li>
-                  <li>{this.state.activeUSState.propertyTax.rank}</li>
-                </ul>
-              ) : (
-                <p>Hover over a state in the map to see its rankings.</p>
-              )}
+          <div className="sbtci-home-data-summary sbtci-box">
+            <div className="sbtci-box-heading">
+              {this.state.activeUSState.name ? this.state.activeUSState.name : 'Rankings Summary'}
             </div>
+            {this.state.activeUSState.total ? (
+              <ul>
+                <li>Overall Rank {this.state.activeUSState.total.rank}</li>
+                <li>Individual Rank {this.state.activeUSState.individual.rank}</li>
+                <li>Corporate Rank {this.state.activeUSState.corporate.rank}</li>
+                <li>Sales Rank {this.state.activeUSState.sales.rank}</li>
+                <li>UI Rank {this.state.activeUSState.unemployment.rank}</li>
+                <li>Property Rank {this.state.activeUSState.propertyTax.rank}</li>
+              </ul>
+            ) : (
+              <p>Hover over a state in the map to see its rankings.</p>
+            )}
+          </div>
 
           <div className="sbtci-home-social sbtci-box">
             <div className="sbtci-home-social-text">

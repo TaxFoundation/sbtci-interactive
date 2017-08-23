@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { geoAlbersUsa, geoPath } from 'd3-geo';
+import { scaleLinear } from 'd3-scale';
+import { interpolateGnBu } from 'd3-scale-chromatic';
 import { feature } from 'topojson-client';
 import USData from '../data/us.json';
 
@@ -8,6 +10,7 @@ class USMap extends React.Component {
   constructor(props) {
     super(props);
 
+    this.projection = this.projection.bind(this);
     this.updateHoverData = this.updateHoverData.bind(this);
   }
 
@@ -24,26 +27,25 @@ class USMap extends React.Component {
   render() {
     const path = geoPath().projection(this.projection);
     const USDataFeatures = feature(USData, USData.objects.states).features
-    const states = USDataFeatures.map((d, i) => {
-      let stateData = this.props.SBTCIData.filter((s) => {
-        return s.id === +d.id;
+    const scaleRank = scaleLinear().domain([0, 50]).range([0, 1]);
+    const states = this.props.SBTCIData.map((d, i) => {
+      let statePath = USDataFeatures.filter((s) => {
+        return +s.id === +d.id;
       })[0];
 
-      let routePath = '';
-      if (stateData) {
-        routePath = `/state/${stateData.name.replace(/\s/g, '-').toLowerCase()}`;
-      }
-
-      return <Link key={ `path-${ d.id }` } to={routePath}>
-        <path
-          onMouseEnter={(e) => this.updateHoverData(d.id)}
-          d={ geoPath().projection(this.projection())(d) }
-          className='state'
-          fill='transparent'
-          stroke='#000000'
-          strokeWidth={ 1 }
-        />
-      </Link>
+      let routePath = `/state/${d.name.replace(/\s/g, '-').toLowerCase()}`;
+      return (
+        <Link key={ `path-${ d.id }` } to={routePath}>
+          <path
+            onMouseEnter={(e) => this.updateHoverData(d.id)}
+            d={ geoPath().projection(this.projection())(statePath) }
+            className='state'
+            fill={interpolateGnBu(scaleRank(d.total.rank))}
+            stroke='#ffffff'
+            strokeWidth={ 1 }
+          />
+        </Link>
+      );
     });
 
     return (
