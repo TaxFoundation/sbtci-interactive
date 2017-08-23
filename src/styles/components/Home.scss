@@ -3,7 +3,7 @@
     @include tablet-up {
       display: grid;
       grid-gap: 1rem;
-      grid-template: 2fr 1fr / 3fr 1fr;
+      grid-template: auto 220px / 3fr 1fr;
     }
 
     margin-bottom: 2rem;
@@ -13,7 +13,7 @@
   &-map {
     @include tablet-up {
       grid-column: span 1;
-      grid-row: span 2;
+      grid-row: 1 / 3;
     }
   }
 

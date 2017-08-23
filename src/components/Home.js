@@ -4,6 +4,7 @@ import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcon
 
 class Home extends Component {
   render() {
+    const domain = 'localhost'; //TODO update with actual domain when known
     return (
       <div className="sbtci-home">
         <div className="sbtci-home-map-section container">
@@ -19,13 +20,19 @@ class Home extends Component {
               <p>How does your state rank? Brag (or complain) to your friends!</p>
             </div>
             <div className="sbtci-home-social-buttons">
-              <a href="" className="sbtci-home-social-button sbtci-social--twitter">
+              <a
+                href={`https://twitter.com/intent/tweet?text=${domain + this.props.location.pathname}`}
+                className="sbtci-home-social-button sbtci-social--twitter">
                 <IconTwitter fill="#ffffff" />
               </a>
-              <a href="" className="sbtci-home-social-button sbtci-social--facebook">
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${domain + this.props.location.pathname}`}
+                className="sbtci-home-social-button sbtci-social--facebook">
                 <IconFacebook fill="#ffffff" />
               </a>
-              <a href="" className="sbtci-home-social-button sbtci-social--linkedin">
+              <a
+                href={`https://www.linkedin.com/shareArticle?mini=true&url=${domain + this.props.location.pathname}`}
+                className="sbtci-home-social-button sbtci-social--linkedin">
                 <IconLinkedIn fill="#ffffff" />
               </a>
               <a href="" className="sbtci-home-social-button sbtci-social--email">
