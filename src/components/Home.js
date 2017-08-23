@@ -40,7 +40,7 @@ class Home extends Component {
               {this.state.activeUSState.name ? this.state.activeUSState.name : 'Rankings Summary'}
             </div>
             {this.state.activeUSState.total ? (
-              <ul>
+              <ul className="sbtci-box-text">
                 <li>Overall Rank {this.state.activeUSState.total.rank}</li>
                 <li>Individual Rank {this.state.activeUSState.individual.rank}</li>
                 <li>Corporate Rank {this.state.activeUSState.corporate.rank}</li>
@@ -49,7 +49,7 @@ class Home extends Component {
                 <li>Property Rank {this.state.activeUSState.propertyTax.rank}</li>
               </ul>
             ) : (
-              <p>Hover over a state in the map to see its rankings.</p>
+              <p className="sbtci-box-text">Hover over a state in the map to see its rankings.</p>
             )}
           </div>
 
