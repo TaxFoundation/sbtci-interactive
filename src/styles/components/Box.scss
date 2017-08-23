@@ -24,6 +24,7 @@
     color: $tf-blue;
     display: block;
     font-size: 0.8rem;
+    margin: 0;
     padding: 6px 0;
     text-align: center;
     text-transform: capitalize;
@@ -37,10 +38,6 @@
 
     &:visited {
       color: $tf-blue;
-    }
-
-    p {
-      margin: 0;
     }
   }
 }
