@@ -10,14 +10,23 @@ class USMap extends React.Component {
     super();
     this.state = {
       USData: feature(USData, USData.objects.states).features,
-      SBTCIData
+      SBTCIData,
+      hoverData: {}
     };
+
+    this.updateHoverData = this.updateHoverData.bind(this);
   }
 
   projection() {
     return geoAlbersUsa()
       .scale(1000)
       .translate([400/2, 600/2]);
+  }
+
+  updateHoverData(s) {
+    this.setState({
+      hoverData: s
+    });
   }
 
   render() {
@@ -32,7 +41,7 @@ class USMap extends React.Component {
         routePath = `/state/${stateData.name.replace(/\s/g, '-').toLowerCase()}`;
       }
 
-      return <Link key={ `path-${ d.id }` } to={routePath}>
+      return <Link key={ `path-${ d.id }` } to={routePath} onMouseEnter={(e) => this.updateHoverData(stateData)}>
         <path
           d={ geoPath().projection(this.projection())(d) }
           className='state'
