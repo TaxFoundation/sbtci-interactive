@@ -43,6 +43,7 @@ class USMap extends React.Component {
             fill={interpolateGnBu(scaleRank(d.total.rank))}
             stroke='#ffffff'
             strokeWidth={ 1 }
+            strokeLinejoin='bevel'
           />
         </Link>
       );
