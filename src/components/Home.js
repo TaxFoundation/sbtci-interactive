@@ -7,6 +7,7 @@ class Home extends Component {
   constructor() {
     super();
     this.state = {
+      activeTax: 'total',
       activeUSState: {}
     }
 
@@ -31,6 +32,8 @@ class Home extends Component {
               USData={this.props.USData}
               SBTCIData={this.props.SBTCIData}
               updateActiveState={this.updateActiveState}
+              activeTax={this.state.activeTax}
+              activeUSState={this.state.activeState}
             />
           </div>
 
@@ -40,31 +43,31 @@ class Home extends Component {
               {this.state.activeUSState.name ? this.state.activeUSState.name : 'Rankings Summary'}
             </div>
             {this.state.activeUSState.total ? (
-              <table className="sbtci-box-text">
+              <table className="sbtci-home-data-summary-table sbtci-box-text">
                 <tbody>
                   <tr className="sbtci-home-data-summary-ranks">
                     <td>Overall Rank</td>
-                    <td>{this.state.activeUSState.total.rank}</td>
+                    <td style={{textAlign: 'right'}}>{this.state.activeUSState.total.rank}</td>
                   </tr>
                   <tr className="sbtci-home-data-summary-ranks">
                     <td>Individual Rank</td>
-                    <td>{this.state.activeUSState.individual.rank}</td>
+                    <td style={{textAlign: 'right'}}>{this.state.activeUSState.individual.rank}</td>
                   </tr>
                   <tr className="sbtci-home-data-summary-ranks">
                     <td>Corporate Rank</td>
-                    <td>{this.state.activeUSState.corporate.rank}</td>
+                    <td style={{textAlign: 'right'}}>{this.state.activeUSState.corporate.rank}</td>
                   </tr>
                   <tr className="sbtci-home-data-summary-ranks">
                     <td>Sales Rank</td>
-                    <td>{this.state.activeUSState.sales.rank}</td>
+                    <td style={{textAlign: 'right'}}>{this.state.activeUSState.sales.rank}</td>
                   </tr>
                   <tr className="sbtci-home-data-summary-ranks">
                     <td>UI Rank</td>
-                    <td>{this.state.activeUSState.unemployment.rank}</td>
+                    <td style={{textAlign: 'right'}}>{this.state.activeUSState.unemployment.rank}</td>
                   </tr>
                   <tr className="sbtci-home-data-summary-ranks">
                     <td>Property Rank</td>
-                    <td>{this.state.activeUSState.propertyTax.rank}</td>
+                    <td style={{textAlign: 'right'}}>{this.state.activeUSState.propertyTax.rank}</td>
                   </tr>
                 </tbody>
               </table>

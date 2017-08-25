@@ -67,5 +67,11 @@
     align-items: center;
     display: grid;
     grid-template: 40px 1fr 30px / 1fr;
+
+    &-table {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      width: 100%;
+    }
   }
 }

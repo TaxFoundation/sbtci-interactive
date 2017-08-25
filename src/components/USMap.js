@@ -11,6 +11,10 @@ class USMap extends React.Component {
 
     this.projection = this.projection.bind(this);
     this.updateHoverData = this.updateHoverData.bind(this);
+
+    this.gradients = {
+      total: interpolateGnBu
+    };
   }
 
   projection() {
@@ -39,7 +43,7 @@ class USMap extends React.Component {
             onMouseEnter={(e) => this.updateHoverData(d.id)}
             d={ geoPath().projection(this.projection())(statePath) }
             className='state'
-            fill={interpolateGnBu(scaleRank(d.total.rank))}
+            fill={this.gradients[this.props.activeTax](scaleRank(d.total.rank))}
             stroke='#ffffff'
             strokeWidth={ 1 }
             strokeLinejoin='bevel'
