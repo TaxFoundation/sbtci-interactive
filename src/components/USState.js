@@ -2,24 +2,29 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import USStateTable from './USStateTable';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
+import Images from './Images';
 
 class USState extends Component {
-  constructor(props) {
-    super(props);
-    this.state = props.stateData;
-  }
-
   render() {
+    const bgImage = {
+      backgroundImage: `url(${Images[`State${this.props.stateData.id}`]})`
+    }
+
     return (
       <div className="sbtci-state">
         <div
           className="sbtci-state-header"
+          style={bgImage}
         >
-          <h1><span className="sbtci-state-header-rank">#{this.state.total.rank}</span> {this.state.name}</h1>
+          <h1>
+            <span className="sbtci-state-header-rank">#{this.props.stateData.total.rank}</span>
+            &nbsp;
+            {this.props.stateData.name}
+          </h1>
         </div>
         <div className="sbtci-state-content container">
           <div className="sbtci-box sbtci-state-table">
-            <USStateTable stateData={this.state} />
+            <USStateTable stateData={this.props.stateData} />
           </div>
           <div className="sbtci-state-social sbtci-box">
             <div className="sbtci-state-social-text">

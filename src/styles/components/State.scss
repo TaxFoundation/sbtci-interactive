@@ -2,9 +2,11 @@
   &-header {
     align-items: center;
     background-color: $tf-blue;
+    background-position: center;
+    background-size: cover;
     display: flex;
     justify-content: center;
-    height: 120px;
+    height: 256px;
     margin-bottom: 2rem;
     width: 100%;
 
