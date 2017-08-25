@@ -6,6 +6,7 @@ import USState from './components/USState';
 import Footer from './components/Footer';
 import FourOhFour from './components/FourOhFour'
 import SBTCIData from './data/SBTCI.json';
+import USData from './data/us.json';
 
 class App extends Component {
   render() {
@@ -14,10 +15,19 @@ class App extends Component {
         <div>
           <Header />
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route
+              exact
+              path="/"
+              render={(props) => <Home {...props} SBTCIData={SBTCIData} USData={USData} />} />
             {SBTCIData.map((s) => {
               const r = `/state/${s.name.replace(/\s/g, '-').toLowerCase()}`;
-              return ( <Route key={ `route-${s.id}` } path={r} render={() => <USState stateData={s} />} /> );
+              return (
+                <Route
+                  key={ `route-${s.id}` }
+                  path={r}
+                  render={(props) => <USState {...props} stateData={s} />}
+                />
+              );
             })}
             <Route component={FourOhFour} />
           </Switch>

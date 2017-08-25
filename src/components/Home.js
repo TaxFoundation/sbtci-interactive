@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import USMap from './USMap';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
-import SBTCIData from '../data/SBTCI.json';
 
 class Home extends Component {
   constructor() {
     super();
     this.state = {
-      SBTCIData,
       activeUSState: {}
     }
 
@@ -16,7 +14,7 @@ class Home extends Component {
   }
 
   updateActiveState(stateId) {
-    const newActiveState = this.state.SBTCIData.filter((USState) => {
+    const newActiveState = this.props.SBTCIData.filter((USState) => {
       return USState.id === stateId;
     })[0];
     this.setState({ activeUSState: newActiveState});
@@ -30,7 +28,8 @@ class Home extends Component {
         <div className="sbtci-home-map-section container">
           <div className="sbtci-home-map">
             <USMap
-              SBTCIData={this.state.SBTCIData}
+              USData={this.props.USData}
+              SBTCIData={this.props.SBTCIData}
               updateActiveState={this.updateActiveState}
             />
           </div>

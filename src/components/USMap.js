@@ -4,7 +4,6 @@ import { geoAlbersUsa, geoPath } from 'd3-geo';
 import { scaleLinear } from 'd3-scale';
 import { interpolateGnBu } from 'd3-scale-chromatic';
 import { feature } from 'topojson-client';
-import USData from '../data/us.json';
 
 class USMap extends React.Component {
   constructor(props) {
@@ -26,7 +25,7 @@ class USMap extends React.Component {
 
   render() {
     const path = geoPath().projection(this.projection);
-    const USDataFeatures = feature(USData, USData.objects.states).features
+    const USDataFeatures = feature(this.props.USData, this.props.USData.objects.states).features
     const scaleRank = scaleLinear().domain([0, 50]).range([0, 1]);
     const states = this.props.SBTCIData.map((d, i) => {
       let statePath = USDataFeatures.filter((s) => {
