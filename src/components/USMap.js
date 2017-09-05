@@ -20,7 +20,7 @@ class USMap extends React.Component {
   projection() {
     return geoAlbersUsa()
       .scale(800)
-      .translate([600/2, 400/2]);
+      .translate([600/2, 400/2 - 25]);
   }
 
   updateHoverData(stateId) {
@@ -31,6 +31,7 @@ class USMap extends React.Component {
     const path = geoPath().projection(this.projection);
     const USDataFeatures = feature(this.props.USData, this.props.USData.objects.states).features
     const scaleRank = scaleLinear().domain([0, 50]).range([0, 1]);
+
     const states = this.props.SBTCIData.map((d, i) => {
       let statePath = USDataFeatures.filter((s) => {
         return +s.id === +d.id;
@@ -52,10 +53,27 @@ class USMap extends React.Component {
       );
     });
 
+    const legendWidth = 30;
+    const legendCount = 10;
+    const legend = [...Array(legendCount).keys()].map((d) => {
+      return (
+        <rect
+          x={ d * legendWidth + (400 - legendWidth*legendCount)}
+          y="370"
+          width="25"
+          height="25"
+          fill={ this.gradients[this.props.activeTax](d/10) }
+        />
+      );
+    })
+
     return (
       <svg width="100%" viewBox="0 0 600 400">
         <g className='states'>
           { states }
+        </g>
+        <g className="legend">
+          { legend }
         </g>
       </svg>
     );
