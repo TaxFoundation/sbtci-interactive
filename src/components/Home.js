@@ -25,12 +25,14 @@ class Home extends Component {
 
     return (
       <div className="sbtci-home">
-        <nav className="sbtci-home-tax-nav">
+        <nav className="sbtci-home-tax-nav container">
           {this.props.taxTypes.map((t) => {
+            let r = `/tax/${t.id}`;
+            if (t.id === 'total') { r = '/'; }
             return <Link
               className="sbtci-home-tax-nav-item"
-              to={`/tax/${t.id}`}
-            />;
+              to={r}
+            >{t.name}</Link>;
           })}
         </nav>
         <div className="sbtci-home-map-section container">
@@ -66,9 +68,7 @@ class Home extends Component {
               <Link
                 className="sbtci-box-footer"
                 to={`/state/${this.state.activeUSState.name.replace(/\s/g, '-').toLowerCase()}`}
-                >
-                  See more about {this.state.activeUSState.name}.
-              </Link>
+              >See more about {this.state.activeUSState.name}.</Link>
             ) : (
               <p className="sbtci-box-footer">Please select a state.</p>
             )}

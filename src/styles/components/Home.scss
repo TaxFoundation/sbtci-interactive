@@ -1,4 +1,39 @@
 .sbtci-home {
+  &-tax-nav {
+    display: none;
+
+    @include tablet-up {
+      display: table;
+      table-layout: fixed;
+    }
+  }
+
+  &-tax-nav-item {
+    display: block;
+
+    @include tablet-up {
+      border-bottom: 1px solid $gray;
+      border-left: 1px solid $gray;
+      color: $gray;
+      display: table-cell;
+      padding: 1rem;
+      text-align: center;
+      text-decoration: none;
+      width: 2%;
+
+      &:last-child {
+        border-right: 1px solid $gray;
+      }
+
+      &:active,
+      &:focus,
+      &:hover {
+        background-color: $sbtci-blue;
+        color: $dark-gray;
+      }
+    }
+  }
+
   &-map-section {
     @include tablet-up {
       display: grid;
