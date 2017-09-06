@@ -4,10 +4,9 @@ import USMap from './USMap';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
 
 class Home extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      activeTax: 'total',
       activeUSState: {}
     }
 
@@ -26,17 +25,24 @@ class Home extends Component {
 
     return (
       <div className="sbtci-home">
+        <nav className="sbtci-home-tax-nav">
+          {this.props.taxTypes.map((t) => {
+            return <Link
+              className="sbtci-home-tax-nav-item"
+              to={`/tax/${t.id}`}
+            />;
+          })}
+        </nav>
         <div className="sbtci-home-map-section container">
           <div className="sbtci-home-map">
             <USMap
               USData={this.props.USData}
               SBTCIData={this.props.SBTCIData}
               updateActiveState={this.updateActiveState}
-              activeTax={this.state.activeTax}
+              activeTax={this.props.activeTax}
               activeUSState={this.state.activeState}
             />
           </div>
-
 
           <div className="sbtci-home-data-summary sbtci-box">
             <div className="sbtci-box-heading">

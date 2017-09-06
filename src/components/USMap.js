@@ -2,7 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { geoAlbersUsa, geoPath } from 'd3-geo';
 import { scaleLinear } from 'd3-scale';
-import { interpolateGnBu } from 'd3-scale-chromatic';
+import {
+  interpolateGnBu,
+  interpolateBuGn,
+  interpolateYlGn,
+  interpolateYlOrBr,
+  interpolateYlOrRd,
+  interpolateRdPu
+} from 'd3-scale-chromatic';
 import { feature } from 'topojson-client';
 
 class USMap extends React.Component {
@@ -13,7 +20,12 @@ class USMap extends React.Component {
     this.updateHoverData = this.updateHoverData.bind(this);
 
     this.gradients = {
-      total: interpolateGnBu
+      total: interpolateGnBu,
+      corporate: interpolateBuGn,
+      individual: interpolateYlGn,
+      sales: interpolateYlOrBr,
+      unemployment: interpolateYlOrRd,
+      propertyTax: interpolateRdPu
     };
   }
 
@@ -44,7 +56,7 @@ class USMap extends React.Component {
             onMouseEnter={(e) => this.updateHoverData(d.id)}
             d={ geoPath().projection(this.projection())(statePath) }
             className='state'
-            fill={this.gradients[this.props.activeTax](scaleRank(d.total.rank))}
+            fill={this.gradients[this.props.activeTax](scaleRank(d[this.props.activeTax].rank))}
             stroke='#ffffff'
             strokeWidth={ 1 }
             strokeLinejoin='bevel'
