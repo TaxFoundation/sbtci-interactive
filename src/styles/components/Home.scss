@@ -3,7 +3,7 @@
     @include tablet-up {
       display: grid;
       grid-gap: 1rem;
-      grid-template: auto 220px / 3fr 1fr;
+      grid-template: 268px 220px / 3fr 1fr;
     }
 
     margin-bottom: 2rem;
@@ -20,7 +20,7 @@
   &-data-summary,
   &-social {
     @include tablet-up {
-      grid-column: 2 /3;
+      grid-column: 2 / 3;
       grid-row: span 1;
     }
 
