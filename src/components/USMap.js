@@ -62,7 +62,7 @@ class USMap extends React.Component {
           y="370"
           width="25"
           height="25"
-          fill={ this.gradients[this.props.activeTax](d/10) }
+          fill={ this.gradients[this.props.activeTax]((legendCount - d)/10) }
         />
       );
     })
@@ -73,6 +73,14 @@ class USMap extends React.Component {
           { states }
         </g>
         <g className="legend">
+          <text textAnchor="end" style={{fontSize: '12px'}}>
+            <tspan x={400 - legendWidth*legendCount - 5} y="379">Worse</tspan>
+            <tspan x={400 - legendWidth*legendCount - 5} y="394">Rank</tspan>
+          </text>
+          <text textAnchor="start" style={{fontSize: '12px'}}>
+            <tspan x={400 + 3} y="379">Better</tspan>
+            <tspan x={400 + 3} y="394">Rank</tspan>
+          </text>
           { legend }
         </g>
       </svg>
