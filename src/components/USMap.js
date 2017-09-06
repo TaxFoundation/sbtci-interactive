@@ -58,7 +58,7 @@ class USMap extends React.Component {
     const legend = [...Array(legendCount).keys()].map((d) => {
       return (
         <rect
-          x={ d * legendWidth + (400 - legendWidth*legendCount)}
+          x={ d * legendWidth + (300 - legendWidth*legendCount/2)}
           y="370"
           width="25"
           height="25"
@@ -74,12 +74,12 @@ class USMap extends React.Component {
         </g>
         <g className="legend">
           <text textAnchor="end" style={{fontSize: '12px'}}>
-            <tspan x={400 - legendWidth*legendCount - 5} y="379">Worse</tspan>
-            <tspan x={400 - legendWidth*legendCount - 5} y="394">Rank</tspan>
+            <tspan x={300 - legendWidth*legendCount/2 - 5} y="379">Worse</tspan>
+            <tspan x={300 - legendWidth*legendCount/2 - 5} y="394">Rank</tspan>
           </text>
           <text textAnchor="start" style={{fontSize: '12px'}}>
-            <tspan x={400 + 3} y="379">Better</tspan>
-            <tspan x={400 + 3} y="394">Rank</tspan>
+            <tspan x={300 + legendWidth*legendCount/2 + 3} y="379">Better</tspan>
+            <tspan x={300 + legendWidth*legendCount/2 + 3} y="394">Rank</tspan>
           </text>
           { legend }
         </g>
