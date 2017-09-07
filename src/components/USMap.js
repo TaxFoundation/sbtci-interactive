@@ -58,8 +58,8 @@ class USMap extends React.Component {
             className='state'
             fill={this.gradients[this.props.activeTax](scaleRank(d[this.props.activeTax].rank))}
             stroke='#ffffff'
-            strokeWidth={ 1 }
             strokeLinejoin='bevel'
+            strokeWidth={ d.id === this.props.activeUSState.id ? 3 : 1 }
           />
         </Link>
       );
