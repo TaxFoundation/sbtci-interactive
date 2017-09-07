@@ -34,6 +34,12 @@
   }
 
   &-map-section {
+    @include mobile-only {
+      & > * {
+        margin-bottom: 1rem;
+      }
+    }
+    
     @include tablet-up {
       display: grid;
       grid-gap: 1rem;
