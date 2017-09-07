@@ -50,7 +50,7 @@ class Home extends Component {
               SBTCIData={this.props.SBTCIData}
               updateActiveState={this.updateActiveState}
               activeTax={this.props.activeTax}
-              activeUSState={this.state.activeState}
+              activeUSState={this.state.activeUSState}
             />
           </div>
 
@@ -62,7 +62,11 @@ class Home extends Component {
               <table className="sbtci-home-data-summary-table sbtci-box-text">
                 <tbody>
                   {this.props.taxTypes.map((t) => {
-                    return <tr className="sbtci-home-data-summary-ranks">
+                    return (
+                      <tr
+                        className="sbtci-home-data-summary-ranks"
+                        key={`summary-row-${t.id}`}
+                      >
                       <style>{
                         `#summary-label-${t.id}::before {
                           background-color: ${t.hex};
@@ -90,7 +94,7 @@ class Home extends Component {
                         {this.state.activeUSState[t.id].rank}
                       </td>
                     </tr>
-                  })}
+                  );})}
                 </tbody>
               </table>
             ) : (
