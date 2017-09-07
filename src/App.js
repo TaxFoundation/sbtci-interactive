@@ -9,12 +9,12 @@ import SBTCIData from './data/SBTCI.json';
 import USData from './data/us.json';
 
 const taxTypes = [
-  {name: 'Overall Rank', id: 'total'},
-  {name: 'Corporate Taxes', id: 'corporate'},
-  {name: 'Individual Taxes', id: 'individual'},
-  {name: 'Sales Taxes', id: 'sales'},
-  {name: 'UI Taxes', id: 'unemployment'},
-  {name: 'Property Taxes', id: 'propertyTax'}
+  {name: 'Overall Rank', id: 'total', hex: '#007BC3'},
+  {name: 'Corporate Taxes', id: 'corporate', hex: '#009688'},
+  {name: 'Individual Taxes', id: 'individual', hex: '#4DAF4E'},
+  {name: 'Sales Taxes', id: 'sales', hex: '#FEC111'},
+  {name: 'UI Taxes', id: 'unemployment', hex: '#EF4438'},
+  {name: 'Property Taxes', id: 'propertyTax', hex: '#903F98'}
 ];
 
 class App extends Component {

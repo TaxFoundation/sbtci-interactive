@@ -12,9 +12,8 @@
     display: block;
 
     @include tablet-up {
-      border-bottom: 1px solid $gray;
       border-left: 1px solid $gray;
-      color: $gray;
+      color: #666666;
       display: table-cell;
       padding: 1rem;
       text-align: center;
@@ -28,7 +27,7 @@
       &:active,
       &:focus,
       &:hover {
-        background-color: $sbtci-blue;
+        background-color: rgba($sbtci-blue, 0.3);
         color: $dark-gray;
       }
     }

@@ -28,9 +28,16 @@ class Home extends Component {
         <nav className="sbtci-home-tax-nav container">
           {this.props.taxTypes.map((t) => {
             let r = `/tax/${t.id}`;
+            let style = {
+              borderBottom: `3px solid ${t.hex}`
+            }
             if (t.id === 'total') { r = '/'; }
+            if (t.id === this.props.activeTax) {
+              style.backgroundColor = 'rgba(95, 194, 255, 0.3)'
+            }
             return <Link
               className="sbtci-home-tax-nav-item"
+              style={style}
               to={r}
             >{t.name}</Link>;
           })}
