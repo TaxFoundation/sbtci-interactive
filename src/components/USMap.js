@@ -70,6 +70,7 @@ class USMap extends React.Component {
     const legend = [...Array(legendCount).keys()].map((d) => {
       return (
         <rect
+          key={`legend-${d}`}
           x={ d * legendWidth + (300 - legendWidth*legendCount/2)}
           y="370"
           width="25"

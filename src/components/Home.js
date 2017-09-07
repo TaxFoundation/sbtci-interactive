@@ -37,6 +37,7 @@ class Home extends Component {
             }
             return <Link
               className="sbtci-home-tax-nav-item"
+              key={`tax-nav-${t.id}`}
               style={style}
               to={r}
             >{t.name}</Link>;
