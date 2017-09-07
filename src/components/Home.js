@@ -63,11 +63,32 @@ class Home extends Component {
                 <tbody>
                   {this.props.taxTypes.map((t) => {
                     return <tr className="sbtci-home-data-summary-ranks">
-                      <style>{`#summary-${t.id}::before {
-                        background-color: ${t.hex};
-                      }`}</style>
-                      <td className="sbtci-home-data-summary-tax" id={`summary-${t.id}`}>{t.name}</td>
-                      <td style={{textAlign: 'right'}}>{this.state.activeUSState[t.id].rank}</td>
+                      <style>{
+                        `#summary-label-${t.id}::before {
+                          background-color: ${t.hex};
+                        }
+                        ${this.props.activeTax === t.id
+                          ? `#summary-label-${t.id},
+                            #summary-rank-${t.id} {
+                              font-size: 1rem;
+                              font-weight: 700;
+                            }`
+                          : ''
+                        }`
+                      }</style>
+                      <td
+                        className="sbtci-home-data-summary-tax"
+                        id={`summary-label-${t.id}`}
+                      >
+                        {t.name}
+                      </td>
+                      <td
+                        className="sbtci-home-data-summary-rank"
+                        id={`summary-rank-${t.id}`}
+                        style={{textAlign: 'right'}}
+                      >
+                        {this.state.activeUSState[t.id].rank}
+                      </td>
                     </tr>
                   })}
                 </tbody>
