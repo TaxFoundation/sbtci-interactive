@@ -39,7 +39,7 @@
         margin-bottom: 1rem;
       }
     }
-    
+
     @include tablet-up {
       display: grid;
       grid-gap: 1rem;
@@ -112,6 +112,15 @@
       font-size: 0.9rem;
       line-height: 1.6;
       width: 100%;
+    }
+
+    &-tax::before {
+      content: "";
+      display: inline-block;
+      height: 1rem;
+      margin-bottom: -2px;
+      margin-right: 0.4rem;
+      width: 3px;
     }
   }
 }

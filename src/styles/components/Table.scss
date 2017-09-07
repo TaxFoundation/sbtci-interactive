@@ -1,5 +1,7 @@
 .sbtci-table {
   border-collapse: collapse;
+  display: table;
+  table-layout: fixed;
   height: 100%;
   width: 100%;
 
@@ -23,7 +25,9 @@
   }
 
   td {
+    display: table-cell;
     text-align: center;
+    width: 2%;
 
     &:first-of-type {
       text-align: left;

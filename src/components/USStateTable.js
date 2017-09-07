@@ -12,32 +12,29 @@ class USStateTable extends Component {
         <thead>
           <tr>
             <th>&nbsp;</th>
-            <th>Overall Rank</th>
-            <th>Corporate Taxes</th>
-            <th>Individual Taxes</th>
-            <th>Sales Taxes</th>
-            <th>UI Taxes</th>
-            <th>Property Taxes</th>
+            {this.props.taxTypes.map((t) => {
+              return (
+                <th style={{borderBottom: `3px inset ${t.hex}`}}>{t.name}</th>
+              );
+            })}
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Rank</td>
-            <td>{ this.state.total.rank }</td>
-            <td>{ this.state.corporate.rank }</td>
-            <td>{ this.state.individual.rank }</td>
-            <td>{ this.state.sales.rank }</td>
-            <td>{ this.state.unemployment.rank }</td>
-            <td>{ this.state.propertyTax.rank }</td>
+            {this.props.taxTypes.map((t) => {
+              return (
+                <td>{ this.state[t.id].rank}</td>
+              );
+            })}
           </tr>
           <tr>
             <td>Score</td>
-            <td>{ this.state.total.value }</td>
-            <td>{ this.state.corporate.value }</td>
-            <td>{ this.state.individual.value }</td>
-            <td>{ this.state.sales.value }</td>
-            <td>{ this.state.unemployment.value }</td>
-            <td>{ this.state.propertyTax.value }</td>
+            {this.props.taxTypes.map((t) => {
+              return (
+                <td>{ this.state[t.id].value}</td>
+              );
+            })}
           </tr>
         </tbody>
       </table>

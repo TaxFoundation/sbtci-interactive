@@ -24,7 +24,7 @@ class USState extends Component {
         </div>
         <div className="sbtci-state-content container">
           <div className="sbtci-box sbtci-state-table">
-            <USStateTable stateData={this.props.stateData} />
+            <USStateTable taxTypes={this.props.taxTypes} stateData={this.props.stateData} />
           </div>
           <div className="sbtci-state-social sbtci-box">
             <div className="sbtci-state-social-text">

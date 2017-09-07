@@ -26,7 +26,11 @@ class App extends Component {
         <Route
           key={ `route-${s.id}` }
           path={r}
-          render={(props) => <USState {...props} stateData={s} />}
+          render={(props) => <USState
+            {...props}
+            stateData={s}
+            taxTypes={taxTypes}
+          />}
         />
       );
     });
