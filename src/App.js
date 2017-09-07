@@ -44,9 +44,9 @@ class App extends Component {
           render={
             (props) => <Home
               {...props}
-              taxTypes={taxTypes}
               activeTax={t.id}
               SBTCIData={SBTCIData}
+              taxTypes={taxTypes}
               USData={USData}
             />
           }
@@ -65,9 +65,9 @@ class App extends Component {
               render={
                 (props) => <Home
                   {...props}
-                  taxTypes={taxTypes}
                   activeTax='total'
                   SBTCIData={SBTCIData}
+                  taxTypes={taxTypes}
                   USData={USData}
                 />
               }
