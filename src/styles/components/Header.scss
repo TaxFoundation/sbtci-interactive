@@ -25,6 +25,15 @@
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     justify-items: end;
+    text-align: right;
+
+    &-icon {
+      padding: 0 10px;
+    }
+
+    svg {
+      width: 24px;
+    }
   }
 
   &-nav {

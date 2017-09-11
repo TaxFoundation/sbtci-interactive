@@ -21,8 +21,6 @@ class Home extends Component {
   }
 
   render() {
-    const domain = 'localhost'; //TODO update with actual domain when known
-
     return (
       <div className="sbtci-home">
         <nav className="sbtci-home-tax-nav container">
@@ -117,17 +115,17 @@ class Home extends Component {
             </div>
             <div className="sbtci-home-social-buttons">
               <a
-                href={`https://twitter.com/intent/tweet?text=${domain + this.props.location.pathname}`}
+                href={`https://twitter.com/intent/tweet?text=${window.location.href}`}
                 className="sbtci-home-social-button sbtci-social--twitter">
                 <IconTwitter fill="#ffffff" />
               </a>
               <a
-                href={`https://www.facebook.com/sharer/sharer.php?u=${domain + this.props.location.pathname}`}
+                href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
                 className="sbtci-home-social-button sbtci-social--facebook">
                 <IconFacebook fill="#ffffff" />
               </a>
               <a
-                href={`https://www.linkedin.com/shareArticle?mini=true&url=${domain + this.props.location.pathname}`}
+                href={`https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}`}
                 className="sbtci-home-social-button sbtci-social--linkedin">
                 <IconLinkedIn fill="#ffffff" />
               </a>
