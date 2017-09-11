@@ -114,24 +114,22 @@ class Home extends Component {
               <p>How does your state rank? Brag (or complain) to your friends!</p>
             </div>
             <div className="sbtci-home-social-buttons">
-              <a
-                href={`https://twitter.com/intent/tweet?text=${window.location.href}`}
-                className="sbtci-home-social-button sbtci-social--twitter">
-                <IconTwitter fill="#ffffff" />
-              </a>
-              <a
-                href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
-                className="sbtci-home-social-button sbtci-social--facebook">
-                <IconFacebook fill="#ffffff" />
-              </a>
-              <a
-                href={`https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}`}
-                className="sbtci-home-social-button sbtci-social--linkedin">
-                <IconLinkedIn fill="#ffffff" />
-              </a>
-              <a href="" className="sbtci-home-social-button sbtci-social--email">
-                <IconEmail fill="#ffffff" />
-              </a>
+              <IconTwitter
+                className="sbtci-home-social-button sbtci-social--twitter"
+                fill="#ffffff"
+              />
+              <IconFacebook
+                className="sbtci-home-social-button sbtci-social--facebook"
+                fill="#ffffff"
+              />
+              <IconLinkedIn
+                className="sbtci-home-social-button sbtci-social--linkedin"
+                fill="#ffffff"
+              />
+              <IconEmail
+                className="sbtci-home-social-button sbtci-social--email"
+                fill="#ffffff"
+              />
             </div>
           </div>
         </div>
