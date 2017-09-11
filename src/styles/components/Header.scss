@@ -1,52 +1,67 @@
 .sbtci-header {
   background-color: $tf-blue;
-  height: 160px;
 
   &-container {
     align-items: end;
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
+    @include tablet-up {
+      grid-template: auto 70px / 1fr 1fr;
+    }
   }
 
   &-logo {
-    display: block;
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    height: 160px;
+    display: none;
 
-    img {
-      height: 130px;
-      margin-top: 30px;
-      width: 100%;
+    @include tablet-up {
+      display: grid;
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+      grid-template: 160px / auto;
+
+      img {
+        align-self: end;
+        max-height: 130px;
+        width: 100%;
+      }
     }
   }
 
   &-social {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    justify-items: end;
-    text-align: right;
+    display: none;
 
-    &-icon {
-      padding: 0 10px;
-    }
+    @include tablet-up {
+      display: block;
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      justify-items: end;
+      text-align: right;
 
-    svg {
-      width: 24px;
+      &-icon {
+        padding: 0 10px;
+      }
+
+      svg {
+        width: 24px;
+      }
     }
   }
 
   &-nav {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    justify-items: end;
-    text-align: right;
+    display: none;
+
+    @include tablet-up {
+      display: block;
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      justify-items: end;
+      text-align: right;
+    }
   }
 
   &-nav-link {
     color: #ffffff;
     display: inline-block;
-    padding: 14px 10px 10px;
+    padding: 24px 10px 20px;
     text-decoration: none;
     text-transform: uppercase;
 
