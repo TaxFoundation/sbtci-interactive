@@ -98,14 +98,6 @@ class Home extends Component {
             ) : (
               <p className="sbtci-box-text">Hover over a state in the map to see its rankings.</p>
             )}
-            {this.state.activeUSState.name ? (
-              <Link
-                className="sbtci-box-footer"
-                to={`/state/${this.state.activeUSState.name.replace(/\s/g, '-').toLowerCase()}`}
-              >See more about {this.state.activeUSState.name}.</Link>
-            ) : (
-              <p className="sbtci-box-footer">Please select a state.</p>
-            )}
           </div>
 
           <div className="sbtci-home-social sbtci-box">

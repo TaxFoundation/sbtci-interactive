@@ -43,7 +43,7 @@
     @include tablet-up {
       display: grid;
       grid-gap: 1rem;
-      grid-template: 268px 220px / 3fr 1fr;
+      grid-template: 250px 220px / 3fr 1fr;
     }
 
     margin-bottom: 2rem;
@@ -106,7 +106,7 @@
   &-data-summary {
     align-items: center;
     display: grid;
-    grid-template: 40px 1fr 30px / 1fr;
+    grid-template: 40px 1fr / 1fr;
 
     &-table {
       font-size: 0.9rem;
