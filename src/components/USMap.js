@@ -27,6 +27,15 @@ class USMap extends React.Component {
       unemployment: interpolateYlOrRd,
       propertyTax: interpolateRdPu
     };
+
+    this.smallStates = {
+      11: {
+        x: 560,
+        y: 180,
+        originX: 509,
+        originY: 152
+      }
+    };
   }
 
   projection() {
@@ -48,6 +57,41 @@ class USMap extends React.Component {
       let statePath = USDataFeatures.filter((s) => {
         return +s.id === +d.id;
       })[0];
+      let smallStateRect = '';
+      if (d.id in this.smallStates) {
+        let smallState = this.smallStates[d.id];
+        smallStateRect = (
+          <g>
+            <line
+              stroke="#666666"
+              strokeWidth="1"
+              x1={smallState.x + 3}
+              y1={smallState.y + 3}
+              x2={smallState.originX}
+              y2={smallState.originY}
+            />
+            <rect
+              onMouseEnter={(e) => this.updateHoverData(d.id)}
+              x={smallState.x}
+              y={smallState.y}
+              height="16"
+              width="16"
+              fill={this.gradients[this.props.activeTax](scaleRank(d[this.props.activeTax].rank))}
+              stroke='#ffffff'
+              strokeLinejoin='bevel'
+              strokeWidth={ d.id === this.props.activeUSState.id ? 3 : 1 }
+            />
+            <text
+              fontSize="12"
+              textAnchor="middle"
+              x={smallState.x + 8}
+              y={smallState.y + 28}
+            >
+              {d.abbr}
+            </text>
+          </g>
+        );
+      }
 
       let routePath = `/state/${d.name.replace(/\s/g, '-').toLowerCase()}`;
       return (
@@ -61,6 +105,7 @@ class USMap extends React.Component {
             strokeLinejoin='bevel'
             strokeWidth={ d.id === this.props.activeUSState.id ? 3 : 1 }
           />
+          {smallStateRect}
         </Link>
       );
     });
