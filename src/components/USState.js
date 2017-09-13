@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import USStateTable from './USStateTable';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
-import Images from './Images';
+import { StateImages } from './Images';
 
 class USState extends Component {
   render() {
     const bgImage = {
-      backgroundImage: `url(${Images[`State${this.props.stateData.id}`]})`
+      backgroundImage: `url(${StateImages[`State${this.props.stateData.id}`]})`
     }
 
     return (

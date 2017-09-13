@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import USMap from './USMap';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
+import { TaxImages } from './Images';
 
 class Home extends Component {
   constructor(props) {
@@ -21,9 +22,16 @@ class Home extends Component {
   }
 
   render() {
+    const bgImage = {
+      backgroundImage: `url(${TaxImages[this.props.activeTax]})`
+    };
+
     return (
       <div className="sbtci-home">
-        <div className="sbtci-home-header">
+        <div
+          className="sbtci-home-header"
+          style={bgImage}
+        >
           <h1>
             { this.props.taxTypes.filter((t) => {
               return this.props.activeTax === t.id;
