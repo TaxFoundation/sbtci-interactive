@@ -23,24 +23,14 @@ class Home extends Component {
   render() {
     return (
       <div className="sbtci-home">
-        <nav className="sbtci-home-tax-nav container">
-          {this.props.taxTypes.map((t) => {
-            let r = `/tax/${t.id}`;
-            let style = {
-              borderBottom: `3px solid ${t.hex}`
+        <div className="sbtci-home-header">
+          <h1>
+            { this.props.taxTypes.filter((t) => {
+              return this.props.activeTax === t.id;
+              })[0].name
             }
-            if (t.id === 'total') { r = '/'; }
-            if (t.id === this.props.activeTax) {
-              style.backgroundColor = 'rgba(95, 194, 255, 0.3)'
-            }
-            return <Link
-              className="sbtci-home-tax-nav-item"
-              key={`tax-nav-${t.id}`}
-              style={style}
-              to={r}
-            >{t.name}</Link>;
-          })}
-        </nav>
+          </h1>
+        </div>
         <div className="sbtci-home-map-section container">
           <div className="sbtci-home-map">
             <USMap
@@ -125,6 +115,24 @@ class Home extends Component {
             </div>
           </div>
         </div>
+        <nav className="sbtci-home-tax-nav container">
+          {this.props.taxTypes.map((t) => {
+            let r = `/tax/${t.id}`;
+            let style = {
+              borderTop: `3px solid ${t.hex}`
+            }
+            if (t.id === 'total') { r = '/'; }
+            if (t.id === this.props.activeTax) {
+              style.backgroundColor = 'rgba(95, 194, 255, 0.3)'
+            }
+            return <Link
+              className="sbtci-home-tax-nav-item"
+              key={`tax-nav-${t.id}`}
+              style={style}
+              to={r}
+              >{t.name}</Link>;
+            })}
+          </nav>
         <hr />
       </div>
     );

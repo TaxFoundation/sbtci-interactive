@@ -1,4 +1,25 @@
 .sbtci-home {
+  &-header {
+    align-items: center;
+    background-color: $tf-blue;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    width: 100%;
+
+
+    h1 {
+      color: #ffffff;
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 3rem;
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+
   &-tax-nav {
     display: none;
 
