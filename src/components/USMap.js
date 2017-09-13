@@ -29,11 +29,23 @@ class USMap extends React.Component {
     };
 
     this.smallStates = {
+      10: {
+        x: 560,
+        y: 160,
+        originX: 528,
+        originY: 148
+      },
       11: {
         x: 560,
-        y: 180,
+        y: 200,
         originX: 509,
         originY: 152
+      },
+      44: {
+        x: 560,
+        y: 120,
+        originX: 557,
+        originY: 104
       }
     };
   }
@@ -57,7 +69,7 @@ class USMap extends React.Component {
       let statePath = USDataFeatures.filter((s) => {
         return +s.id === +d.id;
       })[0];
-      let smallStateRect = '';
+      let smallStateRect;
       if (d.id in this.smallStates) {
         let smallState = this.smallStates[d.id];
         smallStateRect = (
@@ -99,6 +111,7 @@ class USMap extends React.Component {
           <path
             onMouseEnter={(e) => this.updateHoverData(d.id)}
             d={ geoPath().projection(this.projection())(statePath) }
+            id={`state-${d.id}`}
             className='state'
             fill={this.gradients[this.props.activeTax](scaleRank(d[this.props.activeTax].rank))}
             stroke='#ffffff'
