@@ -23,7 +23,9 @@ class Home extends Component {
 
   render() {
     const bgImage = {
-      backgroundImage: `url(${TaxImages[this.props.activeTax]})`
+      backgroundImage: `url(${TaxImages[this.props.activeTax]})`,
+      backgroundColor: this.props.taxTypes.filter(t => t.id === this.props.activeTax)[0].hex,
+      backgroundBlendMode: 'overlay'
     };
 
     return (
