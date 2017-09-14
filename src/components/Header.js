@@ -4,7 +4,26 @@ import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcon
 import Logo from '../images/logo.svg';
 
 class Header extends Component {
+  constructor() {
+    super();
+    this.state = {
+      menuOpen: false
+    };
+
+    this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
+  }
+
+  toggleMobileMenu() {
+    let newState = Object.assign(this.state);
+    newState.menuOpen = !newState.menuOpen;
+    this.setState(newState);
+  }
+
   render() {
+    let menuOpenClass = this.state.menuOpen
+      ? 'sbtci-header-nav sbtci-header-nav--active'
+      : 'sbtci-header-nav';
+
     return (
       <header className="sbtci-header">
         <div className="sbtci-header-container container">
@@ -17,7 +36,8 @@ class Header extends Component {
           <IconLinkedIn className="sbtci-header-social-icon" fill="#ffffff" />
           <IconEmail className="sbtci-header-social-icon" fill="#ffffff" />
         </div>
-        <nav className="sbtci-header-nav">
+        <div className="sbtci-header-menu" onClick={(e) => this.toggleMobileMenu()}>Menu</div>
+        <nav className={menuOpenClass}>
           <Link className="sbtci-header-nav-link" to="/">
             Rankings
             <nav className="sbtci-header-rankings-nav">
