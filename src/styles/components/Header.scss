@@ -4,14 +4,11 @@
   &-container {
     align-items: end;
     display: grid;
+
     @include tablet-up {
       grid-template: auto 70px / 1fr 1fr;
+      position: relative;
     }
-  }
-
-  &-rankings-nav,
-  &-states-nav {
-    display: none;
   }
 
   &-logo {
@@ -63,6 +60,32 @@
     }
   }
 
+  &-rankings-nav,
+  &-states-nav {
+    align-items: center;
+    background-color: #ffffff;
+    display: none;
+    justify-content: space-around;
+    padding: 0.5rem;
+    position: absolute;
+    right: 0%;
+    top: 100%;
+    width: 100%;
+
+
+    a {
+      color: $tf-blue;
+      display: block;
+      padding: 0.5rem;
+      text-align: left;
+      text-decoration: none;
+
+      &:hover {
+        color: $sbtci-blue;
+      }
+    }
+  }
+
   &-nav-link {
     color: #ffffff;
     display: inline-block;
@@ -73,6 +96,24 @@
     &:active,
     &:hover {
       background-color: $sbtci-blue;
+    }
+
+    &:hover > .sbtci-header-rankings-nav {
+      display: flex;
+    }
+
+    &:hover > .sbtci-header-states-nav {
+      display: block;
+    }
+  }
+
+  &-states-nav {
+    column-count: 5;
+    column-gap: 1rem;
+
+    a {
+      display: inline-block;
+      width: 100%;
     }
   }
 }

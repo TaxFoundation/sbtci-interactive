@@ -18,25 +18,29 @@ class Header extends Component {
           <IconEmail className="sbtci-header-social-icon" fill="#ffffff" />
         </div>
         <nav className="sbtci-header-nav">
-          <Link className="sbtci-header-nav-link" to="/">Rankings</Link>
-          <Link className="sbtci-header-nav-link" to="/">States</Link>
+          <Link className="sbtci-header-nav-link" to="/">
+            Rankings
+            <nav className="sbtci-header-rankings-nav">
+              {this.props.taxTypes.map((t) => {
+                let r = `/tax/${t.id}`;
+                if (t.id === 'total') { r = '/'; }
+                return (
+                  <Link to={r}>{ t.name }</Link>
+                );
+              })}
+            </nav>
+          </Link>
+          <Link className="sbtci-header-nav-link" to="/">
+            States
+            <nav className="sbtci-header-states-nav">
+              {this.props.USStates.map((s) => {
+                return (
+                  <Link to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}>{ s.name }</Link>
+                );
+              })}
+            </nav>
+          </Link>
           <Link className="sbtci-header-nav-link" to="/">Methodology</Link>
-        </nav>
-        <nav className="sbtci-header-rankings-nav">
-          {this.props.taxTypes.map((t) => {
-            let r = `/tax/${t.id}`;
-            if (t.id === 'total') { r = '/'; }
-            return (
-              <Link to={r}>{ t.name }</Link>
-            );
-          })}
-        </nav>
-        <nav className="sbtci-header-states-nav">
-          {this.props.USStates.map((s) => {
-            return (
-              <Link to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}>{ s.name }</Link>
-            );
-          })}
         </nav>
       </div>
     </header>
