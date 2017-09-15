@@ -125,9 +125,13 @@
   }
 
   &-data-summary {
-    align-items: center;
-    display: grid;
-    grid-template: 40px 1fr / 1fr;
+    display: none;
+
+    @include tablet-up {
+      align-items: center;
+      display: grid;
+      grid-template: 40px 1fr / 1fr;
+    }
 
     &-table {
       font-size: 0.9rem;
