@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import USMap from './USMap';
+import USMapDataSummary from './USMapDataSummary';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
 import { TaxImages } from './Images';
 
@@ -52,53 +53,10 @@ class Home extends Component {
             />
           </div>
 
-          <div className="sbtci-home-data-summary sbtci-box">
-            <div className="sbtci-box-heading">
-              {this.state.activeUSState.name ? this.state.activeUSState.name : 'Rankings Summary'}
-            </div>
-            {this.state.activeUSState.total ? (
-              <table className="sbtci-home-data-summary-table sbtci-box-text">
-                <tbody>
-                  {this.props.taxTypes.map((t) => {
-                    return (
-                      <tr
-                        className="sbtci-home-data-summary-ranks"
-                        key={`summary-row-${t.id}`}
-                      >
-                      <style>{
-                        `#summary-label-${t.id}::before {
-                          background-color: ${t.hex};
-                        }
-                        ${this.props.activeTax === t.id
-                          ? `#summary-label-${t.id},
-                            #summary-rank-${t.id} {
-                              font-size: 1rem;
-                              font-weight: 700;
-                            }`
-                          : ''
-                        }`
-                      }</style>
-                      <td
-                        className="sbtci-home-data-summary-tax"
-                        id={`summary-label-${t.id}`}
-                      >
-                        {t.name}
-                      </td>
-                      <td
-                        className="sbtci-home-data-summary-rank"
-                        id={`summary-rank-${t.id}`}
-                        style={{textAlign: 'right'}}
-                      >
-                        {this.state.activeUSState[t.id].rank}
-                      </td>
-                    </tr>
-                  );})}
-                </tbody>
-              </table>
-            ) : (
-              <p className="sbtci-box-text">Hover over a state in the map to see its rankings.</p>
-            )}
-          </div>
+          <USMapDataSummary
+            activeUSState={this.state.activeUSState}
+            taxTypes={this.props.taxTypes}
+          />
 
           <div className="sbtci-home-social sbtci-box">
             <div className="sbtci-home-social-text">
