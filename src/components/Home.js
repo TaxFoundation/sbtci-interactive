@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import USMap from './USMap';
 import USMapDataSummary from './USMapDataSummary';
+import RankingsTable from './RankingsTable';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
 import { TaxImages } from './Images';
 
@@ -102,6 +103,7 @@ class Home extends Component {
             })}
           </nav>
         <hr />
+        <RankingsTable USStateData={this.props.SBTCIData} taxTypes={this.props.taxTypes} />
       </div>
     );
   }
