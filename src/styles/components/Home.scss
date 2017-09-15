@@ -128,9 +128,9 @@
     display: none;
 
     @include tablet-up {
-      align-items: center;
+      align-items: stretch;
       display: grid;
-      grid-template: 40px 1fr / 1fr;
+      grid-template: 36px auto / auto;
     }
 
     &-table {

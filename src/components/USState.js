@@ -55,17 +55,17 @@ class USState extends Component {
             </div>
           </div>
           <div className="sbtci-state-neighbors sbtci-box">
-            <h2 className="sbtci-box-heading">Neighboring States</h2>
+            <div className="sbtci-box-heading">Neighboring States</div>
             <div>Placeholder</div>
             <Link to="/" className="sbtci-box-footer">See Full Map</Link>
           </div>
           <div className="sbtci-state-top sbtci-box">
-            <h2 className="sbtci-box-heading">Top States</h2>
+            <div className="sbtci-box-heading">Top States</div>
             <div>Placeholder</div>
             <Link to="/" className="sbtci-box-footer">See Rankings</Link>
           </div>
           <div className="sbtci-state-bottom sbtci-box">
-            <h2 className="sbtci-box-heading">Bottom States</h2>
+            <div className="sbtci-box-heading">Bottom States</div>
             <div>Placeholder</div>
             <Link to="/" className="sbtci-box-footer">See Rankings</Link>
           </div>
