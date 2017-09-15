@@ -37,4 +37,9 @@
   tbody tr:last-of-type td {
     border-bottom: none;
   }
+
+  &-header-link {
+    color: $dark-gray;
+    text-decoration: none;
+  }
 }

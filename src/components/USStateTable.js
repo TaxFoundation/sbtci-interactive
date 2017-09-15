@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class USStateTable extends Component {
   constructor(props) {
@@ -14,7 +15,14 @@ class USStateTable extends Component {
             <th>&nbsp;</th>
             {this.props.taxTypes.map((t) => {
               return (
-                <th style={{borderBottom: `3px inset ${t.hex}`}}>{t.name}</th>
+                <th style={{borderBottom: `3px inset ${t.hex}`}}>
+                  <Link
+                    className="sbtci-table-header-link"
+                    to={t.id === 'total' ? '/' : `/tax/${t.id}`}
+                  >
+                    {t.name}
+                  </Link>
+                </th>
               );
             })}
           </tr>
