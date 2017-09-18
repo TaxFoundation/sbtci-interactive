@@ -8,10 +8,14 @@ class RankingsTable extends Component {
     this.state = {
       USStateData: this.props.USStateData,
       sortedBy: 'id',
-      sorted: 'asc'
+      sorted: 'desc'
     };
 
     this.sortTable = this.sortTable.bind(this);
+  }
+
+  componentDidMount() {
+    this.sortTable('id');
   }
 
   sortTable(key) {
