@@ -39,6 +39,10 @@
     border-bottom: none;
   }
 
+  &--compact {
+    font-size: 0.85rem;
+  }
+
   &-link {
     color: $dark-gray;
     text-decoration: none;

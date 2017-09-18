@@ -29,7 +29,7 @@ class RankingsTable extends Component {
   render() {
     let currentSortClass = `sbtci-table-sorted--${this.state.sorted}`;
     return (
-      <table className="sbtci-table">
+      <table className="sbtci-table sbtci-table--compact">
         <thead>
           <tr>
             <th
