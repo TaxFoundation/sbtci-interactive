@@ -27,18 +27,33 @@ class RankingsTable extends Component {
   }
 
   render() {
+    let currentSortClass = `sbtci-table-sorted--${this.state.sorted}`;
     return (
       <table className="sbtci-table">
         <thead>
           <tr>
-            <th onClick={e => this.sortTable('id')}>State</th>
+            <th
+              className={
+                this.state.sortedBy === 'id'
+                ? `sbtci-table-sorted ${currentSortClass}`
+                : 'sbtci-table-sorted'
+              }
+              onClick={e => this.sortTable('id')}
+            >
+              State
+            </th>
             {this.props.taxTypes.map((t) => {
               return (
                 <th
+                  className={
+                    this.state.sortedBy === t.id
+                    ? `sbtci-table-sorted ${currentSortClass}`
+                    : 'sbtci-table-sorted'
+                  }
                   onClick={e => this.sortTable(`${t.id}`)}
                   style={{borderBottom: `3px solid ${t.hex}`}}
                 >
-                  {t.name}
+                  {t.name.replace(/\s+/, '\n')}
                 </th>
               );
             })}
@@ -48,10 +63,17 @@ class RankingsTable extends Component {
           {this.state.USStateData.map((s) => {
             return (
               <tr>
-                <td><Link to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}>{s.name}</Link></td>
+                <td>
+                  <Link
+                    className="sbtci-table-link"
+                    to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}
+                  >
+                    {s.name}
+                  </Link>
+                </td>
                 {this.props.taxTypes.map((t) => {
                   return (
-                    <td>{s[t.id].rank}</td>
+                    <td >{s[t.id].rank}</td>
                   );
                 })}
               </tr>

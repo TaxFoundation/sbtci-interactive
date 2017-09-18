@@ -22,6 +22,7 @@
   th {
     border-top: none;
     text-align: center;
+    white-space: pre-line;
   }
 
   td {
@@ -38,8 +39,51 @@
     border-bottom: none;
   }
 
-  &-header-link {
+  &-link {
     color: $dark-gray;
     text-decoration: none;
+
+    &:focus,
+    &:hover {
+      color: $tf-blue;
+      text-decoration: underline;
+    }
+  }
+
+  &-sorted {
+    cursor: pointer;
+    position: relative;
+    text-align: left;
+  }
+
+  &-sorted:after,
+  &-sorted:before {
+    border: 4px solid transparent;
+    content: "";
+    display: block;
+    height: 0;
+    right: 6px;
+    top: 50%;
+    position: absolute;
+    width: 0;
+  }
+
+  &-sorted:before {
+    border-bottom-color: $light-gray;
+    margin-top: -9px;
+  }
+
+  &-sorted:after {
+    border-top-color: $light-gray;
+    margin-top: 1px;
+  }
+
+  &-sorted--desc:after {
+    border-top-color: $dark-gray;
+
+  }
+
+  &-sorted--asc:before {
+    border-bottom-color: $dark-gray;
   }
 }

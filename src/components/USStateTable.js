@@ -17,7 +17,7 @@ class USStateTable extends Component {
               return (
                 <th style={{borderBottom: `3px inset ${t.hex}`}}>
                   <Link
-                    className="sbtci-table-header-link"
+                    className="sbtci-table-link"
                     to={t.id === 'total' ? '/' : `/tax/${t.id}`}
                   >
                     {t.name}
