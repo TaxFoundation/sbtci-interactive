@@ -103,8 +103,12 @@ class Home extends Component {
             })}
           </nav>
         <hr />
-        <RankingsTable USStateData={this.props.SBTCIData} taxTypes={this.props.taxTypes} />
-      </div>
+        <div className="container">
+          <div className="sbtci-box">
+            <RankingsTable USStateData={this.props.SBTCIData} taxTypes={this.props.taxTypes} />
+          </div>
+        </div>
+        </div>
     );
   }
 }
