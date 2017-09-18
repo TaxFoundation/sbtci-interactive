@@ -41,6 +41,10 @@
 
   &--compact {
     font-size: 0.85rem;
+
+    tr:nth-child(odd) td {
+      background-color: #f6f6f6;
+    }
   }
 
   &-link {
