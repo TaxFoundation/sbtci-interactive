@@ -24,35 +24,8 @@ class USState extends Component {
         </div>
         <div className="sbtci-state-content container">
           <div className="sbtci-box sbtci-state-table">
+            <div className="sbtci-box-heading">{this.props.stateData.name}</div>
             <USStateTable taxTypes={this.props.taxTypes} stateData={this.props.stateData} />
-          </div>
-          <div className="sbtci-state-social sbtci-box">
-            <div className="sbtci-state-social-text">
-              <h2>Spread the Word!</h2>
-              <p>How does your state rank? Brag (or complain) to your friends!</p>
-            </div>
-            <div className="sbtci-state-social-buttons">
-              <IconTwitter
-                className="sbtci-state-social-button sbtci-social--twitter"
-                fill="#ffffff"
-                text="Tweet"
-              />
-              <IconFacebook
-                className="sbtci-state-social-button sbtci-social--facebook"
-                fill="#ffffff"
-                text="Share"
-              />
-              <IconLinkedIn
-                className="sbtci-state-social-button sbtci-social--linkedin"
-                fill="#ffffff"
-                text="LinkedIn"
-              />
-              <IconEmail
-                className="sbtci-state-social-button sbtci-social--email"
-                fill="#ffffff"
-                text="Email"
-              />
-            </div>
           </div>
           <div className="sbtci-state-neighbors sbtci-box">
             <div className="sbtci-box-heading">Neighboring States</div>
@@ -63,6 +36,33 @@ class USState extends Component {
             <div className="sbtci-box-heading">Top States</div>
             <div>Placeholder</div>
             <Link to="/" className="sbtci-box-footer">See Rankings</Link>
+          </div>
+          <div className="sbtci-state-social sbtci-box">
+            <div className="sbtci-state-social-text">
+              <p>Share this page with your friends!</p>
+            </div>
+            <div className="sbtci-state-social-buttons">
+              <IconTwitter
+                className="sbtci-state-social-button sbtci-social--twitter"
+                fill="#ffffff"
+              />
+              <IconFacebook
+                className="sbtci-state-social-button sbtci-social--facebook"
+                fill="#ffffff"
+              />
+              <IconLinkedIn
+                className="sbtci-state-social-button sbtci-social--linkedin"
+                fill="#ffffff"
+              />
+              <IconEmail
+                className="sbtci-state-social-button sbtci-social--email"
+                fill="#ffffff"
+              />
+            </div>
+          </div>
+          <div className="sbtci-state-print sbtci-box">
+            <p>Get a handy one-pager on your state!</p>
+            <p>Print!</p>
           </div>
           <div className="sbtci-state-bottom sbtci-box">
             <div className="sbtci-box-heading">Bottom States</div>

@@ -13,37 +13,27 @@ class USStateTable extends Component {
         <thead>
           <tr>
             <th>&nbsp;</th>
-            {this.props.taxTypes.map((t) => {
-              return (
-                <th style={{borderBottom: `3px inset ${t.hex}`}}>
-                  <Link
-                    className="sbtci-table-link"
-                    to={t.id === 'total' ? '/' : `/tax/${t.id}`}
-                  >
-                    {t.name}
-                  </Link>
-                </th>
-              );
-            })}
+            <th>Rank</th>
+            <th>Score</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Rank</td>
-            {this.props.taxTypes.map((t) => {
-              return (
-                <td>{ this.state[t.id].rank}</td>
-              );
-            })}
-          </tr>
-          <tr>
-            <td>Score</td>
-            {this.props.taxTypes.map((t) => {
-              return (
-                <td>{ this.state[t.id].value}</td>
-              );
-            })}
-          </tr>
+          {this.props.taxTypes.map((t) => {
+            return (
+              <tr>
+                <td style={{borderRight: `3px inset ${t.hex}`}}>
+                  <Link
+                    className="sbtci-table-link"
+                    to={t.id === 'total' ? '/' : `/tax/${t.id}`}
+                    >
+                      {t.name}
+                    </Link>
+                  </td>
+                  <td>{ this.state[t.id].rank}</td>
+                  <td>{ this.state[t.id].value}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     );
