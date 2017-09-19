@@ -13,8 +13,8 @@ const taxTypes = [
   {name: 'Corporate Taxes', id: 'corporate', hex: '#009688'},
   {name: 'Individual Taxes', id: 'individual', hex: '#4DAF4E'},
   {name: 'Sales Taxes', id: 'sales', hex: '#FEC111'},
-  {name: 'UI Taxes', id: 'unemployment', hex: '#EF4438'},
-  {name: 'Property Taxes', id: 'propertyTax', hex: '#903F98'}
+  {name: 'Property Taxes', id: 'propertyTax', hex: '#EF4438'},
+  {name: 'Unemp. Insur. Taxes', id: 'unemployment', hex: '#903F98'},
 ];
 
 class App extends Component {
