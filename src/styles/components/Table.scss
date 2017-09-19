@@ -57,6 +57,12 @@
     }
   }
 
+  &-change {
+    color: $light-gray;
+    font-size: 0.85rem;
+    padding-left: 0.4rem;
+  }
+
   &-sorted {
     cursor: pointer;
     position: relative;

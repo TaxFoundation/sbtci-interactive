@@ -38,7 +38,7 @@
     @include tablet-up {
       display: grid;
       grid-gap: 1rem;
-      grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+      grid-template: repeat(4, auto) / repeat(3, 1fr);
     }
   }
 
@@ -46,12 +46,17 @@
     @include tablet-up {
       grid-column: 1 / 2;
       grid-row: 1 / 5;
+
+      table {
+        height: calc(100% - 38px);
+      }
     }
   }
 
   &-social {
     @include tablet-up {
-      align-self: end;
+      display: flex;
+      flex-direction: column;
       grid-column: 3 / 4;
       grid-row: 1 / 2;
     }
@@ -59,6 +64,10 @@
     &-text {
       padding: 1rem;
       text-align: center;
+
+      @include tablet-up {
+        flex: 1 0 auto;
+      }
     }
 
     &-buttons {
@@ -95,40 +104,25 @@
     }
   }
 
-  &-neighbors {
-    @include tablet-up {
+  @include tablet-up {
+    &-bottom {
+      grid-column: 3 / 4;
+      grid-row: 3 / 5;
+    }
+
+    &-neighbors {
       grid-column: 2 / 3;
       grid-row: 1 / 3;
     }
 
-    align-items: center;
-    display: grid;
-    grid-template: 40px 1fr 30px / 1fr;
-  }
-
-  &-bottom,
-  &-top {
-    align-items: center;
-    display: grid;
-    grid-template: 40px 1fr 30px / 1fr;
-  }
-
-  &-bottom {
-    @include tablet-up {
-      grid-column: 3 / 4;
-      grid-row: 3 / 5;
-    }
-  }
-
-  &-top {
-    @include tablet-up {
+    &-top {
       grid-column: 2 / 3;
       grid-row: 3 / 5
     }
-  }
 
-  &-print {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
+    &-print {
+      grid-column: 3 / 4;
+      grid-row: 2 / 3;
+    }
   }
 }
