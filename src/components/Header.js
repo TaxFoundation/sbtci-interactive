@@ -45,7 +45,7 @@ class Header extends Component {
                 let r = `/tax/${t.id}`;
                 if (t.id === 'total') { r = '/'; }
                 return (
-                  <Link to={r}>{ t.name }</Link>
+                  <Link key={`nav-tax-${t.id}`} to={r}>{ t.name }</Link>
                 );
               })}
             </nav>
@@ -55,7 +55,12 @@ class Header extends Component {
             <nav className="sbtci-header-states-nav">
               {this.props.USStates.map((s) => {
                 return (
-                  <Link to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}>{ s.name }</Link>
+                  <Link
+                    key={`nav-state-${s.name.replace(/\s/g, '-').toLowerCase()}`}
+                    to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}
+                  >
+                    { s.name }
+                  </Link>
                 );
               })}
             </nav>

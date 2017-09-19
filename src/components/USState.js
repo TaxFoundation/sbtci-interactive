@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import USStateTable from './USStateTable';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
 import { StateImages } from './Images';

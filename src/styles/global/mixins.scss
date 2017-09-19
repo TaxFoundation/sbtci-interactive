@@ -1,24 +1,35 @@
+// Screen Sizes
+$tablet-width: 912px;
+$desktop-width: 1024px;
+$max-width: 1200px;
+
 // Media Query mixins
 @mixin mobile-only {
-  @media only screen and (min-width: 0) and (max-width: #{$tablet-width - 1px}) {
+  @media only all and (min-width: 0) and (max-width: #{$tablet-width - 1px}) {
     @content;
   }
 }
 
 @mixin tablet-up {
-  @media only screen and (min-width: #{$tablet-width}) {
+  @media only all and (min-width: #{$tablet-width}) {
     @content;
   }
 }
 
 @mixin tablet-only {
-  @media only screen and (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+  @media only all and (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
     @content;
   }
 }
 
 @mixin desktop-up {
-  @media only screen and (min-width: #{$desktop-width}) {
+  @media only all and (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin print-only {
+  @media print {
     @content;
   }
 }

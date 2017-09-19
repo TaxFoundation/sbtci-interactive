@@ -2,6 +2,10 @@
   border: 1px solid $gray;
   border-radius: $radius;
 
+  @include print-only {
+    border: 1px solid #000000;
+  }
+
   &-heading {
     background-color: $tf-blue;
     border: 1px solid $tf-blue;
@@ -12,6 +16,13 @@
     margin: -1px -1px 0 -1px;
     padding: 8px 0;
     text-align: center;
+
+    @include print-only {
+      background-color: #efefef;
+      border: 1px solid #000000;
+      color: #000000;
+      -webkit-print-color-adjust: exact;
+    }
   }
 
   &-text {

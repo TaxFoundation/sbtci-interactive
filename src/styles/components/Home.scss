@@ -9,6 +9,10 @@
     height: 150px;
     width: 100%;
 
+    @include print-only {
+      background-color: #ffffff;
+      height: 6rem;
+    }
 
     h1 {
       color: #ffffff;
@@ -17,6 +21,10 @@
       font-size: 3rem;
       font-weight: 400;
       margin: 0;
+
+      @include print-only {
+        color: #000000;
+      }
     }
   }
 
@@ -122,6 +130,10 @@
         border-radius: 0 0 $radius 0;
       }
     }
+
+    @include print-only {
+      display: none;
+    }
   }
 
   &-data-summary {
@@ -150,6 +162,6 @@
   }
 
   &-rankings-table {
-    padding: 1rem 0;
+    padding-top: 1rem;
   }
 }

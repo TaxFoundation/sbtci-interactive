@@ -49,6 +49,7 @@ class RankingsTable extends Component {
             {this.props.taxTypes.map((t) => {
               return (
                 <th
+                  key={`rank-th-${t.id}`}
                   className={
                     this.state.sortedBy === t.id
                     ? `sbtci-table-sorted ${currentSortClass}`
@@ -66,7 +67,7 @@ class RankingsTable extends Component {
         <tbody>
           {this.state.USStateData.map((s) => {
             return (
-              <tr>
+              <tr key={`rank-row-${s.id}`}>
                 <td>
                   <Link
                     className="sbtci-table-link"
@@ -77,7 +78,7 @@ class RankingsTable extends Component {
                 </td>
                 {this.props.taxTypes.map((t) => {
                   return (
-                    <td >{s[t.id].rank}</td>
+                    <td key={`rank-data-${s.id}-${t.id}`}>{s[t.id].rank}</td>
                   );
                 })}
               </tr>
