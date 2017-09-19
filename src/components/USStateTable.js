@@ -16,6 +16,7 @@ class USStateTable extends Component {
       };
     });
 
+    const deltaFormat = format('+')
     const scoreFormat = format('.3r')
 
     return (
@@ -45,7 +46,7 @@ class USStateTable extends Component {
                   </Link>
                 </td>
                 <td style={{textAlign: 'right'}}>
-                  { `#${this.props.stateData[t.id].rank}` }
+                  { this.props.stateData[t.id].rank }
                   <span
                     className="sbtci-table-change"
                     style={
@@ -54,10 +55,10 @@ class USStateTable extends Component {
                       : null
                     }
                   >
-                    {`(${rankChange.delta > 0 ? '+' : ''}${rankChange.delta})`}
+                    {`(${deltaFormat(rankChange.delta)})`}
                   </span>
                 </td>
-                <td style={{textAlign: 'right'}}>
+                <td>
                   { scoreFormat(this.props.stateData[t.id].value) }
                 </td>
               </tr>
