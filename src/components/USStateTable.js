@@ -36,7 +36,7 @@ class USStateTable extends Component {
             })[0];
 
             return (
-              <tr>
+              <tr key={`rank-and-score-${t.id}`}>
                 <td style={{borderRight: `3px inset ${t.hex}`}}>
                   <Link
                     className="sbtci-table-link"

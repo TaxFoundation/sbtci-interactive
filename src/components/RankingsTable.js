@@ -44,7 +44,7 @@ class RankingsTable extends Component {
               }
               onClick={e => this.sortTable('id')}
             >
-              State
+              <div>State</div>
             </th>
             {this.props.taxTypes.map((t) => {
               return (
@@ -58,7 +58,7 @@ class RankingsTable extends Component {
                   onClick={e => this.sortTable(`${t.id}`)}
                   style={{borderBottom: `3px solid ${t.hex}`}}
                 >
-                  {t.name.replace(/\s+/, '\n')}
+                  <div>{t.name.replace(/\s+/, '\n')}</div>
                 </th>
               );
             })}
@@ -73,7 +73,8 @@ class RankingsTable extends Component {
                     className="sbtci-table-link"
                     to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}
                   >
-                    {s.name}
+                    <span className="sbtci-full-state-name">{s.name}</span>
+                    <span className="sbtci-abbr-state-name">{s.abbr}</span>
                   </Link>
                 </td>
                 {this.props.taxTypes.map((t) => {
