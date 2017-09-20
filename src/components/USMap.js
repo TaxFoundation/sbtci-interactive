@@ -159,4 +159,8 @@ class USMap extends React.Component {
   }
 }
 
+USMap.propTypes = {
+  updateActiveState: React.Proptypes.func.isRequired
+};
+
 export default USMap;
