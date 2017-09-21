@@ -28,7 +28,8 @@ class App extends Component {
           path={r}
           render={(props) => <USState
             {...props}
-            stateData={s}
+            stateId={s.id}
+            USStates={SBTCIData}
             taxTypes={taxTypes}
           />}
         />

@@ -165,17 +165,17 @@
 }
 
 .sbtci-full-state-name {
-  display: none;
+  display: inline;
 
-  @include tablet-up {
-    display: inline;
+  @include mobile-only {
+    display: none;
   }
 }
 
 .sbtci-abbr-state-name {
-  display: inline;
+  display: none;
 
-  @include tablet-up {
-    display: none;
+  @include mobile-only {
+    display: inline;
   }
 }

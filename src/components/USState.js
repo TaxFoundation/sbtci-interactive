@@ -6,8 +6,12 @@ import { StateImages } from './Images';
 class USState extends Component {
   render() {
     const bgImage = {
-      backgroundImage: `url(${StateImages[`State${this.props.stateData.id}`]})`
+      backgroundImage: `url(${StateImages[`State${this.props.stateId}`]})`
     }
+
+    const stateData = this.props.USStates.filter((s) => {
+      return s.id === this.props.stateId;
+    })[0];
 
     return (
       <div className="sbtci-state">
@@ -16,14 +20,14 @@ class USState extends Component {
           style={bgImage}
         >
           <h1>
-            <span className="sbtci-state-header-rank">#{this.props.stateData.total.rank}</span>
+            <span className="sbtci-state-header-rank">#{stateData.total.rank}</span>
             &nbsp;
-            {this.props.stateData.name}
+            {stateData.name}
           </h1>
         </div>
         <div className="sbtci-state-content container">
           <div className="sbtci-box sbtci-state-table">
-            <USStateTable taxTypes={this.props.taxTypes} stateData={this.props.stateData} />
+            <USStateTable taxTypes={this.props.taxTypes} stateData={stateData} />
           </div>
           <div className="sbtci-state-neighbors sbtci-box">
             <div className="sbtci-box-heading">Neighboring States</div>
