@@ -32,22 +32,19 @@
     display: none;
 
     @include tablet-up {
-      display: table;
-      table-layout: fixed;
+      display: flex;
+      flex-wrap: nowrap;
     }
   }
 
   &-tax-nav-item {
-    display: block;
-
     @include tablet-up {
       border-left: 1px solid $gray;
       color: #666666;
-      display: table-cell;
+      flex: 1 0 auto;
       padding: 1rem;
       text-align: center;
       text-decoration: none;
-      width: 2%;
 
       &:last-child {
         border-right: 1px solid $gray;
