@@ -137,7 +137,7 @@
         rgba(255, 255, 255, 0) 65%,
         rgba(246, 246, 246, 1) 95%,
         rgba(246, 246, 246, 1)
-      );
+      ) !important;
       bottom: 0;
       content: "";
       left: 0;
@@ -145,6 +145,7 @@
       right: 0;
       top: 60px;
       z-index: 200;
+      -webkit-print-color-adjust: exact;
     }
 
     &:before {
