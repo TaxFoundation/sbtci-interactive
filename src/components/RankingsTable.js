@@ -40,6 +40,9 @@ class RankingsTable extends Component {
 
   render() {
     let currentSortClass = `sbtci-table-sorted--${this.state.sorted}`;
+    let currentTableClass = this.state.expanded
+      ? 'sbtci-box'
+      : 'sbtci-box sbtci-table--condensed';
     return (
       <div className="sbtci-rankings-table">
         <div
@@ -48,7 +51,7 @@ class RankingsTable extends Component {
         >
           { this.state.expanded ? 'Collapse Table' : 'Expand Table' }
         </div>
-        <div className="sbtci-box">
+        <div className={ currentTableClass }>
           <table className="sbtci-table sbtci-table--compact">
             <thead>
               <tr>
