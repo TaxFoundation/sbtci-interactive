@@ -28,13 +28,14 @@ class Header extends Component {
       let r = `/tax/${t.id}`;
       if (t.id === 'total') { r = '/'; }
       return (
-        <Link key={`nav-tax-${t.id}`} to={r}>{ t.name }</Link>
+        <Link className="sbtci-header-nav-link" key={`nav-tax-${t.id}`} to={r}>{ t.name }</Link>
       );
     });
 
     const stateLinks = this.props.USStates.map((s) => {
       return (
         <Link
+          className="sbtci-header-nav-link"
           key={`nav-state-${s.name.replace(/\s/g, '-').toLowerCase()}`}
           to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}
         >
@@ -55,23 +56,26 @@ class Header extends Component {
           <IconLinkedIn className="sbtci-header-social-icon" fill="#ffffff" />
           <IconEmail className="sbtci-header-social-icon" fill="#ffffff" />
         </div>
-        <div className="sbtci-header-menu" onClick={(e) => this.toggleMobileMenu()}>Menu</div>
         <nav className="sbtci-header-nav">
-          <div className="sbtci-header-nav-link" to="/">
+          <div className="sbtci-header-nav-category" to="/">
             Rankings
             <nav className="sbtci-header-rankings-nav">
               { taxTypeLinks }
             </nav>
           </div>
-          <div className="sbtci-header-nav-link" to="/">
+          <div className="sbtci-header-nav-category" to="/">
             States
             <nav className="sbtci-header-states-nav">
               { stateLinks }
             </nav>
           </div>
-          <Link className="sbtci-header-nav-link" to="/">Methodology</Link>
+          <Link className="sbtci-header-nav-category" to="/">Methodology</Link>
         </nav>
-        <nav className={ menuOpenClass }></nav>
+
+        <div className="sbtci-header-menu" onClick={(e) => this.toggleMobileMenu()}>Menu</div>
+        <nav className={ menuOpenClass }>
+
+        </nav>
       </div>
     </header>
     );
