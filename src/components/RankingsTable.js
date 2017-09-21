@@ -8,10 +8,12 @@ class RankingsTable extends Component {
     this.state = {
       USStateData: this.props.USStateData,
       sortedBy: 'id',
-      sorted: 'desc'
+      sorted: 'desc',
+      expanded: false
     };
 
     this.sortTable = this.sortTable.bind(this);
+    this.expandToggle = this.expandToggle.bind(this);
   }
 
   componentDidMount() {
@@ -30,63 +32,79 @@ class RankingsTable extends Component {
     this.setState(newState);
   }
 
+  expandToggle() {
+    const newState = {...this.state};
+    newState.expanded = !newState.expanded;
+    this.setState(newState);
+  }
+
   render() {
     let currentSortClass = `sbtci-table-sorted--${this.state.sorted}`;
     return (
-      <table className="sbtci-table sbtci-table--compact">
-        <thead>
-          <tr>
-            <th
-              className={
-                this.state.sortedBy === 'id'
-                ? `sbtci-table-sorted ${currentSortClass}`
-                : 'sbtci-table-sorted'
-              }
-              onClick={e => this.sortTable('id')}
-            >
-              <div>State</div>
-            </th>
-            {this.props.taxTypes.map((t) => {
-              return (
+      <div className="sbtci-rankings-table">
+        <div
+          className="sbtci-rankings-table-expand sbtci-button sbtci-button--centered"
+          onClick={e => this.expandToggle()}
+        >
+          { this.state.expanded ? 'Collapse Table' : 'Expand Table' }
+        </div>
+        <div className="sbtci-box">
+          <table className="sbtci-table sbtci-table--compact">
+            <thead>
+              <tr>
                 <th
-                  key={`rank-th-${t.id}`}
                   className={
-                    this.state.sortedBy === t.id
+                    this.state.sortedBy === 'id'
                     ? `sbtci-table-sorted ${currentSortClass}`
                     : 'sbtci-table-sorted'
                   }
-                  onClick={e => this.sortTable(`${t.id}`)}
-                  style={{borderBottom: `3px solid ${t.hex}`}}
+                  onClick={e => this.sortTable('id')}
                 >
-                  <div>{t.name.replace(/\s+/, '\n')}</div>
+                  <div>State</div>
                 </th>
-              );
-            })}
-          </tr>
-        </thead>
-        <tbody>
-          {this.state.USStateData.map((s) => {
-            return (
-              <tr key={`rank-row-${s.id}`}>
-                <td>
-                  <Link
-                    className="sbtci-table-link"
-                    to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}
-                  >
-                    <span className="sbtci-full-state-name">{s.name}</span>
-                    <span className="sbtci-abbr-state-name">{s.abbr}</span>
-                  </Link>
-                </td>
                 {this.props.taxTypes.map((t) => {
                   return (
-                    <td key={`rank-data-${s.id}-${t.id}`}>{s[t.id].rank}</td>
+                    <th
+                      key={`rank-th-${t.id}`}
+                      className={
+                        this.state.sortedBy === t.id
+                        ? `sbtci-table-sorted ${currentSortClass}`
+                        : 'sbtci-table-sorted'
+                      }
+                      onClick={e => this.sortTable(`${t.id}`)}
+                      style={{borderBottom: `3px solid ${t.hex}`}}
+                    >
+                      <div>{t.name.replace(/\s+/, '\n')}</div>
+                    </th>
                   );
                 })}
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
+            </thead>
+            <tbody>
+              {this.state.USStateData.map((s) => {
+                return (
+                  <tr key={`rank-row-${s.id}`}>
+                    <td>
+                      <Link
+                        className="sbtci-table-link"
+                        to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}
+                        >
+                          <span className="sbtci-full-state-name">{s.name}</span>
+                          <span className="sbtci-abbr-state-name">{s.abbr}</span>
+                        </Link>
+                      </td>
+                      {this.props.taxTypes.map((t) => {
+                        return (
+                          <td key={`rank-data-${s.id}-${t.id}`}>{s[t.id].rank}</td>
+                        );
+                      })}
+                    </tr>
+                  );
+                })}
+              </tbody>
+          </table>
+        </div>
+      </div>
     );
   }
 }

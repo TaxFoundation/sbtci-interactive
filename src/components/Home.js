@@ -105,11 +105,9 @@ class Home extends Component {
         <hr />
         <div className="sbtci-home-rankings-table container">
           <h2 style={{textAlign: 'center'}}>Overall and Component Tax Ranks</h2>
-          <div className="sbtci-box">
-            <RankingsTable USStateData={this.props.SBTCIData} taxTypes={this.props.taxTypes} />
-          </div>
+          <RankingsTable USStateData={this.props.SBTCIData} taxTypes={this.props.taxTypes} />
         </div>
-        </div>
+      </div>
     );
   }
 }

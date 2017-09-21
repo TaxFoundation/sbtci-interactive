@@ -41,3 +41,21 @@ hr {
   max-width: 960px;
   padding: 0 15px;
 }
+
+.sbtci {
+  &-button {
+    background-color: #00aa22;
+    border-radius: $radius;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    text-align: center;
+
+    &--centered {
+      display: block;
+      margin: 1rem auto;
+      max-width: 15%;
+    }
+  }
+}
