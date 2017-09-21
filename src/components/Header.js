@@ -21,8 +21,27 @@ class Header extends Component {
 
   render() {
     let menuOpenClass = this.state.menuOpen
-      ? 'sbtci-header-nav sbtci-header-nav--active'
-      : 'sbtci-header-nav';
+      ? 'sbtci-header-mobile-nav sbtci-header-nav--active'
+      : 'sbtci-header-mobile-nav';
+
+    const taxTypeLinks = this.props.taxTypes.map((t) => {
+      let r = `/tax/${t.id}`;
+      if (t.id === 'total') { r = '/'; }
+      return (
+        <Link key={`nav-tax-${t.id}`} to={r}>{ t.name }</Link>
+      );
+    });
+
+    const stateLinks = this.props.USStates.map((s) => {
+      return (
+        <Link
+          key={`nav-state-${s.name.replace(/\s/g, '-').toLowerCase()}`}
+          to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}
+        >
+          { s.name }
+        </Link>
+      );
+    });
 
     return (
       <header className="sbtci-header">
@@ -37,36 +56,22 @@ class Header extends Component {
           <IconEmail className="sbtci-header-social-icon" fill="#ffffff" />
         </div>
         <div className="sbtci-header-menu" onClick={(e) => this.toggleMobileMenu()}>Menu</div>
-        <nav className={menuOpenClass}>
-          <Link className="sbtci-header-nav-link" to="/">
+        <nav className="sbtci-header-nav">
+          <div className="sbtci-header-nav-link" to="/">
             Rankings
             <nav className="sbtci-header-rankings-nav">
-              {this.props.taxTypes.map((t) => {
-                let r = `/tax/${t.id}`;
-                if (t.id === 'total') { r = '/'; }
-                return (
-                  <Link key={`nav-tax-${t.id}`} to={r}>{ t.name }</Link>
-                );
-              })}
+              { taxTypeLinks }
             </nav>
-          </Link>
-          <Link className="sbtci-header-nav-link" to="/">
+          </div>
+          <div className="sbtci-header-nav-link" to="/">
             States
             <nav className="sbtci-header-states-nav">
-              {this.props.USStates.map((s) => {
-                return (
-                  <Link
-                    key={`nav-state-${s.name.replace(/\s/g, '-').toLowerCase()}`}
-                    to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}
-                  >
-                    { s.name }
-                  </Link>
-                );
-              })}
+              { stateLinks }
             </nav>
-          </Link>
+          </div>
           <Link className="sbtci-header-nav-link" to="/">Methodology</Link>
         </nav>
+        <nav className={ menuOpenClass }></nav>
       </div>
     </header>
     );

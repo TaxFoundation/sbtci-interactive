@@ -75,15 +75,7 @@
 
   &-nav {
     @include mobile-only {
-      display: block;
-      left: -100vw;
-      position: absolute;
-      top: 2rem;
-      width: 100vw;
-
-      &--active {
-        left: 0;
-      }
+      display: none;
     }
 
     @include tablet-up {
@@ -182,8 +174,25 @@
     }
   }
 
+  &-mobile-nav {
+    display: none;
+
+    @include mobile-only {
+      display: block;
+      left: -100vw;
+      position: absolute;
+      top: 2rem;
+      width: 100vw;
+
+      &--active {
+        left: 0;
+      }
+    }
+  }
+
   @include print-only {
-    &-menu {
+    &-menu,
+    nav {
       display: none;
     }
   }
