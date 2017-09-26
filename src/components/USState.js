@@ -41,7 +41,7 @@ class USState extends Component {
             <div className="sbtci-box-heading">Top States</div>
             <ul>
               {topStates.map((s) => {
-                return (<li>#{s.total.rank} {s.name}</li>);
+                return (<li key={`top-${s.id}`}>#{s.total.rank} {s.name}</li>);
               })}
             </ul>
           </div>
@@ -49,7 +49,7 @@ class USState extends Component {
             <div className="sbtci-box-heading">Bottom States</div>
             <ul>
               {bottomStates.map((s) => {
-                return (<li>#{s.total.rank} {s.name}</li>);
+                return (<li key={`bottom-${s.id}`}>#{s.total.rank} {s.name}</li>);
               })}
             </ul>
           </div>
