@@ -23,6 +23,18 @@ class USState extends Component {
     const topStates = this.props.USStates.sort(sortComparison('total', 'asc')).slice(0, 5);
     const bottomStates = this.props.USStates.sort(sortComparison('total', 'desc')).slice(0, 5);
 
+    const ListItem = ({s, list}) => {
+      let listClass = s.id === this.props.stateId
+        ? 'sbtci-box-list-item sbtci-box-list-item--highlighted'
+        : 'sbtci-box-list-item';
+
+      return (
+        <li className={listClass}>
+          <span style={{fontWeight: 300}}>#</span>{s.total.rank} {s.name}
+        </li>
+      );
+    };
+
     return (
       <div className="sbtci-state">
         <div
@@ -41,35 +53,25 @@ class USState extends Component {
           </div>
           <div className="sbtci-state-neighbors sbtci-box">
             <div className="sbtci-box-heading">Neighboring States</div>
-            {neighbors.map((s) => {
-              return (
-                <li key={`neighbors-${s.id}`}>
-                  <span style={{fontWeight: 300}}>#</span>{s.total.rank} {s.name}
-                </li>
-              );
-            })}
+            <ul className="sbtci-box-list">
+              {neighbors.map((s) => {
+                return <ListItem key={`neighbors-${s.id}`} s={s} />
+              })}
+            </ul>
           </div>
           <div className="sbtci-state-top sbtci-box">
             <div className="sbtci-box-heading">Top States</div>
-            <ul>
+            <ul className="sbtci-box-list">
               {topStates.map((s) => {
-                return (
-                  <li key={`top-${s.id}`}>
-                    <span style={{fontWeight: 300}}>#</span>{s.total.rank} {s.name}
-                  </li>
-                );
+                return <ListItem key={`top-${s.id}`} s={s} />
               })}
             </ul>
           </div>
           <div className="sbtci-state-bottom sbtci-box">
             <div className="sbtci-box-heading">Bottom States</div>
-            <ul>
+            <ul className="sbtci-box-list">
               {bottomStates.map((s) => {
-                return (
-                  <li key={`bottom-${s.id}`}>
-                    <span style={{fontWeight: 300}}>#</span>{s.total.rank} {s.name}
-                  </li>
-                );
+                return <ListItem key={`bottom-${s.id}`} s={s} />
               })}
             </ul>
           </div>
