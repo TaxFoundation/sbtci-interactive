@@ -14,6 +14,12 @@ class USState extends Component {
       return s.id === this.props.stateId;
     })[0];
 
+    const neighbors = this.props.USStates.filter((s) => {
+      return stateData.neighbors.includes(s.id);
+    });
+    neighbors.push(stateData);
+    neighbors.sort(sortComparison('total', 'asc'));
+
     const topStates = this.props.USStates.sort(sortComparison('total', 'asc')).slice(0, 5);
     const bottomStates = this.props.USStates.sort(sortComparison('total', 'desc')).slice(0, 5);
 
@@ -35,13 +41,23 @@ class USState extends Component {
           </div>
           <div className="sbtci-state-neighbors sbtci-box">
             <div className="sbtci-box-heading">Neighboring States</div>
-            <div>Placeholder</div>
+            {neighbors.map((s) => {
+              return (
+                <li key={`neighbors-${s.id}`}>
+                  <span style={{fontWeight: 300}}>#</span>{s.total.rank} {s.name}
+                </li>
+              );
+            })}
           </div>
           <div className="sbtci-state-top sbtci-box">
             <div className="sbtci-box-heading">Top States</div>
             <ul>
               {topStates.map((s) => {
-                return (<li key={`top-${s.id}`}>#{s.total.rank} {s.name}</li>);
+                return (
+                  <li key={`top-${s.id}`}>
+                    <span style={{fontWeight: 300}}>#</span>{s.total.rank} {s.name}
+                  </li>
+                );
               })}
             </ul>
           </div>
@@ -49,7 +65,11 @@ class USState extends Component {
             <div className="sbtci-box-heading">Bottom States</div>
             <ul>
               {bottomStates.map((s) => {
-                return (<li key={`bottom-${s.id}`}>#{s.total.rank} {s.name}</li>);
+                return (
+                  <li key={`bottom-${s.id}`}>
+                    <span style={{fontWeight: 300}}>#</span>{s.total.rank} {s.name}
+                  </li>
+                );
               })}
             </ul>
           </div>
