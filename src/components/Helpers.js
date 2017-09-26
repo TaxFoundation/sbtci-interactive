@@ -13,10 +13,10 @@ export const sortComparison = (key, order) => {
         (order === 'desc') ? (comparison * -1) : comparison
       );
     } else {
-      if (a[key].rank > b[key].rank) { comparison = -1; }
-      else if (a[key].rank < b[key].rank) { comparison = 1; }
-      else if (a.id > b.id) { comparison = -1; }
-      else if (a.id < b.id) { comparison = 1; }
+      if (a[key].rank > b[key].rank) { comparison = 1; }
+      else if (a[key].rank < b[key].rank) { comparison = -1; }
+      else if (a.id > b.id) { comparison = 1; }
+      else if (a.id < b.id) { comparison = -1; }
 
       return (
         (order === 'desc') ? (comparison * -1) : comparison

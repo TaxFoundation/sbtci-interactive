@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import USStateTable from './USStateTable';
+import { sortComparison } from './Helpers';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
 import { StateImages } from './Images';
 
@@ -12,6 +13,9 @@ class USState extends Component {
     const stateData = this.props.USStates.filter((s) => {
       return s.id === this.props.stateId;
     })[0];
+
+    const topStates = this.props.USStates.sort(sortComparison('total', 'asc')).slice(0, 5);
+    const bottomStates = this.props.USStates.sort(sortComparison('total', 'desc')).slice(0, 5);
 
     return (
       <div className="sbtci-state">
@@ -35,11 +39,19 @@ class USState extends Component {
           </div>
           <div className="sbtci-state-top sbtci-box">
             <div className="sbtci-box-heading">Top States</div>
-            <div>Placeholder</div>
+            <ul>
+              {topStates.map((s) => {
+                return (<li>#{s.total.rank} {s.name}</li>);
+              })}
+            </ul>
           </div>
           <div className="sbtci-state-bottom sbtci-box">
             <div className="sbtci-box-heading">Bottom States</div>
-            <div>Placeholder</div>
+            <ul>
+              {bottomStates.map((s) => {
+                return (<li>#{s.total.rank} {s.name}</li>);
+              })}
+            </ul>
           </div>
           <div className="sbtci-state-social sbtci-box">
             <div className="sbtci-state-social-text">
