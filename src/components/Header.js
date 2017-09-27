@@ -21,7 +21,7 @@ class Header extends Component {
 
   render() {
     let menuOpenClass = this.state.menuOpen
-      ? 'sbtci-header-mobile-nav sbtci-header-nav--active'
+      ? 'sbtci-header-mobile-nav sbtci-header-mobile-nav--active'
       : 'sbtci-header-mobile-nav';
 
     const taxTypeLinks = this.props.taxTypes.map((t) => {
@@ -74,7 +74,19 @@ class Header extends Component {
 
         <div className="sbtci-header-menu" onClick={(e) => this.toggleMobileMenu()}>Menu</div>
         <nav className={ menuOpenClass }>
-
+          <div>
+            <div className="sbtci-header-mobile-nav-top-level-item">
+              <div>Rankings</div>
+              { taxTypeLinks }
+            </div>
+            <div className="sbtci-header-mobile-nav-top-level-item">
+              <div>States</div>
+              { stateLinks }
+            </div>
+            <div className="sbtci-header-mobile-nav-top-level-item">
+              <Link to="/">Methodology</Link>
+            </div>
+          </div>
         </nav>
       </div>
     </header>

@@ -186,13 +186,14 @@
   }
 
   &-mobile-nav {
+    background-color: #ffffff;
     display: none;
 
     @include mobile-only {
       display: block;
       left: -100vw;
       position: absolute;
-      top: 2rem;
+      top: 54px;
       width: 100vw;
 
       &--active {
