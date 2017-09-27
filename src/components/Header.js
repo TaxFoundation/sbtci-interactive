@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import CSSTransition from 'react-transition-group/CSSTransition';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
 import Logo from '../images/logo.svg';
 
@@ -20,10 +21,6 @@ class Header extends Component {
   }
 
   render() {
-    let menuOpenClass = this.state.menuOpen
-      ? 'sbtci-header-mobile-nav sbtci-header-mobile-nav--active'
-      : 'sbtci-header-mobile-nav';
-
     const taxTypeLinks = this.props.taxTypes.map((t) => {
       let r = `/tax/${t.id}`;
       if (t.id === 'total') { r = '/'; }
@@ -43,6 +40,28 @@ class Header extends Component {
         </Link>
       );
     });
+
+    const mobileMenu = () => {
+      if (this.state.menuOpen) {
+        return (
+          <div>
+            <div className="sbtci-header-mobile-nav-top-level-item">
+              <div>Rankings</div>
+              { taxTypeLinks }
+            </div>
+            <div className="sbtci-header-mobile-nav-top-level-item">
+              <div>States</div>
+              { stateLinks }
+            </div>
+            <div className="sbtci-header-mobile-nav-top-level-item">
+              <Link to="/">Methodology</Link>
+            </div>
+          </div>
+        );
+      } else {
+        return <div></div>
+      }
+    };
 
     return (
       <header className="sbtci-header">
@@ -73,21 +92,18 @@ class Header extends Component {
         </nav>
 
         <div className="sbtci-header-menu" onClick={(e) => this.toggleMobileMenu()}>Menu</div>
-        <nav className={ menuOpenClass }>
-          <div>
-            <div className="sbtci-header-mobile-nav-top-level-item">
-              <div>Rankings</div>
-              { taxTypeLinks }
-            </div>
-            <div className="sbtci-header-mobile-nav-top-level-item">
-              <div>States</div>
-              { stateLinks }
-            </div>
-            <div className="sbtci-header-mobile-nav-top-level-item">
-              <Link to="/">Methodology</Link>
-            </div>
-          </div>
-        </nav>
+        <CSSTransition
+          classNames={{
+            enter: "sbtci-header-mobile-nav",
+            enterActive: "sbtci-header-mobile-nav sbtci-header-mobile-nav--active",
+            exit: "sbtci-header-mobile-nav sbtci-header-mobile-nav--active",
+            exitActive: "sbtci-header-mobile-nav"
+          }}
+          in={this.state.menuOpen}
+          timeout={250}
+        >
+          { mobileMenu }
+        </CSSTransition>
       </div>
     </header>
     );
