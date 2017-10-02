@@ -191,10 +191,14 @@
 
     @include mobile-only {
       display: block;
-      left: -100vw;
       position: absolute;
+      transition: left 250ms ease-in-out;
       top: 54px;
       width: 100vw;
+
+      &--inactive {
+        left: -100vw;
+      }
 
       &--active {
         left: 0;
