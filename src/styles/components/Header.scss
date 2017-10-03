@@ -204,6 +204,25 @@
         left: 0;
       }
     }
+
+    &-rankings,
+    &-states {
+      display: block;
+      overflow: hidden;
+      transition: max-height 200ms ease-in-out;
+
+      &--inactive {
+        max-height: 0;
+      }
+    }
+
+    &-rankings--active {
+      max-height: 120px;
+    }
+
+    &-states--active {
+      max-height: 950px;
+    }
   }
 
   @include print-only {
