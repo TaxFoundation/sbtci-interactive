@@ -71,6 +71,10 @@
       grid-row: 1 / 2;
     }
 
+    @include print-only {
+      display: none;
+    }
+
     &-text {
       padding: 1rem;
       text-align: center;
@@ -111,6 +115,12 @@
       &:last-of-type {
         border-radius: 0 0 $radius 0;
       }
+    }
+  }
+
+  &-print {
+    @include print-only {
+      display: none;
     }
   }
 
