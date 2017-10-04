@@ -102,13 +102,76 @@
     }
 
     &-nav-link {
-      background-color: #ffffff;
+      background-color: #f6f6f6;
+      border-top: 1px solid $light-gray;
+      color: #333333;
       display: block;
+      padding: 0.8rem 1rem 0.8rem 1.5rem;
+      text-decoration: none;
     }
 
     &-rankings-nav,
     &-states-nav {
       display: none;
+    }
+  }
+
+  &-mobile-nav {
+    background-color: #ffffff;
+    display: none;
+    
+    @include mobile-only {
+      display: block;
+      min-height: calc(100vh  - 54px);
+      position: absolute;
+      transition: left 250ms ease-in-out;
+      top: 54px;
+      width: 100vw;
+
+      &--inactive {
+        left: -100vw;
+      }
+
+      &--active {
+        left: 0;
+      }
+    }
+
+    &-top-level-item {
+      border-bottom: 1px solid $light-gray;
+    }
+
+    &-top-link {
+      color: #333333;
+      display: block;
+      font-size: 1.2rem;
+      padding: 0.8rem 1rem;
+      text-decoration: none;
+
+      &:active,
+      &:hover,
+      &:visited {
+        color: #333333;
+      }
+    }
+
+    &-rankings,
+    &-states {
+      display: block;
+      overflow: hidden;
+      transition: max-height 200ms ease-in-out;
+
+      &--inactive {
+        max-height: 0;
+      }
+    }
+
+    &-rankings--active {
+      max-height: 45rem;
+    }
+
+    &-states--active {
+      max-height: 150rem;
     }
   }
 
@@ -182,46 +245,6 @@
         display: inline-block;
         width: calc(100% - 1rem);
       }
-    }
-  }
-
-  &-mobile-nav {
-    background-color: #ffffff;
-    display: none;
-
-    @include mobile-only {
-      display: block;
-      position: absolute;
-      transition: left 250ms ease-in-out;
-      top: 54px;
-      width: 100vw;
-
-      &--inactive {
-        left: -100vw;
-      }
-
-      &--active {
-        left: 0;
-      }
-    }
-
-    &-rankings,
-    &-states {
-      display: block;
-      overflow: hidden;
-      transition: max-height 200ms ease-in-out;
-
-      &--inactive {
-        max-height: 0;
-      }
-    }
-
-    &-rankings--active {
-      max-height: 120px;
-    }
-
-    &-states--active {
-      max-height: 950px;
     }
   }
 

@@ -96,7 +96,12 @@ class Header extends Component {
           }
         >
           <div className="sbtci-header-mobile-nav-top-level-item">
-            <div onClick={(e) => this.toggleMobileMenu('rankingsMenuOpen')}>Rankings</div>
+            <div 
+              className="sbtci-header-mobile-nav-top-link"
+              onClick={(e) => this.toggleMobileMenu('rankingsMenuOpen')}
+            >
+              Rankings
+            </div>
             <div
               className={
                 this.state.rankingsMenuOpen
@@ -108,7 +113,12 @@ class Header extends Component {
             </div>
           </div>
           <div className="sbtci-header-mobile-nav-top-level-item">
-            <div onClick={(e) => this.toggleMobileMenu('statesMenuOpen')}>States</div>
+            <div 
+              className="sbtci-header-mobile-nav-top-link"
+              onClick={(e) => this.toggleMobileMenu('statesMenuOpen')}
+            >
+              States
+            </div>
             <div
               className={
                 this.state.statesMenuOpen
@@ -120,7 +130,13 @@ class Header extends Component {
             </div>
           </div>
           <div className="sbtci-header-mobile-nav-top-level-item">
-            <Link to="/">Methodology</Link>
+            <Link
+              className="sbtci-header-mobile-nav-top-link"
+              onClick={(e) => this.toggleMobileMenu('statesMenuOpen')}
+              to="/"
+            >
+              Methodology
+            </Link>
           </div>
         </div>
       </div>
