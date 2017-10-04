@@ -94,16 +94,17 @@ class Home extends Component {
             if (t.id === this.props.activeTax) {
               style.backgroundColor = 'rgba(95, 194, 255, 0.3)'
             }
-            return <Link
-              className="sbtci-home-tax-nav-item"
-              key={`tax-nav-${t.id}`}
-              style={style}
-              to={r}
-            >
-              {t.name}
-            </Link>;
-            })
-          }
+            return (
+              <Link
+                className="sbtci-home-tax-nav-item"
+                key={`tax-nav-${t.id}`}
+                style={style}
+                to={r}
+              >
+                {t.name}
+              </Link>
+            );
+          })}
         </nav>
         <hr/>
         <div className="sbtci-home-rankings-table container">

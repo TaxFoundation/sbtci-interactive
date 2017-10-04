@@ -7,6 +7,6 @@ const FourOhFour = (props) => {
       <p>We're sorry, but we cannot find the page you are looking for.</p>
     </div>
   );
-}
+};
 
 export default FourOhFour;

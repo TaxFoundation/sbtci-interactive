@@ -83,7 +83,7 @@ class USMap extends React.Component {
               y2={smallState.originY}
             />
             <rect
-              onMouseEnter={(e) => this.updateHoverData(d.id)}
+              onMouseEnter={() => this.updateHoverData(d.id)}
               x={smallState.x}
               y={smallState.y}
               height="16"
@@ -109,7 +109,7 @@ class USMap extends React.Component {
       return (
         <Link key={ `path-${ d.id }` } to={routePath}>
           <path
-            onMouseEnter={(e) => this.updateHoverData(d.id)}
+            onMouseEnter={() => this.updateHoverData(d.id)}
             d={ geoPath().projection(this.projection())(statePath) }
             id={`state-${d.id}`}
             className='state'

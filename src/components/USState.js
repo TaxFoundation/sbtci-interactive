@@ -23,7 +23,7 @@ class USState extends Component {
     const topStates = this.props.USStates.sort(sortComparison('total', 'asc')).slice(0, 5);
     const bottomStates = this.props.USStates.sort(sortComparison('total', 'desc')).slice(0, 5);
 
-    const ListItem = ({s, list}) => {
+    const ListItem = ({s}) => {
       let listClass = s.id === this.props.stateId
         ? 'sbtci-box-list-item sbtci-box-list-item--highlighted'
         : 'sbtci-box-list-item';

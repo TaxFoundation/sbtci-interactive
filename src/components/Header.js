@@ -38,7 +38,7 @@ class Header extends Component {
         <Link
           className="sbtci-header-nav-link"
           key={`nav-tax-${t.id}`}
-          onClick={(e) => this.closeAllMobileMenu()}
+          onClick={() => this.closeAllMobileMenu()}
           to={r}
         >
           { t.name }
@@ -51,7 +51,7 @@ class Header extends Component {
         <Link
           className="sbtci-header-nav-link"
           key={`nav-state-${s.name.replace(/\s/g, '-').toLowerCase()}`}
-          onClick={(e) => this.closeAllMobileMenu()}
+          onClick={() => this.closeAllMobileMenu()}
           to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}
         >
           { s.name }
@@ -87,7 +87,7 @@ class Header extends Component {
             <Link className="sbtci-header-nav-category" to="/">Methodology</Link>
           </nav>
 
-          <div className="sbtci-header-menu" onClick={(e) => this.toggleMobileMenu('menuOpen')}>Menu</div>
+          <div className="sbtci-header-menu" onClick={() => this.toggleMobileMenu('menuOpen')}>Menu</div>
           <div
             className={
               this.state.menuOpen
@@ -98,7 +98,7 @@ class Header extends Component {
             <div className="sbtci-header-mobile-nav-top-level-item">
               <div 
                 className="sbtci-header-mobile-nav-top-link"
-                onClick={(e) => this.toggleMobileMenu('rankingsMenuOpen')}
+                onClick={() => this.toggleMobileMenu('rankingsMenuOpen')}
               >
                 Rankings
               </div>
@@ -115,7 +115,7 @@ class Header extends Component {
             <div className="sbtci-header-mobile-nav-top-level-item">
               <div 
                 className="sbtci-header-mobile-nav-top-link"
-                onClick={(e) => this.toggleMobileMenu('statesMenuOpen')}
+                onClick={() => this.toggleMobileMenu('statesMenuOpen')}
               >
                 States
               </div>
@@ -132,7 +132,7 @@ class Header extends Component {
             <div className="sbtci-header-mobile-nav-top-level-item">
               <Link
                 className="sbtci-header-mobile-nav-top-link"
-                onClick={(e) => this.toggleMobileMenu('statesMenuOpen')}
+                onClick={() => this.toggleMobileMenu('statesMenuOpen')}
                 to="/"
               >
                 Methodology

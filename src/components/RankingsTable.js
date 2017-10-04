@@ -47,7 +47,7 @@ class RankingsTable extends Component {
       <div className="sbtci-rankings-table">
         <div
           className="sbtci-rankings-table-expand sbtci-button sbtci-button--centered"
-          onClick={e => this.expandToggle()}
+          onClick={() => this.expandToggle()}
         >
           { this.state.expanded ? 'Collapse Table' : 'Expand Table' }
         </div>
@@ -61,7 +61,7 @@ class RankingsTable extends Component {
                       ? `sbtci-table-sorted ${currentSortClass}`
                       : 'sbtci-table-sorted'
                   }
-                  onClick={e => this.sortTable('id')}
+                  onClick={() => this.sortTable('id')}
                 >
                   <div>State</div>
                 </th>
@@ -74,7 +74,7 @@ class RankingsTable extends Component {
                           ? `sbtci-table-sorted ${currentSortClass}`
                           : 'sbtci-table-sorted'
                       }
-                      onClick={e => this.sortTable(`${t.id}`)}
+                      onClick={() => this.sortTable(`${t.id}`)}
                       style={{borderBottom: `3px solid ${t.hex}`}}
                     >
                       <div>{t.name.replace(/\s+/, '\n')}</div>
