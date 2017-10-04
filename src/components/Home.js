@@ -99,9 +99,12 @@ class Home extends Component {
               key={`tax-nav-${t.id}`}
               style={style}
               to={r}
-              >{t.name}</Link>;
-            })}
-          </nav>
+            >
+              {t.name}
+            </Link>;
+            })
+          }
+        </nav>
         <hr/>
         <div className="sbtci-home-rankings-table container">
           <h2 style={{textAlign: 'center'}}>Overall and Component Tax Ranks</h2>

@@ -51,8 +51,8 @@ class USStateTable extends Component {
                     className="sbtci-table-change"
                     style={
                       rankChange.delta !== 0
-                      ? {color: rankChange.color}
-                      : null
+                        ? {color: rankChange.color}
+                        : null
                     }
                   >
                     {`(${deltaFormat(rankChange.delta)})`}

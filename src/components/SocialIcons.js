@@ -12,7 +12,7 @@ const IconTwitter = (props) => {
       { props.text ? <span>{ props.text }</span> : null }
     </a>
   );
-}
+};
 
 const IconFacebook = (props) => {
   return (
@@ -26,7 +26,7 @@ const IconFacebook = (props) => {
       { props.text ? <span>{ props.text }</span> : null }
     </a>
   );
-}
+};
 
 const IconLinkedIn = (props) => {
   return (
@@ -42,7 +42,7 @@ const IconLinkedIn = (props) => {
       { props.text ? <span>{ props.text }</span> : null }
     </a>
   );
-}
+};
 
 const IconEmail = (props) => {
   return (
@@ -62,6 +62,6 @@ const IconEmail = (props) => {
       { props.text ? <span>{ props.text }</span> : null }
     </a>
   );
-}
+};
 
 export { IconTwitter, IconFacebook, IconLinkedIn, IconEmail };

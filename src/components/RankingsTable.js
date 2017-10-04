@@ -58,8 +58,8 @@ class RankingsTable extends Component {
                 <th
                   className={
                     this.state.sortedBy === 'id'
-                    ? `sbtci-table-sorted ${currentSortClass}`
-                    : 'sbtci-table-sorted'
+                      ? `sbtci-table-sorted ${currentSortClass}`
+                      : 'sbtci-table-sorted'
                   }
                   onClick={e => this.sortTable('id')}
                 >
@@ -71,8 +71,8 @@ class RankingsTable extends Component {
                       key={`rank-th-${t.id}`}
                       className={
                         this.state.sortedBy === t.id
-                        ? `sbtci-table-sorted ${currentSortClass}`
-                        : 'sbtci-table-sorted'
+                          ? `sbtci-table-sorted ${currentSortClass}`
+                          : 'sbtci-table-sorted'
                       }
                       onClick={e => this.sortTable(`${t.id}`)}
                       style={{borderBottom: `3px solid ${t.hex}`}}
@@ -91,20 +91,20 @@ class RankingsTable extends Component {
                       <Link
                         className="sbtci-table-link"
                         to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}
-                        >
-                          <span className="sbtci-full-state-name">{s.name}</span>
-                          <span className="sbtci-abbr-state-name">{s.abbr}</span>
-                        </Link>
-                      </td>
-                      {this.props.taxTypes.map((t) => {
-                        return (
-                          <td key={`rank-data-${s.id}-${t.id}`}>{s[t.id].rank}</td>
-                        );
-                      })}
-                    </tr>
-                  );
-                })}
-              </tbody>
+                      >
+                        <span className="sbtci-full-state-name">{s.name}</span>
+                        <span className="sbtci-abbr-state-name">{s.abbr}</span>
+                      </Link>
+                    </td>
+                    {this.props.taxTypes.map((t) => {
+                      return (
+                        <td key={`rank-data-${s.id}-${t.id}`}>{s[t.id].rank}</td>
+                      );
+                    })}
+                  </tr>
+                );
+              })}
+            </tbody>
           </table>
         </div>
       </div>

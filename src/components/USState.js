@@ -55,7 +55,7 @@ class USState extends Component {
             <div className="sbtci-box-heading">Neighboring States</div>
             <ul className="sbtci-box-list">
               {neighbors.map((s) => {
-                return <ListItem key={`neighbors-${s.id}`} s={s} />
+                return <ListItem key={`neighbors-${s.id}`} s={s} />;
               })}
             </ul>
           </div>
@@ -63,7 +63,7 @@ class USState extends Component {
             <div className="sbtci-box-heading">Top States</div>
             <ul className="sbtci-box-list">
               {topStates.map((s) => {
-                return <ListItem key={`top-${s.id}`} s={s} />
+                return <ListItem key={`top-${s.id}`} s={s} />;
               })}
             </ul>
           </div>
@@ -71,7 +71,7 @@ class USState extends Component {
             <div className="sbtci-box-heading">Bottom States</div>
             <ul className="sbtci-box-list">
               {bottomStates.map((s) => {
-                return <ListItem key={`bottom-${s.id}`} s={s} />
+                return <ListItem key={`bottom-${s.id}`} s={s} />;
               })}
             </ul>
           </div>
