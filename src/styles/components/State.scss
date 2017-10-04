@@ -122,6 +122,18 @@
     @include print-only {
       display: none;
     }
+
+    p {
+      margin: 0;
+      padding: 1rem;
+    }
+
+    &-button {
+      background-color: $green;
+      color: #ffffff;
+      cursor: pointer;
+      text-align: center;
+    }
   }
 
   @include tablet-up {

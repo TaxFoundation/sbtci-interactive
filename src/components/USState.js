@@ -100,7 +100,12 @@ class USState extends Component {
           </div>
           <div className="sbtci-state-print sbtci-box">
             <p>Get a handy one-pager on your state!</p>
-            <p>Print!</p>
+            <p
+              className="sbtci-state-print-button"
+              onClick={() => window.print()}
+            >
+              Print!
+            </p>
           </div>
         </div>
       </div>
