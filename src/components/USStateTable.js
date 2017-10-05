@@ -45,18 +45,29 @@ class USStateTable extends Component {
                     {t.name}
                   </Link>
                 </td>
-                <td style={{textAlign: 'right'}}>
-                  { this.props.stateData[t.id].rank }
-                  <span
-                    className="sbtci-table-change"
-                    style={
-                      rankChange.delta !== 0
-                        ? {color: rankChange.color}
-                        : null
-                    }
+                <td>
+                  <div
+                    style={{
+                      display: 'grid',
+                      gridTemplate: 'auto / 1fr 1fr'
+                    }}
                   >
-                    {`(${deltaFormat(rankChange.delta)})`}
-                  </span>
+                    <div style={{gridColumn: '1 / 2', gridRow: '1 / 2', textAlign: 'right'}}>
+                      { this.props.stateData[t.id].rank }
+                    </div>
+                    <div style={{gridColumn: '2 / 3', gridRow: '1 / 2', textAlign: 'left'}}>
+                      <span
+                        className="sbtci-table-change"
+                        style={
+                          rankChange.delta !== 0
+                            ? {color: rankChange.color}
+                            : null
+                        }
+                      >
+                        {`(${deltaFormat(rankChange.delta)})`}
+                      </span>
+                    </div>
+                  </div>
                 </td>
                 <td>
                   { scoreFormat(this.props.stateData[t.id].value) }
