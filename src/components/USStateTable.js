@@ -16,8 +16,8 @@ class USStateTable extends Component {
       };
     });
 
-    const deltaFormat = format('+')
-    const scoreFormat = format('.3r')
+    const deltaFormat = format('+');
+    const scoreFormat = format('.3r');
 
     return (
       <table className="sbtci-table">
