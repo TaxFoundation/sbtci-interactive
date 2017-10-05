@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import USStateTable from './USStateTable';
 import { sortComparison } from './Helpers';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
@@ -28,9 +29,11 @@ class USState extends Component {
         ? 'sbtci-box-list-item sbtci-box-list-item--highlighted'
         : 'sbtci-box-list-item';
 
+      let r = `/state/${s.name.replace(/\s/g, '-').toLowerCase()}`;
+
       return (
         <li className={listClass}>
-          <span style={{fontWeight: 300}}>#</span>{s.total.rank} {s.name}
+          <Link to={r}><span style={{fontWeight: 300}}>#</span>{s.total.rank} {s.name}</Link>
         </li>
       );
     };
@@ -107,6 +110,14 @@ class USState extends Component {
               Print!
             </p>
           </div>
+        </div>
+        <hr/>
+        <div className="sbtci-state-read-more">
+          <h2>Learn More About This State's Taxes</h2>
+          <a
+          href={`https://taxfoundation.org/state/${stateData.name.replace(/\s/g, '-').toLowerCase()}`}>
+              Read 
+          </a>
         </div>
       </div>
     );

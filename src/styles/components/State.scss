@@ -50,6 +50,8 @@
       grid-gap: 1rem;
       grid-template: repeat(4, auto) / repeat(3, 1fr);
     }
+
+    margin-bottom: 2rem;
   }
 
   &-table {
@@ -121,6 +123,11 @@
   &-print {
     @include print-only {
       display: none;
+    }
+
+    @include tablet-up {
+      display: grid;
+      grid-template: auto 50px / auto;
     }
 
     p {
