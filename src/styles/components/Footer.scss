@@ -1,0 +1,14 @@
+.sbtci-footer {
+  background-color: $light-gray;
+  
+  @include tablet-up {
+    display: grid;
+    grid-template: auto / 1fr 1fr;
+  }
+
+  &-info,
+  &-links {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
