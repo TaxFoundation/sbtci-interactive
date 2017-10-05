@@ -148,21 +148,21 @@
         z-index: 200;
         -webkit-print-color-adjust: exact;
       }
-
-      &:before {
-        background: transparent;
-        bottom: 0;
-        content: "Expand to see full list of rankings.";
-        color: $gray;
-        font-size: 1.2rem;
-        left: 0;
-        position: absolute;
-        right: 0;
-        text-align: center;
-        top: 450px;
-        z-index: 300;
-      }
     }
+  }
+
+  &-expand-overlay {
+    background: transparent;
+    bottom: 0;
+    color: $gray;
+    cursor: pointer;
+    font-size: 1.2rem;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 450px;
+    z-index: 300;
   }
 }
 

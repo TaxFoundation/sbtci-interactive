@@ -106,6 +106,13 @@ class RankingsTable extends Component {
               })}
             </tbody>
           </table>
+          <div
+            className="sbtci-table-expand-overlay"
+            onClick={() => this.expandToggle()}
+            style={ this.state.expanded ? { display: 'none' } : null }
+          >
+            Expand to see full list of rankings.
+          </div>
         </div>
       </div>
     );
