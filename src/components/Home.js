@@ -16,6 +16,10 @@ class Home extends Component {
     this.updateActiveState = this.updateActiveState.bind(this);
     this.fullName = this.fullName.bind(this);
   }
+  
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
 
   updateActiveState(stateId) {
     const newActiveState = this.props.SBTCIData.filter((USState) => {

@@ -6,6 +6,10 @@ import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcon
 import { StateImages } from './Images';
 
 class USState extends Component {
+  componentDidMount () {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     const bgImage = {
       backgroundImage: `url(${StateImages[`State${this.props.stateId}`]})`
