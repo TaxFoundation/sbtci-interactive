@@ -14,6 +14,7 @@ class Home extends Component {
     }
 
     this.updateActiveState = this.updateActiveState.bind(this);
+    this.fullName = this.fullName.bind(this);
   }
 
   updateActiveState(stateId) {
@@ -21,6 +22,10 @@ class Home extends Component {
       return USState.id === stateId;
     })[0];
     this.setState({ activeUSState: newActiveState});
+  }
+
+  fullName(name) {
+    return name === 'Unemp. Insur. Taxes' ? 'Unemployment Insurance Taxes' : name;
   }
 
   render() {
@@ -37,9 +42,11 @@ class Home extends Component {
           style={bgImage}
         >
           <h1>
-            { this.props.taxTypes.filter((t) => {
-              return this.props.activeTax === t.id;
-              })[0].name
+            { this.fullName(
+                this.props.taxTypes.filter((t) => {
+                  return this.props.activeTax === t.id;
+                })[0].name
+              )
             }
           </h1>
         </div>
@@ -112,6 +119,31 @@ class Home extends Component {
           <RankingsTable USStateData={this.props.SBTCIData} taxTypes={this.props.taxTypes} />
         </div>
         <hr/>
+        <div className="sbtci-home-categories container container--narrow">
+          <h2 style={{textAlign: 'center'}}>Ranked Tax Categories</h2>
+          <Link className="sbtci-button sbtci-button--centered" to="/">
+            Read Full Methodology
+          </Link>
+          { this.props.taxTypes.filter(t => t.id !== 'total').map((t) => {
+            return (
+              <div className="sbtci-home-tax-type" key={`tax-desc-${t.id}`}>
+                <h3>{ this.fullName(t.name) }</h3>
+                <p>{ t.description }</p>
+                <Link
+                  className="sbtci-button"
+                  style={{backgroundColor: t.hex}}
+                  to={`/tax/${t.id}`}
+                >
+                  Read More
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+        <hr/>
+        <div className="sbtci-home-changes container">
+          <h2 style={{textAlign: 'center'}}>Notable Ranking Changes</h2>
+        </div>
       </div>
     );
   }

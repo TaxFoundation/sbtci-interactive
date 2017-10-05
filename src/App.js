@@ -13,7 +13,7 @@ const taxTypes = [
     name: 'Overall Rank',
     id: 'total',
     hex: '#007BC3',
-    description: ''
+    description: 'The State Business Tax Climate Index is a measure of how well states structure their tax systems. It enables policymakers, business leaders, and taxpayers to gauge how their states’ tax systems compare, and provides a roadmap for improvement.'
   },
   {
     name: 'Corporate Taxes',
