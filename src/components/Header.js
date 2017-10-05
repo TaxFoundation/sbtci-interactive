@@ -132,7 +132,7 @@ class Header extends Component {
             <div className="sbtci-header-mobile-nav-top-level-item">
               <Link
                 className="sbtci-header-mobile-nav-top-link"
-                onClick={() => this.toggleMobileMenu('statesMenuOpen')}
+                onClick={() => this.closeAllMobileMenu()}
                 to="/"
               >
                 Methodology

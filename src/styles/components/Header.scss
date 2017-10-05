@@ -119,11 +119,13 @@
   &-mobile-nav {
     background-color: #ffffff;
     display: none;
+    z-index: 1000;
     
     @include mobile-only {
       display: block;
-      min-height: calc(100vh  - 54px);
-      position: absolute;
+      height: calc(100vh  - 54px);
+      position: fixed;
+      overflow-y: scroll;
       transition: left 250ms ease-in-out;
       top: 54px;
       width: 100vw;
