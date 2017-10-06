@@ -45,9 +45,11 @@ const IconLinkedIn = (props) => {
 };
 
 const IconEmail = (props) => {
+  let emailSubject = props.emailSubject || 'Check out the State Business Tax Climate Index';
+  let emailBody = props.emailBody || `You can see it here: ${window.location.href}`;
   return (
     <a
-      href=""
+      href={ `mailto:?subject=${emailSubject}&body=${emailBody}` }
       className={ props.className }
     >
       <svg id="email" viewBox="0 0 48 48">

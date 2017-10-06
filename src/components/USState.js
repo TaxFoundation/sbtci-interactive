@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import USStateTable from './USStateTable';
-import { sortComparison } from './Helpers';
+import { ordinal, sortComparison } from './Helpers';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
 import { StateImages } from './Images';
 import ShareBoxes from './ShareBoxes';
@@ -103,6 +103,8 @@ class USState extends Component {
               <IconEmail
                 className="sbtci-state-social-button sbtci-social--email"
                 fill="#ffffff"
+                emailSubject={ `Check out ${stateData.name} in the State Business Tax Climate Index` }
+                emailBody={ `${stateData.name} ranks ${ordinal(stateData.total.rank)} overall. See more here: ${window.location.href}` }
               />
             </div>
           </div>
