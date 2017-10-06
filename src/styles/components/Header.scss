@@ -99,6 +99,7 @@
       font-size: 1.2rem;
       font-weight: 700;;
       padding: 1rem;
+      text-align: right;
     }
 
     &-nav-link {
@@ -123,11 +124,11 @@
     
     @include mobile-only {
       display: block;
-      height: calc(100vh  - 54px);
+      height: 100vh;
       position: fixed;
       overflow-y: scroll;
       transition: left 250ms ease-in-out;
-      top: 54px;
+      top: 0;
       width: 100vw;
 
       &--inactive {
@@ -137,6 +138,15 @@
       &--active {
         left: 0;
       }
+    }
+
+    &-top-bar {
+      background-color: $tf-blue;
+      color: #ffffff;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1rem;
+      text-align: right;
     }
 
     &-top-level-item {

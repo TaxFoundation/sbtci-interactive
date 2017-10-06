@@ -95,6 +95,12 @@ class Header extends Component {
                 : 'sbtci-header-mobile-nav sbtci-header-mobile-nav--inactive'
             }
           >
+            <div
+              className="sbtci-header-mobile-nav-top-bar"
+              onClick={() => this.closeAllMobileMenu()}
+            >
+              Close Menu
+            </div>
             <div className="sbtci-header-mobile-nav-top-level-item">
               <div 
                 className="sbtci-header-mobile-nav-top-link"
