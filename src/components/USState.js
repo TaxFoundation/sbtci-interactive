@@ -115,12 +115,14 @@ class USState extends Component {
             </p>
           </div>
         </div>
-        <hr/>
+        <hr className="hide-print" />
         <div className="sbtci-state-read-more">
-          <h2>Learn More About This State's Taxes</h2>
+          <h2 style={{textAlign: 'center'}}>Learn More About This State's Taxes</h2>
           <a
-          href={`https://taxfoundation.org/state/${stateData.name.replace(/\s/g, '-').toLowerCase()}`}>
-              Read 
+            className="sbtci-button sbtci-button--centered"
+            href={`https://taxfoundation.org/state/${stateData.name.replace(/\s/g, '-').toLowerCase()}`}
+          >
+              Read More About {stateData.name}
           </a>
         </div>
       </div>
