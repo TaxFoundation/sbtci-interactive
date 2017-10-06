@@ -76,7 +76,7 @@
     @include tablet-up {
       display: grid;
       grid-gap: 1rem;
-      grid-template: 250px 220px / 3fr 1fr;
+      grid-template: auto 220px / 3fr 1fr;
     }
 
     margin-bottom: 2rem;
@@ -87,6 +87,18 @@
     @include tablet-up {
       grid-column: span 1;
       grid-row: 1 / 3;
+    }
+
+    &-legend {
+      align-items: stretch;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      min-height: 2rem;
+
+      > div {
+        flex: 1 1 auto;
+      }
     }
   }
 
@@ -152,6 +164,7 @@
     &-table {
       font-size: 0.9rem;
       line-height: 1.6;
+      margin: auto;
       width: 100%;
     }
 

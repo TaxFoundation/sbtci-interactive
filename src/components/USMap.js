@@ -123,38 +123,30 @@ class USMap extends React.Component {
       );
     });
 
-    const legendWidth = 30;
     const legendCount = 10;
     const legend = [...Array(legendCount).keys()].map((d) => {
+      let color = this.gradients[this.props.activeTax]((legendCount - d)/10);
       return (
-        <rect
+        <div
           key={`legend-${d}`}
-          x={ d * legendWidth + (300 - legendWidth*legendCount/2)}
-          y="370"
-          width="25"
-          height="25"
-          fill={ this.gradients[this.props.activeTax]((legendCount - d)/10) }
-        />
+          style={{backgroundColor: color}}
+        ></div>
       );
     })
 
     return (
-      <svg width="100%" viewBox="0 0 600 400">
-        <g className='states'>
-          { states }
-        </g>
-        <g className="legend">
-          <text textAnchor="end" style={{fontSize: '12px'}}>
-            <tspan x={300 - legendWidth*legendCount/2 - 5} y="379">Worse</tspan>
-            <tspan x={300 - legendWidth*legendCount/2 - 5} y="394">Rank</tspan>
-          </text>
-          <text textAnchor="start" style={{fontSize: '12px'}}>
-            <tspan x={300 + legendWidth*legendCount/2 + 3} y="379">Better</tspan>
-            <tspan x={300 + legendWidth*legendCount/2 + 3} y="394">Rank</tspan>
-          </text>
+      <div>
+        <svg width="100%" viewBox="0 0 600 400">
+          <g className='states'>
+            { states }
+          </g>
+        </svg>
+        <div className="sbtci-home-map-legend">
+          <div style={{paddingRight: '1rem', textAlign: 'right'}}>Worse<br />Rank</div>
           { legend }
-        </g>
-      </svg>
+          <div style={{paddingLeft: '1rem'}}>Better<br />Rank</div>
+        </div>
+      </div>
     );
   }
 }
