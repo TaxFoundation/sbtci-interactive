@@ -164,4 +164,22 @@
     margin-bottom: 2rem;
     padding-top: 1rem;
   }
+
+  &-tax-type {
+    margin-bottom: 4rem;
+
+    &-icon {
+      @include mobile-only {
+        display: block;
+        margin: 0 auto;
+        width: 65%;
+      }
+
+      @include tablet-up {
+        float: left;
+        margin-right: 2rem;
+        width: 135px;
+      }
+    }
+  }
 }

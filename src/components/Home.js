@@ -5,6 +5,7 @@ import USMapDataSummary from './USMapDataSummary';
 import RankingsTable from './RankingsTable';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
 import { TaxImages } from './Images';
+import TaxIcons from './TaxIcons';
 
 class Home extends Component {
   constructor(props) {
@@ -131,6 +132,7 @@ class Home extends Component {
           { this.props.taxTypes.filter(t => t.id !== 'total').map((t) => {
             return (
               <div className="sbtci-home-tax-type" key={`tax-desc-${t.id}`}>
+                { TaxIcons[t.id]({className: 'sbtci-home-tax-type-icon'})}
                 <h3>{ this.fullName(t.name) }</h3>
                 <p>{ t.description }</p>
                 <Link
@@ -138,7 +140,7 @@ class Home extends Component {
                   style={{backgroundColor: t.hex}}
                   to={`/tax/${t.id}`}
                 >
-                  Read More
+                  See Map
                 </Link>
               </div>
             );
