@@ -5,7 +5,7 @@ const Footer = (props) => {
     <footer className="sbtci-footer">
       <div className="container">
         <div className="sbtci-footer-info">
-          <svg x="0px" y="0px" width="228px" height="35px" viewBox="0 0 228 35" enable-background="new 0 0 228 35" style={{display: 'block'}}>
+          <svg x="0px" y="0px" width="228px" height="35px" viewBox="0 0 228 35" style={{display: 'block'}}>
             <polygon fill="#0094FF" points="42.5,26 45.5,26 45.5,12 50.5,12 50.5,9 37.5,9 37.5,12 42.5,12 	"/>
             <path fill="#0094FF" d="M56.736,9H53.5l-6.422,17H50l1.5-4h7l1.5,4h3.5l-0.336-0.28L56.736,9z M52.5,19l2.598-7.053h0.047h0.024L57.709,19H52.5z"/>
             <polygon fill="#0094FF" points="78,9 74.782,9 63.5,26 63.5,26 66.738,26 	"/>
