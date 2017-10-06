@@ -46,7 +46,7 @@ class RankingsTable extends Component {
     return (
       <div className="sbtci-rankings-table">
         <div
-          className="sbtci-rankings-table-expand sbtci-button sbtci-button--centered"
+          className="sbtci-rankings-table-expand sbtci-button sbtci-button--centered hide-print"
           onClick={() => this.expandToggle()}
         >
           { this.state.expanded ? 'Collapse Table' : 'Expand Table' }
@@ -107,7 +107,7 @@ class RankingsTable extends Component {
             </tbody>
           </table>
           <div
-            className="sbtci-table-expand-overlay"
+            className="sbtci-table-expand-overlay hide-print"
             onClick={() => this.expandToggle()}
             style={ this.state.expanded ? { display: 'none' } : null }
           >

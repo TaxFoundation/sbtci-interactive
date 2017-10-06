@@ -129,7 +129,10 @@ class USMap extends React.Component {
       return (
         <div
           key={`legend-${d}`}
-          style={{backgroundColor: color}}
+          style={{
+            backgroundColor: color,
+            WebkitPrintColorAdjust: 'exact'
+          }}
         ></div>
       );
     })
