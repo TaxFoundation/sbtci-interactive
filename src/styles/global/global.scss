@@ -64,6 +64,7 @@ hr {
     &--centered {
       display: block;
       margin: 1rem auto;
+      max-width: 80%;
 
       @include tablet-up {
         max-width: 9rem;

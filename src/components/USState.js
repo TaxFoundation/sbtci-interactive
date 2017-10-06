@@ -117,11 +117,11 @@ class USState extends Component {
           </div>
         </div>
         <hr className="hide-print" />
-        <div className="sbtci-state-share-boxes container">
+        <div className="sbtci-state-share-boxes container hide-print">
           <ShareBoxes stateData={stateData} taxTypes={this.props.taxTypes} />
         </div>
         <hr className="hide-print" />
-        <div className="sbtci-state-read-more">
+        <div className="sbtci-state-read-more hide-print">
           <h2 style={{textAlign: 'center'}}>Learn More About This State's Taxes</h2>
           <a
             className="sbtci-button sbtci-button--centered"

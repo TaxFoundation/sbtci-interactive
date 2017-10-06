@@ -140,9 +140,7 @@
   }
 
   &-print {
-    @include print-only {
-      display: none;
-    }
+    display: none;
 
     @include tablet-up {
       display: grid;
@@ -202,12 +200,7 @@
   }
 
   &-share-boxes {
-    padding: 2rem 0;
-  }
-
-  &-read-more {
-    @include print-only {
-      display: none;
-    }
+    padding-bottom: 2rem;
+    padding-top: 2rem;
   }
 }

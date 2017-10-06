@@ -3,10 +3,13 @@
   color: #666666;
   padding: 2rem 0;
   
-  @include tablet-up {
+  .container {
+    display: grid;
+    grid-template: auto / 1fr 1fr;
+  }
+  @include mobile-only {
     .container {
-      display: grid;
-      grid-template: auto / 1fr 1fr;
+      display: block;
     }
   }
 
@@ -14,5 +17,9 @@
   &-links {
     grid-column: span 1;
     grid-row: span 1;
+
+    @include mobile-only {
+      margin-bottom: 1rem;
+    }
   }
 }
