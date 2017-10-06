@@ -71,3 +71,9 @@ hr {
     }
   }
 }
+
+.hide-print {
+  @include print-only {
+    display: none;
+  }
+}
