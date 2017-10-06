@@ -24,3 +24,23 @@ export const sortComparison = (key, order) => {
     }
   };
 };
+
+export const ordinal = (num) => {
+  let a = num % 10;
+  let b = num % 100;
+
+  if (a === 1 && b !== 11) {
+    return `${num}st`;
+  }
+  if (a === 2 && b !== 12) {
+    return `${num}nd`;
+  }
+  if (a === 3 && b !== 13) {
+    return `${num}rd`;
+  }
+  return `${num}th`;
+};
+
+export const fullName = (name) => {
+  return name === 'Unemp. Insur. Taxes' ? 'Unemployment Insurance Taxes' : name;
+};

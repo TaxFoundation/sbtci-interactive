@@ -5,6 +5,7 @@ import USMapDataSummary from './USMapDataSummary';
 import RankingsTable from './RankingsTable';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
 import { TaxImages } from './Images';
+import { fullName } from './Helpers';
 import TaxIcons from './TaxIcons';
 
 class Home extends Component {
@@ -15,7 +16,6 @@ class Home extends Component {
     }
 
     this.updateActiveState = this.updateActiveState.bind(this);
-    this.fullName = this.fullName.bind(this);
   }
   
   componentDidMount() {
@@ -27,10 +27,6 @@ class Home extends Component {
       return USState.id === stateId;
     })[0];
     this.setState({ activeUSState: newActiveState});
-  }
-
-  fullName(name) {
-    return name === 'Unemp. Insur. Taxes' ? 'Unemployment Insurance Taxes' : name;
   }
 
   render() {
@@ -47,7 +43,7 @@ class Home extends Component {
           style={bgImage}
         >
           <h1>
-            { this.fullName(
+            { fullName(
                 this.props.taxTypes.filter((t) => {
                   return this.props.activeTax === t.id;
                 })[0].name
@@ -133,7 +129,7 @@ class Home extends Component {
             return (
               <div className="sbtci-home-tax-type" key={`tax-desc-${t.id}`}>
                 { TaxIcons[t.id]({className: 'sbtci-home-tax-type-icon'})}
-                <h3>{ this.fullName(t.name) }</h3>
+                <h3>{ fullName(t.name) }</h3>
                 <p>{ t.description }</p>
                 <Link
                   className="sbtci-button"

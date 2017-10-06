@@ -4,6 +4,7 @@ import USStateTable from './USStateTable';
 import { sortComparison } from './Helpers';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
 import { StateImages } from './Images';
+import ShareBoxes from './ShareBoxes';
 
 class USState extends Component {
   componentDidMount () {
@@ -114,6 +115,10 @@ class USState extends Component {
               Print!
             </p>
           </div>
+        </div>
+        <hr className="hide-print" />
+        <div className="sbtci-state-share-boxes container">
+          <ShareBoxes stateData={stateData} taxTypes={this.props.taxTypes} />
         </div>
         <hr className="hide-print" />
         <div className="sbtci-state-read-more">

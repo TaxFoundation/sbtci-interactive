@@ -201,6 +201,10 @@
     }
   }
 
+  &-share-boxes {
+    padding: 2rem 0;
+  }
+
   &-read-more {
     @include print-only {
       display: none;
