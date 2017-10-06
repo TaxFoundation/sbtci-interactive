@@ -145,6 +145,19 @@ class Home extends Component {
         <hr/>
         <div className="sbtci-home-changes container">
           <h2 style={{textAlign: 'center'}}>Notable Ranking Changes</h2>
+          <div className="sbtci-home-notable-changes">
+            {this.props.notableChanges.map((c) => {
+              let stateData = this.props.SBTCIData.filter(s => s.id === c.id)[0];
+              return (
+                <div className="sbtci-home-notable-change">
+                  <h3><Link to={`/state/${stateData.name.replace(/\s/g, '-').toLowerCase()}`}>
+                    {stateData.name}
+                  </Link></h3>
+                  <p>{c.text}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     );

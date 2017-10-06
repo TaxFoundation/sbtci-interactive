@@ -201,4 +201,26 @@
       }
     }
   }
+
+  &-notable-changes {
+    margin-bottom: 2rem;
+    
+    @include tablet-up {
+      display: grid;
+      grid-column-gap: 2rem;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &-notable-change {
+    a {
+      color: #333333;
+      text-decoration: none;
+    }
+
+    @include tablet-up {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+  }
 }
