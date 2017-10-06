@@ -199,8 +199,45 @@
     }
   }
 
-  &-share-boxes {
-    padding-bottom: 2rem;
-    padding-top: 2rem;
+  &-share-boxes > div {
+    @include tablet-up {
+      display: grid;
+      grid-column-gap: 2rem;
+      grid-template-columns: 1fr 1fr; 
+      padding-bottom: 2rem;
+      padding-top: 2rem;
+      text-align: center;
+    }
+  }
+
+  &-share-box {
+    display: grid;
+    grid-template: auto 49px / auto;
+    
+    &-text {
+      grid-row: span 1;
+      padding: 1rem;
+    }
+
+    &-buttons {
+      align-items: center;
+      display: grid;
+      grid-row: span 1;
+      grid-template: auto / 1fr 1fr;
+    }
+
+    &-button {
+      color: #ffffff;
+      display: block;
+      grid-column: span 1;
+      padding: 12px;
+      text-align: center;
+      text-decoration: none;
+
+      svg {
+        margin-right: 1rem;
+        width: 20px
+      }
+    }
   }
 }
