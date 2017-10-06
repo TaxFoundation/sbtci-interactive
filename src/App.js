@@ -114,6 +114,7 @@ class App extends Component {
               SBTCIData={SBTCIData}
               taxTypes={taxTypes}
               USData={USData}
+              notableChanges={notableChanges}
             />
           }
         />
