@@ -121,6 +121,7 @@ class USState extends Component {
           <a
             className="sbtci-button sbtci-button--centered"
             href={`https://taxfoundation.org/state/${stateData.name.replace(/\s/g, '-').toLowerCase()}`}
+            target="_blank"
           >
               Read More About {stateData.name}
           </a>

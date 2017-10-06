@@ -87,7 +87,10 @@ class Header extends Component {
             <Link className="sbtci-header-nav-category" to="/">Methodology</Link>
           </nav>
 
-          <div className="sbtci-header-menu" onClick={() => this.toggleMobileMenu('menuOpen')}>Menu</div>
+          <div className="sbtci-header-menu">
+            <Link to="/" style={{color: '#ffffff', float: 'left', textDecoration: 'none'}}>State Tax Index</Link>
+            <div onClick={() => this.toggleMobileMenu('menuOpen')}>Menu</div>
+          </div>
           <div
             className={
               this.state.menuOpen

@@ -6,7 +6,7 @@
     background-size: cover;
     display: flex;
     justify-content: center;
-    height: 150px;
+    height: 128px;
     width: 100%;
 
     @include print-only {
@@ -15,13 +15,19 @@
     }
 
     h1 {
+      background-color: rgba(0, 0, 0, 0.5);
       color: #ffffff;
       display: block;
       font-family: 'Oswald', sans-serif;
       font-size: 3rem;
       font-weight: 400;
       margin: 0;
+      padding: 1rem 1.6rem;
       text-align: center;
+
+      @include mobile-only {
+        font-size: 2rem;
+      }
 
       @include print-only {
         color: #000000;
