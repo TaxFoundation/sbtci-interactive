@@ -221,4 +221,12 @@
       grid-row: span 1;
     }
   }
+
+  &-mobile-state-list {
+    display: none;
+
+    @include mobile-only {
+      display: block;
+    }
+  }
 }

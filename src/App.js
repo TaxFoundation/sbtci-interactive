@@ -83,6 +83,40 @@ const notableChanges = [
 ];
 
 class App extends Component {
+    constructor() {
+    super();
+    this.state = {
+      menuOpen: false,
+      rankingsMenuOpen: false,
+      statesMenuOpen: false
+    };
+
+    this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
+    this.closeAllMobileMenu = this.closeAllMobileMenu.bind(this);
+    this.openStatesMenu = this.openStatesMenu.bind(this);
+  }
+
+  toggleMobileMenu(menu) {
+    let newState = Object.assign(this.state);
+    newState[menu] = !newState[menu];
+    this.setState(newState);
+  }
+
+  closeAllMobileMenu() {
+    let newState = Object.assign(this.state);
+    newState.menuOpen = false;
+    newState.rankingsMenuOpen = false;
+    newState.statesMenuOpen = false;
+    this.setState(newState);
+  }
+
+  openStatesMenu() {
+    let newState = Object.assign(this.state);
+    newState.menuOpen = true;
+    newState.rankingsMenuOpen = false;
+    newState.statesMenuOpen = true;
+    this.setState(newState);
+  }
 
   render() {
     const stateRoutes = SBTCIData.map((s) => {
@@ -115,6 +149,7 @@ class App extends Component {
               taxTypes={taxTypes}
               USData={USData}
               notableChanges={notableChanges}
+              openStatesMenu={this.openStatesMenu}
             />
           }
         />
@@ -127,6 +162,11 @@ class App extends Component {
           <Header
             taxTypes={taxTypes}
             USStates={SBTCIData.map((s) => { return {name: s.name}; })}
+            toggleMobileMenu={this.toggleMobileMenu}
+            closeAllMobileMenu={this.closeAllMobileMenu}
+            menuOpen={this.state.menuOpen}
+            rankingsMenuOpen={this.state.rankingsMenuOpen}
+            statesMenuOpen={this.state.statesMenuOpen}
           />
           <Switch>
             <Route
@@ -140,6 +180,7 @@ class App extends Component {
                   taxTypes={taxTypes}
                   USData={USData}
                   notableChanges={notableChanges}
+                  openStatesMenu={this.openStatesMenu}
                 />
               }
             />

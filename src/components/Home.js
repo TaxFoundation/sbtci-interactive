@@ -61,6 +61,12 @@ class Home extends Component {
               activeUSState={this.state.activeUSState}
             />
           </div>
+          <div
+            className="sbtci-home-mobile-state-list sbtci-button sbtci-button--centered"
+            onClick={() => {this.props.openStatesMenu()}}
+          >
+            See Your State
+          </div>
 
           <USMapDataSummary
             activeUSState={this.state.activeUSState}

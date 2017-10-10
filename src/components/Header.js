@@ -4,32 +4,6 @@ import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcon
 import Logo from '../images/logo.svg';
 
 class Header extends Component {
-  constructor() {
-    super();
-    this.state = {
-      menuOpen: false,
-      rankingsMenuOpen: false,
-      statesMenuOpen: false
-    };
-
-    this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
-    this.closeAllMobileMenu = this.closeAllMobileMenu.bind(this);
-  }
-
-  toggleMobileMenu(menu) {
-    let newState = Object.assign(this.state);
-    newState[menu] = !newState[menu];
-    this.setState(newState);
-  }
-
-  closeAllMobileMenu() {
-    let newState = Object.assign(this.state);
-    newState.menuOpen = false;
-    newState.rankingsMenuOpen = false;
-    newState.statesMenuOpen = false;
-    this.setState(newState);
-  }
-
   render() {
     const taxTypeLinks = this.props.taxTypes.map((t) => {
       let r = `/tax/${t.id}`;
@@ -38,7 +12,7 @@ class Header extends Component {
         <Link
           className="sbtci-header-nav-link"
           key={`nav-tax-${t.id}`}
-          onClick={() => this.closeAllMobileMenu()}
+          onClick={() => this.props.closeAllMobileMenu()}
           to={r}
         >
           { t.name }
@@ -51,7 +25,7 @@ class Header extends Component {
         <Link
           className="sbtci-header-nav-link"
           key={`nav-state-${s.name.replace(/\s/g, '-').toLowerCase()}`}
-          onClick={() => this.closeAllMobileMenu()}
+          onClick={() => this.props.closeAllMobileMenu()}
           to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}
         >
           { s.name }
@@ -89,31 +63,31 @@ class Header extends Component {
 
           <div className="sbtci-header-menu">
             <Link to="/" style={{color: '#ffffff', float: 'left', textDecoration: 'none'}}>State Tax Index</Link>
-            <div onClick={() => this.toggleMobileMenu('menuOpen')}>Menu</div>
+            <div onClick={() => this.props.toggleMobileMenu('menuOpen')}>Menu</div>
           </div>
           <div
             className={
-              this.state.menuOpen
+              this.props.menuOpen
                 ? 'sbtci-header-mobile-nav sbtci-header-mobile-nav--active'
                 : 'sbtci-header-mobile-nav sbtci-header-mobile-nav--inactive'
             }
           >
             <div
               className="sbtci-header-mobile-nav-top-bar"
-              onClick={() => this.closeAllMobileMenu()}
+              onClick={() => this.props.closeAllMobileMenu()}
             >
               Close Menu
             </div>
             <div className="sbtci-header-mobile-nav-top-level-item">
               <div 
                 className="sbtci-header-mobile-nav-top-link"
-                onClick={() => this.toggleMobileMenu('rankingsMenuOpen')}
+                onClick={() => this.props.toggleMobileMenu('rankingsMenuOpen')}
               >
                 Rankings
               </div>
               <div
                 className={
-                  this.state.rankingsMenuOpen
+                  this.props.rankingsMenuOpen
                     ? 'sbtci-header-mobile-nav-rankings sbtci-header-mobile-nav-rankings--active'
                     : 'sbtci-header-mobile-nav-rankings sbtci-header-mobile-nav-rankings--inactive'
                 }
@@ -124,13 +98,13 @@ class Header extends Component {
             <div className="sbtci-header-mobile-nav-top-level-item">
               <div 
                 className="sbtci-header-mobile-nav-top-link"
-                onClick={() => this.toggleMobileMenu('statesMenuOpen')}
+                onClick={() => this.props.toggleMobileMenu('statesMenuOpen')}
               >
                 States
               </div>
               <div
                 className={
-                  this.state.statesMenuOpen
+                  this.props.statesMenuOpen
                     ? 'sbtci-header-mobile-nav-states sbtci-header-mobile-nav-states--active'
                     : 'sbtci-header-mobile-nav-states sbtci-header-mobile-nav-states--inactive'
                 }
@@ -141,7 +115,7 @@ class Header extends Component {
             <div className="sbtci-header-mobile-nav-top-level-item">
               <Link
                 className="sbtci-header-mobile-nav-top-link"
-                onClick={() => this.closeAllMobileMenu()}
+                onClick={() => this.props.closeAllMobileMenu()}
                 to="/"
               >
                 Methodology
