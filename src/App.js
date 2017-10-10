@@ -90,6 +90,7 @@ class App extends Component {
       menuOpen: false,
       rankingsMenuOpen: false,
       statesMenuOpen: false,
+      shareMenuOpen: false,
       emailSubscribe: false
     };
 
@@ -178,6 +179,7 @@ class App extends Component {
             menuOpen={this.state.menuOpen}
             rankingsMenuOpen={this.state.rankingsMenuOpen}
             statesMenuOpen={this.state.statesMenuOpen}
+            shareMenuOpen={this.state.shareMenuOpen}
             toggleEmailSubscribe={this.toggleEmailSubscribe}
           />
           { this.state.emailSubscribe ? <MailChimp /> : null }

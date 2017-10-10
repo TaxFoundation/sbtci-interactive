@@ -137,6 +137,22 @@ class Header extends Component {
                 Methodology
               </Link>
             </div>
+            <div className="sbtci-header-mobile-nav-top-level-item">
+              <div
+                className="sbtci-header-mobile-nav-top-link"
+                onClick={() => this.props.toggleMobileMenu('shareMenuOpen')}
+              >Share</div>
+              <div
+                className={
+                  this.props.shareMenuOpen
+                    ? 'sbtci-header-mobile-nav-states sbtci-header-mobile-nav-states--active'
+                    : 'sbtci-header-mobile-nav-states sbtci-header-mobile-nav-states--inactive'
+                }
+              >
+                <IconFacebook className="sbtci-header-mobile-share" fill="#3b5998" text="Facebook" />
+                <IconTwitter className="sbtci-header-mobile-share" fill="#00b6f1" text="Twitter" />
+              </div>
+            </div>
           </div>
         </div>
       </header>
