@@ -213,6 +213,14 @@
   &-share-box {
     display: grid;
     grid-template: auto 49px / auto;
+
+    @include mobile-only {
+      margin: 1rem 0 0;
+
+      &:last-child {
+        margin-bottom: 1rem;
+      }
+    }
     
     &-text {
       grid-row: span 1;
