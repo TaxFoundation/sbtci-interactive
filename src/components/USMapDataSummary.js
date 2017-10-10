@@ -9,6 +9,12 @@ class USMapDataSummary extends Component {
         </div>
         {this.props.activeUSState.total ? (
           <table className="sbtci-home-data-summary-table sbtci-box-text">
+            <thead>
+              <tr>
+                <th style={{textAlign: 'left'}}>Tax Type</th>
+                <th>Rank</th>
+              </tr>
+            </thead>
             <tbody>
               {this.props.taxTypes.map((t) => {
                 return (
