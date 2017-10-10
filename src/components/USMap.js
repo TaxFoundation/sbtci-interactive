@@ -24,8 +24,8 @@ class USMap extends React.Component {
       corporate: interpolateBuGn,
       individual: interpolateYlGn,
       sales: interpolateYlOrBr,
-      unemployment: interpolateYlOrRd,
-      propertyTax: interpolateRdPu
+      unemployment: interpolateRdPu,
+      propertyTax: interpolateYlOrRd
     };
 
     this.smallStates = {
