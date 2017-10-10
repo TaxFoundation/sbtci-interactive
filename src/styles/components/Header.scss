@@ -53,13 +53,16 @@
     display: none;
 
     @include tablet-up {
-      display: block;
+      align-items: center;
+      display: flex;
+      flex-wrap: nowrap;
       grid-column: 2 / 3;
       grid-row: 1 / 2;
-      justify-items: end;
+      justify-content: flex-end;
       text-align: right;
 
       &-icon {
+        display: block;
         padding: 0 10px;
       }
 

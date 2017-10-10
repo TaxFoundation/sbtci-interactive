@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
+import { IconTwitter, IconFacebook, IconLinkedIn } from './SocialIcons';
 import Logo from '../images/logo.svg';
 
 class Header extends Component {
@@ -43,7 +43,13 @@ class Header extends Component {
             <IconTwitter className="sbtci-header-social-icon" fill="#ffffff" />
             <IconFacebook className="sbtci-header-social-icon" fill="#ffffff" />
             <IconLinkedIn className="sbtci-header-social-icon" fill="#ffffff" />
-            <IconEmail className="sbtci-header-social-icon" fill="#ffffff" />
+            <div
+              style={{marginLeft: '1rem'}}
+              className="sbtci-button"
+              onClick={() => {this.props.toggleEmailSubscribe()}}
+            >
+              Subscribe
+            </div>
           </div>
           <nav className="sbtci-header-nav">
             <div className="sbtci-header-nav-category" to="/">

@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import FourOhFour from './components/FourOhFour'
 import SBTCIData from './data/SBTCI.json';
 import USData from './data/us.json';
+import MailChimp from './components/MailChimp';
 
 const taxTypes = [
   {
@@ -88,12 +89,14 @@ class App extends Component {
     this.state = {
       menuOpen: false,
       rankingsMenuOpen: false,
-      statesMenuOpen: false
+      statesMenuOpen: false,
+      emailSubscribe: false
     };
 
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
     this.closeAllMobileMenu = this.closeAllMobileMenu.bind(this);
     this.openStatesMenu = this.openStatesMenu.bind(this);
+    this.toggleEmailSubscribe = this.toggleEmailSubscribe.bind(this);
   }
 
   toggleMobileMenu(menu) {
@@ -118,6 +121,12 @@ class App extends Component {
     this.setState(newState);
   }
 
+  toggleEmailSubscribe() {
+    let newState = Object.assign(this.state);
+    newState.emailSubscribe = !newState.emailSubscribe;
+    this.setState(newState);
+  }
+
   render() {
     const stateRoutes = SBTCIData.map((s) => {
       let r = `/state/${s.name.replace(/\s/g, '-').toLowerCase()}`;
@@ -130,6 +139,7 @@ class App extends Component {
             stateId={s.id}
             USStates={SBTCIData}
             taxTypes={taxTypes}
+            toggleEmailSubscribe={this.toggleEmailSubscribe}
           />}
         />
       );
@@ -150,6 +160,7 @@ class App extends Component {
               USData={USData}
               notableChanges={notableChanges}
               openStatesMenu={this.openStatesMenu}
+              toggleEmailSubscribe={this.toggleEmailSubscribe}
             />
           }
         />
@@ -167,7 +178,9 @@ class App extends Component {
             menuOpen={this.state.menuOpen}
             rankingsMenuOpen={this.state.rankingsMenuOpen}
             statesMenuOpen={this.state.statesMenuOpen}
+            toggleEmailSubscribe={this.toggleEmailSubscribe}
           />
+          { this.state.emailSubscribe ? <MailChimp /> : null }
           <Switch>
             <Route
               exact
