@@ -194,6 +194,7 @@
 
       @include mobile-only {
         display: block;
+        float: none;
         margin: 0 auto;
         width: 65%;
       }
