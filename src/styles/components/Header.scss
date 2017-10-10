@@ -97,12 +97,28 @@
   // mobile navigation
   @include mobile-only {
     &-menu {
+      align-items: center;
+      color: #ffffff;
+      display: flex;
+      font-size: 1rem;
+      font-weight: 700;
+      justify-content: space-between;
+      padding: 1rem 0;
+      text-align: right;
+    }
+
+    &-mobile-title {
       color: #ffffff;
       display: block;
-      font-size: 1.2rem;
-      font-weight: 700;;
-      padding: 1rem;
-      text-align: right;
+      text-align: left;
+      text-decoration: none;
+    }
+
+    &-mobile-menu-toggle {
+      border: 1px solid #ffffff;
+      border-radius: $radius;
+      display: block;
+      padding: 0.5rem;
     }
 
     &-nav-link {
