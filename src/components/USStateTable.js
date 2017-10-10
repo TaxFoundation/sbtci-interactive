@@ -8,7 +8,7 @@ class USStateTable extends Component {
       let delta = this.props.stateData[t.id].prevRank - this.props.stateData[t.id].rank;
       let color = null;
       if (delta < 0) { color = '#ff0022'; }
-      if (delta > 0) { color = '#22ee77'; }
+      if (delta > 0) { color = '#00aa22'; }
       return {
         id: t.id,
         delta: delta,
