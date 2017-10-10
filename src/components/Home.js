@@ -122,6 +122,7 @@ class Home extends Component {
         <hr/>
         <div className="sbtci-home-categories container container--narrow">
           <h2 style={{textAlign: 'center'}}>Ranked Tax Categories</h2>
+          <p>The State Business Tax Climate Index is a measure of how well states structure their tax systems. It enables policymakers, business leaders, and taxpayers to gauge how their states’ tax systems compare, and provides a roadmap for improvement.</p>
           <Link className="sbtci-button sbtci-button--centered" to="/">
             Read Full Methodology
           </Link>
@@ -149,7 +150,7 @@ class Home extends Component {
             {this.props.notableChanges.map((c) => {
               let stateData = this.props.SBTCIData.filter(s => s.id === c.id)[0];
               return (
-                <div className="sbtci-home-notable-change">
+                <div key={`change-${c.id}`} className="sbtci-home-notable-change">
                   <h3><Link to={`/state/${stateData.name.replace(/\s/g, '-').toLowerCase()}`}>
                     {stateData.name}
                   </Link></h3>
