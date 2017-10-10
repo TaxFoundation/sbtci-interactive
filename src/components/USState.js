@@ -85,7 +85,8 @@ class USState extends Component {
           </div>
           <div className="sbtci-state-social sbtci-box">
             <div className="sbtci-state-social-text">
-              <p>Share this page with your friends!</p>
+              <h2>Spread the Word!</h2>
+              <p>How does your state rank? Brag (or complain) to your friends!</p>
             </div>
             <div className="sbtci-state-social-buttons">
               <IconTwitter
@@ -126,7 +127,6 @@ class USState extends Component {
         <div className="sbtci-state-read-more hide-print">
           <a
             className="sbtci-button"
-            style={{fontSize: '1.4rem'}}
             href={`https://taxfoundation.org/state/${stateData.name.replace(/\s/g, '-').toLowerCase()}`}
             target="_blank"
           >
