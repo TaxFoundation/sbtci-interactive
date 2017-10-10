@@ -2,10 +2,10 @@ import React from 'react';
 
 const MailChimp = () => {
   return (
-    <form action="//TaxFoundation.us1.list-manage.com/subscribe/post?u=fefb55dc846b4d629857464f8&amp;id=8387957ec9&SIGNUP=SBTCI" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-      <input type="email" value="" name="EMAIL" class="required email" placeholder="Email" id="mce-EMAIL" />
-      <input type="text" value="" name="FNAME" class="required" placeholder="First Name" id="mce-FNAME" />
-      <select name="STATE" class="" placeholder="State" id="mce-STATE">
+    <form action="//TaxFoundation.us1.list-manage.com/subscribe/post?u=fefb55dc846b4d629857464f8&amp;id=8387957ec9&SIGNUP=SBTCI" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+      <input type="email" value="" name="EMAIL" placeholder="Email" id="mce-EMAIL" />
+      <input type="text" value="" name="FNAME" placeholder="First Name" id="mce-FNAME" />
+      <select name="STATE" placeholder="State" id="mce-STATE">
         <option value="AL">AL</option>
         <option value="AK">AK</option>
         <option value="AZ">AZ</option>
