@@ -63,14 +63,8 @@ const IconEmail = (props) => {
       href={ `mailto:?subject=${emailSubject}&body=${emailBody}` }
       className={ props.className }
     >
-      <svg id="email" viewBox="0 0 48 48">
-        <polygon fill={props.fill} points="24,0 18,4 30,4 "/>
-        <path fill={props.fill} d="M24,32l-3,1L0,46c0,2,2,2,2,2h44c0,0,2,0,2-2L27,33L24,32z"/>
-        <polygon fill={props.fill} points="0,22 0,44 17.11,33.41 	"/>
-        <polygon fill={props.fill} points="30.89,33.41 48,44 48,22 	"/>
-        <polygon fill={props.fill} points="43,14 43,23 48,19 "/>
-        <polygon fill={props.fill} points="0,19 5,23 5,14 "/>
-        <polygon fill={props.fill} points="7,6 7,24 18,31 20,30 24,29 28,30 30,31 41,24 41,6 "/>
+      <svg id="email" viewBox="0 0 64 64">
+        <path fill={props.fill} d="M3.5,25l12.1,8.8l16.8-9.1c0.5-0.3,1,0.4,0.6,0.8L19,37v19.4c0,0.9,1.1,1.4,1.7,0.7L31,45.5L49.5,59c0.6,0.4,1.4,0.1,1.6-0.6l10-54c0.1-0.8-0.6-1.4-1.3-1.1l-56,20C3,23.6,2.9,24.6,3.5,25z"/>      
       </svg>
       { props.text ? <span>{ props.text }</span> : null }
     </a>
