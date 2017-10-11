@@ -48,7 +48,7 @@ class USState extends Component {
       <div className="sbtci-state">
         <Metadata
           title={ `${stateData.name} | State Business Tax Climate Index - Tax Foundation` }
-          description={ `${stateData.name} ranks ${stateData.total.rank} on the State Bussiness Tax Climate Index. How does your state compare?` }
+          description={ `${stateData.name} ranks ${ordinal(stateData.total.rank)} on this year's State Bussiness Tax Climate Index. How does your state compare?` }
           location={ this.props.location.pathname }
           image={StateImages[`State${this.props.stateId}`]}
         />
