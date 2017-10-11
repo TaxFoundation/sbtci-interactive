@@ -3,7 +3,11 @@ import React from 'react';
 const IconTwitter = (props) => {
   return (
     <a
-      href={`https://twitter.com/intent/tweet?text=${window.location.href}`}
+      href={
+        'https://twitter.com/intent/tweet?text='
+        + (props.message ? encodeURI(props.message) + '%20' : '')
+        + encodeURI(window.location.href)
+      }
       className={ props.className }
     >
       <svg id="twitter" viewBox="0 0 48 48">
@@ -17,7 +21,10 @@ const IconTwitter = (props) => {
 const IconFacebook = (props) => {
   return (
     <a
-      href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
+      href={
+        'https://www.facebook.com/sharer/sharer.php?u='
+        + encodeURI(window.location.href)
+      }
       className={ props.className }
     >
       <svg id="facebook" viewBox="0 0 48 48">
@@ -31,7 +38,11 @@ const IconFacebook = (props) => {
 const IconLinkedIn = (props) => {
   return (
     <a
-      href={`https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}`}
+      href={
+        'https://www.linkedin.com/shareArticle?mini=true&url='
+        + encodeURI(window.location.href)
+        + (props.message ? '&summary=' + encodeURI(props.message) : '')
+      }
       className={ props.className }
     >
       <svg id="linkedin" viewBox="0 0 48 48">
@@ -46,7 +57,7 @@ const IconLinkedIn = (props) => {
 
 const IconEmail = (props) => {
   let emailSubject = props.emailSubject || 'Check out the State Business Tax Climate Index';
-  let emailBody = props.emailBody || `You can see it here: ${window.location.href}`;
+  let emailBody = props.emailBody || `You can see it here: ${encodeURI(window.location.href)}`;
   return (
     <a
       href={ `mailto:?subject=${emailSubject}&body=${emailBody}` }
