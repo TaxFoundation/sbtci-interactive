@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import USStateTable from './USStateTable';
 import { ordinal, sortComparison } from './Helpers';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
@@ -45,6 +46,9 @@ class USState extends Component {
 
     return (
       <div className="sbtci-state">
+        <Helmet>
+          <title>{ `${stateData.name} | State Business Tax Climate Index` }</title>
+        </Helmet>
         <div
           className="sbtci-state-header"
           style={bgImage}

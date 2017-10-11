@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import USMap from './USMap';
 import USMapDataSummary from './USMapDataSummary';
 import RankingsTable from './RankingsTable';
@@ -36,18 +37,27 @@ class Home extends Component {
       backgroundBlendMode: 'overlay'
     };
 
+    const taxName = fullName(
+      this.props.taxTypes.filter((t) => {
+        return this.props.activeTax === t.id;
+      })[0].name
+    );
+
     return (
       <div className="sbtci-home">
+        <Helmet>
+          <title>{ 
+            this.props.activeTax === 'total'
+              ? 'State Business Tax Climate Index'
+              : `${taxName} | State Business Tax Climate Index`
+          }</title>
+        </Helmet>
         <div
           className="sbtci-home-header"
           style={bgImage}
         >
           <h1>
-            { fullName(
-              this.props.taxTypes.filter((t) => {
-                return this.props.activeTax === t.id;
-              })[0].name
-            ) }
+            { taxName }
           </h1>
         </div>
         <div className="sbtci-home-map-section container">
