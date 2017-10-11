@@ -3,7 +3,6 @@ import { fullName, ordinal } from './Helpers';
 import { IconFacebook, IconTwitter } from './SocialIcons';
 
 const Box = ({children}, context) => {
-  console.log(children);
   return (
     <div className="sbtci-box sbtci-state-share-box">
       <p className="sbtci-state-share-box-text">{children}</p>
