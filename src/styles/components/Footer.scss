@@ -21,5 +21,19 @@
     @include mobile-only {
       margin-bottom: 1rem;
     }
+
+    a {
+      color: $tf-blue;
+      text-decoration: none;
+
+      &:active,
+      &:visited {
+        color: $tf-blue;
+      }
+
+      &:hover {
+        color: $sbtci-blue;
+      } 
+    }
   }
 }
