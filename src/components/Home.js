@@ -13,13 +13,13 @@ class Home extends Component {
     super(props);
     this.state = {
       activeUSState: {}
-    }
+    };
 
     this.updateActiveState = this.updateActiveState.bind(this);
   }
   
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   updateActiveState(stateId) {
@@ -44,11 +44,10 @@ class Home extends Component {
         >
           <h1>
             { fullName(
-                this.props.taxTypes.filter((t) => {
-                  return this.props.activeTax === t.id;
-                })[0].name
-              )
-            }
+              this.props.taxTypes.filter((t) => {
+                return this.props.activeTax === t.id;
+              })[0].name
+            ) }
           </h1>
         </div>
         <div className="sbtci-home-map-section container">
@@ -63,7 +62,7 @@ class Home extends Component {
           </div>
           <div
             className="sbtci-home-mobile-state-list sbtci-button sbtci-button--centered"
-            onClick={() => {this.props.openStatesMenu()}}
+            onClick={() => {this.props.openStatesMenu();}}
           >
             See Your State
           </div>
@@ -103,10 +102,10 @@ class Home extends Component {
             let r = `/tax/${t.id}`;
             let style = {
               borderTop: `3px solid ${t.hex}`
-            }
+            };
             if (t.id === 'total') { r = '/'; }
             if (t.id === this.props.activeTax) {
-              style.backgroundColor = 'rgba(95, 194, 255, 0.3)'
+              style.backgroundColor = 'rgba(95, 194, 255, 0.3)';
             }
             return (
               <Link
