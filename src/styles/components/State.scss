@@ -201,9 +201,10 @@
 
   &-share-boxes > div {
     @include tablet-up {
-      display: grid;
-      grid-column-gap: 2rem;
-      grid-template-columns: 1fr 1fr; 
+      align-items: stretch;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
       padding-bottom: 2rem;
       padding-top: 2rem;
       text-align: center;
@@ -213,12 +214,21 @@
   &-share-box {
     display: grid;
     grid-template: auto 49px / auto;
-
+    
     @include mobile-only {
       margin: 1rem 0 0;
-
+      
       &:last-child {
         margin-bottom: 1rem;
+      }
+    }
+    
+    @include tablet-up {
+      flex: 1 1 0;
+      margin-right: 1rem;
+
+      &:last-child {
+        margin-right: 0;
       }
     }
     
@@ -229,15 +239,15 @@
 
     &-buttons {
       align-items: center;
-      display: grid;
+      display: flex;
+      justify-content: center;
       grid-row: span 1;
-      grid-template: auto / 1fr 1fr;
     }
 
     &-button {
       color: #ffffff;
       display: block;
-      grid-column: span 1;
+      flex: 1 0 auto;
       padding: 12px;
       text-align: center;
       text-decoration: none;

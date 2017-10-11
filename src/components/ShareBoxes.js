@@ -2,22 +2,28 @@ import React from 'react';
 import { fullName, ordinal } from './Helpers';
 import { IconFacebook, IconTwitter } from './SocialIcons';
 
-const Box = ({children}, context) => {
+const Box = (props) => {
   return (
     <div className="sbtci-box sbtci-state-share-box">
-      <p className="sbtci-state-share-box-text">{children}</p>
+      <p className="sbtci-state-share-box-text">
+        {props.social === 'twitter' ? props.children : 'Share this page on Facebook.'}
+      </p>
       <div className="sbtci-state-share-box-buttons">
-        <IconFacebook
-          className="sbtci-social--facebook sbtci-state-share-box-button"
-          fill="#ffffff"
-          text="Share"
-        />
-        <IconTwitter
-          className="sbtci-social--twitter sbtci-state-share-box-button"
-          fill="#ffffff"
-          text="Tweet"
-          message={children}
-        />
+        { props.social === 'twitter'
+          ? <IconTwitter
+            className="sbtci-social--twitter sbtci-state-share-box-button"
+            fill="#ffffff"
+            text="Tweet"
+            message={props.children}
+            hashtags={props.hashtags}
+          />
+          : <IconFacebook
+            className="sbtci-social--facebook sbtci-state-share-box-button"
+            fill="#ffffff"
+            text="Share"
+          />
+        }
+
       </div>
     </div>
   );
@@ -40,12 +46,13 @@ const ShareBoxes = (props) => {
 
   return (
     <div>
-      <Box>
+      <Box social="twitter" hashtags="StateTaxReform">
         {`${props.stateData.name} ranks ${ordinal(bestRank.rank)} for ${fullName(bestRank.name).toLowerCase()}.`}
       </Box>
-      <Box>
-      {`${props.stateData.name} ranks ${ordinal(worstRank.rank)} for ${fullName(worstRank.name).toLowerCase()}.`}
+      <Box social="twitter" hashtags="StateTaxReform">
+        {`${props.stateData.name} ranks ${ordinal(worstRank.rank)} for ${fullName(worstRank.name).toLowerCase()}.`}
       </Box>
+      <Box social="facebook"></Box>
     </div>
   );
 };
