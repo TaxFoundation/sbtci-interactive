@@ -62,7 +62,7 @@ class USMap extends React.Component {
 
   render() {
     const path = geoPath().projection(this.projection);
-    const USDataFeatures = feature(this.props.USData, this.props.USData.objects.states).features
+    const USDataFeatures = feature(this.props.USData, this.props.USData.objects.states).features;
     const scaleRank = scaleLinear().domain([0, 50]).range([0, 1]);
 
     const states = this.props.SBTCIData.map((d, i) => {
@@ -105,7 +105,7 @@ class USMap extends React.Component {
         );
       }
 
-      let routePath = `/state/${d.name.replace(/\s/g, '-').toLowerCase()}`;
+      let routePath = `/state/${d.name.replace(/\s/g, '-').toLowerCase()}/`;
       return (
         <Link key={ `path-${ d.id }` } to={routePath}>
           <path
@@ -135,7 +135,7 @@ class USMap extends React.Component {
           }}
         ></div>
       );
-    })
+    });
 
     return (
       <div>

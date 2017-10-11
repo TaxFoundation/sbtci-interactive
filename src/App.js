@@ -130,7 +130,7 @@ class App extends Component {
 
   render() {
     const stateRoutes = SBTCIData.map((s) => {
-      let r = `/state/${s.name.replace(/\s/g, '-').toLowerCase()}`;
+      let r = `/state/${s.name.replace(/\s/g, '-').toLowerCase()}/`;
       return (
         <Route
           key={ `route-${s.id}` }
@@ -147,7 +147,7 @@ class App extends Component {
     });
 
     const taxRoutes = taxTypes.map((t) => {
-      let r = `/tax/${t.id}`;
+      let r = `/tax/${t.id}/`;
       return (
         <Route
           key={ `route-${t.id}` }

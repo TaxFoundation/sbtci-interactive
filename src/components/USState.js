@@ -9,13 +9,13 @@ import ShareBoxes from './ShareBoxes';
 
 class USState extends Component {
   componentDidMount () {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {
     const bgImage = {
       backgroundImage: `url(${StateImages[`State${this.props.stateId}`]})`
-    }
+    };
 
     const stateData = this.props.USStates.filter((s) => {
       return s.id === this.props.stateId;
@@ -35,7 +35,7 @@ class USState extends Component {
         ? 'sbtci-box-list-item sbtci-box-list-item--highlighted'
         : 'sbtci-box-list-item';
 
-      let r = `/state/${s.name.replace(/\s/g, '-').toLowerCase()}`;
+      let r = `/state/${s.name.replace(/\s/g, '-').toLowerCase()}/`;
 
       return (
         <li className={listClass}>

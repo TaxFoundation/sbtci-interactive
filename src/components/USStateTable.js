@@ -40,7 +40,7 @@ class USStateTable extends Component {
                 <td style={{borderRight: `3px inset ${t.hex}`}}>
                   <Link
                     className="sbtci-table-link"
-                    to={t.id === 'total' ? '/' : `/tax/${t.id}`}
+                    to={t.id === 'total' ? '/' : `/tax/${t.id}/`}
                   >
                     {t.name}
                   </Link>

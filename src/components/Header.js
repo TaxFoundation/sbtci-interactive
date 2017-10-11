@@ -6,7 +6,7 @@ import Logo from '../images/logo.svg';
 class Header extends Component {
   render() {
     const taxTypeLinks = this.props.taxTypes.map((t) => {
-      let r = `/tax/${t.id}`;
+      let r = `/tax/${t.id}/`;
       if (t.id === 'total') { r = '/'; }
       return (
         <Link
@@ -26,7 +26,7 @@ class Header extends Component {
           className="sbtci-header-nav-link"
           key={`nav-state-${s.name.replace(/\s/g, '-').toLowerCase()}`}
           onClick={() => this.props.closeAllMobileMenu()}
-          to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}
+          to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}/`}
         >
           { s.name }
         </Link>
@@ -46,7 +46,7 @@ class Header extends Component {
             <div
               style={{marginLeft: '1rem'}}
               className="sbtci-button"
-              onClick={() => {this.props.toggleEmailSubscribe()}}
+              onClick={() => {this.props.toggleEmailSubscribe();}}
             >
               Subscribe
             </div>

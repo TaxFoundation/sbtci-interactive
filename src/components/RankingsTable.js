@@ -26,7 +26,7 @@ class RankingsTable extends Component {
     if (this.state.sortedBy === newState.sortedBy) {
       newState.sorted = this.state.sorted === 'asc' ? 'desc' : 'asc';
     } else {
-      newState.sorted = 'asc'
+      newState.sorted = 'asc';
     }
     newState.USStateData.sort(sortComparison(newState.sortedBy, newState.sorted));
     this.setState(newState);
@@ -90,7 +90,7 @@ class RankingsTable extends Component {
                     <td>
                       <Link
                         className="sbtci-table-link"
-                        to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}`}
+                        to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}/`}
                       >
                         <span className="sbtci-full-state-name">{s.name}</span>
                         <span className="sbtci-abbr-state-name">{s.abbr}</span>

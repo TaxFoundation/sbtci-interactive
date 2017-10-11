@@ -114,7 +114,7 @@ class Home extends Component {
         </div>
         <nav className="sbtci-home-tax-nav container">
           {this.props.taxTypes.map((t) => {
-            let r = `/tax/${t.id}`;
+            let r = `/tax/${t.id}/`;
             let style = {
               borderTop: `3px solid ${t.hex}`
             };
@@ -155,7 +155,7 @@ class Home extends Component {
                 <Link
                   className="sbtci-button"
                   style={{backgroundColor: t.hex}}
-                  to={`/tax/${t.id}`}
+                  to={`/tax/${t.id}/`}
                 >
                   See Map
                 </Link>
@@ -171,7 +171,7 @@ class Home extends Component {
               let stateData = this.props.SBTCIData.filter(s => s.id === c.id)[0];
               return (
                 <div key={`change-${c.id}`} className="sbtci-home-notable-change">
-                  <h3><Link to={`/state/${stateData.name.replace(/\s/g, '-').toLowerCase()}`}>
+                  <h3><Link to={`/state/${stateData.name.replace(/\s/g, '-').toLowerCase()}/`}>
                     {stateData.name}
                   </Link></h3>
                   <p>{c.text}</p>
