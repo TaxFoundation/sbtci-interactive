@@ -1,6 +1,7 @@
 import React from 'react';
 import { fullName, ordinal } from './Helpers';
 import { IconFacebook, IconTwitter } from './SocialIcons';
+import blurbs from '../data/blurbs.json';
 
 const Box = (props) => {
   return (
@@ -16,6 +17,7 @@ const Box = (props) => {
             text="Tweet"
             message={props.children}
             hashtags={props.hashtags}
+            noVia={props.noVia}
           />
           : <IconFacebook
             className="sbtci-social--facebook sbtci-state-share-box-button"
@@ -44,14 +46,30 @@ const ShareBoxes = (props) => {
     return prev.rank > cur.rank ? prev : cur;
   });
 
+  const standardText = (name, item) => {
+    return {
+      text: `${name} ranks ${ordinal(item.rank)} for ${fullName(item.name).toLowerCase()}.`,
+      hashtags: 'StateTaxReform'
+    };
+  }
+
+  const stateBlurbs = blurbs.filter((b) => {
+    return b.id === props.stateData.id;
+  })[0];
+
+  let shareTexts = [];
+
+  if (stateBlurbs) { stateBlurbs['blurbs'].map(b => shareTexts.push(b)); }
+  shareTexts.push(standardText(props.stateData.name, bestRank));
+  shareTexts.push(standardText(props.stateData.name, worstRank));
+  
+  shareTexts = shareTexts.slice(0, 2);
+
   return (
     <div>
-      <Box social="twitter" hashtags="StateTaxReform">
-        {`${props.stateData.name} ranks ${ordinal(bestRank.rank)} for ${fullName(bestRank.name).toLowerCase()}.`}
-      </Box>
-      <Box social="twitter" hashtags="StateTaxReform">
-        {`${props.stateData.name} ranks ${ordinal(worstRank.rank)} for ${fullName(worstRank.name).toLowerCase()}.`}
-      </Box>
+      { shareTexts.map((t, i) => {
+        return <Box key={`share-${i}`} social="twitter" noVia={true} hashtags={t.hashtags}>{t.text}</Box>;
+      })}
       <Box social="facebook"></Box>
     </div>
   );
