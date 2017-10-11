@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import Metadata from './Metadata';
 import USStateTable from './USStateTable';
 import { ordinal, sortComparison } from './Helpers';
 import { IconTwitter, IconFacebook, IconLinkedIn, IconEmail } from './SocialIcons';
@@ -46,9 +46,12 @@ class USState extends Component {
 
     return (
       <div className="sbtci-state">
-        <Helmet>
-          <title>{ `${stateData.name} | State Business Tax Climate Index` }</title>
-        </Helmet>
+        <Metadata
+          title={ `${stateData.name} | State Business Tax Climate Index - Tax Foundation` }
+          description={ `${stateData.name} ranks ${stateData.total.rank} on the State Bussiness Tax Climate Index. How does your state compare?` }
+          location={ this.props.location.pathname }
+          image={StateImages[`State${this.props.stateId}`]}
+        />
         <div
           className="sbtci-state-header"
           style={bgImage}

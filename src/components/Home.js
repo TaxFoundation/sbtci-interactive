@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import Metadata from './Metadata';
 import USMap from './USMap';
 import USMapDataSummary from './USMapDataSummary';
 import RankingsTable from './RankingsTable';
@@ -37,27 +37,32 @@ class Home extends Component {
       backgroundBlendMode: 'overlay'
     };
 
-    const taxName = fullName(
-      this.props.taxTypes.filter((t) => {
-        return this.props.activeTax === t.id;
-      })[0].name
-    );
+    const activeTax = this.props.taxTypes.filter((t) => {
+      return this.props.activeTax === t.id;
+    })[0];
 
     return (
       <div className="sbtci-home">
-        <Helmet>
-          <title>{ 
+        <Metadata
+          title={ 
             this.props.activeTax === 'total'
-              ? 'State Business Tax Climate Index'
-              : `${taxName} | State Business Tax Climate Index`
-          }</title>
-        </Helmet>
+              ? 'State Business Tax Climate Index - Tax Foundation'
+              : `${fullName(activeTax.name)} | State Business Tax Climate Index - Tax Foundation`
+          }
+          description={ 
+            this.props.activeTax === 'total'
+              ? 'The State Business Tax Climate Index is a measure of how well states structure their tax systems. It enables policymakers, business leaders, and taxpayers to gauge how their states’ tax systems compare, and provides a roadmap for improvement.'
+              : activeTax.description
+          }
+          location={ this.props.location.pathname }
+          image={TaxImages[this.props.activeTax]}
+        />
         <div
           className="sbtci-home-header"
           style={bgImage}
         >
           <h1>
-            { taxName }
+            { activeTax.name }
           </h1>
         </div>
         <div className="sbtci-home-map-section container">
