@@ -13,7 +13,7 @@ const Metadata = (props) => {
       <meta property="og:image" content={ `https://statetaxindex.org${ props.image }` } />
       <meta property="og:url" content={ `https://statetaxindex.org${ props.location }` } />
       <meta property="og:locale" content="en_US" />
-      <meta property="fb:app_id" content="1667818153232107" />
+      <meta property="fb:app_id" content="123259711705584" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@taxfoundation" />
       <meta name="twitter:title" content={ props.title } />
