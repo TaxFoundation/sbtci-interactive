@@ -31,7 +31,7 @@
     "start": "npm-run-all -p watch-sass start-js",
     "build-sass": "node-sass src/style.scss src/style.css --output-style=compressed",
     "build-js": "react-scripts build && react-snapshot",
-    "build": "npm-run-all -p build-sass build-js",
+    "build": "build-sass && build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "update-live": "aws s3 sync --acl public-read --sse --delete --profile sbtci ./build/ s3://statetaxindex.org",
