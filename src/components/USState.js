@@ -132,13 +132,7 @@ class USState extends Component {
         </div>
         <hr className="hide-print" />
         <div className="sbtci-state-read-more hide-print">
-          <div
-            className="sbtci-button"
-            onClick={() => {this.props.history.goBack();}}
-            style={{marginRight: '1rem'}}
-          >
-            <span>Return to Previous Page</span>
-          </div>
+          <Link className="sbtci-button" to="/" style={{marginRight: '1rem'}}>Return to Home Page</Link>
           <a
             className="sbtci-button"
             href={`https://taxfoundation.org/state/${stateData.name.replace(/\s/g, '-').toLowerCase()}`}

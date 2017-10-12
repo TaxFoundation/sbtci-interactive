@@ -112,6 +112,14 @@ class Home extends Component {
             </div>
           </div>
         </div>
+        <div className="container">
+          <div className="sbtci-box" style={{marginBottom: '1rem'}}>
+            <div className="sbtci-box-text">
+              <p>The <em>State Business Tax Climate Index</em> is a measure of how well states structure their tax systems. It enables policymakers, business leaders, and taxpayers to gauge how their states’ tax systems compare, and provides a roadmap for improvement.</p>
+              <p>Click a state or tax category to learn more!</p>
+            </div>
+          </div>
+        </div>
         <nav className="sbtci-home-tax-nav container">
           {this.props.taxTypes.map((t) => {
             let r = `/tax/${t.id}/`;
@@ -142,7 +150,6 @@ class Home extends Component {
         <hr/>
         <div className="sbtci-home-categories container container--narrow">
           <h2 style={{textAlign: 'center'}}>Ranked Tax Categories</h2>
-          <p>The State Business Tax Climate Index is a measure of how well states structure their tax systems. It enables policymakers, business leaders, and taxpayers to gauge how their states’ tax systems compare, and provides a roadmap for improvement.</p>
           <Link className="sbtci-button sbtci-button--centered" to="/">
             Read Full Methodology
           </Link>
