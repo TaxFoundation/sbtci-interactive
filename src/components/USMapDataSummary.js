@@ -53,7 +53,10 @@ class USMapDataSummary extends Component {
             </tbody>
           </table>
         ) : (
-          <p className="sbtci-box-text">Hover over a state in the map to see its rankings.</p>
+          <div className="sbtci-box-text" style={{fontSize: '0.85rem'}}>
+            <p>The <em>State Business Tax Climate Index</em> is a measure of how well states structure their tax systems. It enables policymakers, business leaders, and taxpayers to gauge how their states’ tax systems compare, and provides a roadmap for improvement.</p>
+            <p>Hover over a state in the map to see its rankings. Click a state or tax category to learn more!</p>
+          </div>
         )}
       </div>
     );
