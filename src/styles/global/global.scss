@@ -15,6 +15,10 @@ $email: #df4a32;
 $font-size: 16px;
 $radius: 4px;
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   color: $dark-gray;

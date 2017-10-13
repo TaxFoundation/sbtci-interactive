@@ -128,7 +128,7 @@
       text-decoration: none;
 
       svg {
-        padding: 12px;
+        margin: 12px;
         width: 20px;
       }
 
@@ -149,6 +149,15 @@
 
     @include print-only {
       display: none;
+    }
+  }
+
+  &-social {
+    display: flex;
+    flex-direction: column;
+
+    &-text {
+      flex: 1 0 auto;
     }
   }
 
