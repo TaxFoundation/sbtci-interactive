@@ -2,12 +2,12 @@ import React from 'react';
 
 const MailChimp = () => {
   return (
-    <div id="mc_embed_signup">
-      <form action="https://TaxFoundation.us1.list-manage.com/subscribe/post?u=fefb55dc846b4d629857464f8&amp;id=8387957ec9&SIGNUP=SBTCI" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" novalidate>
-        <div id="mc_embed_signup_scroll">
-          <input type="email" value="" name="EMAIL" placeholder="Email" className="required email" id="mce-EMAIL" />
-          <input type="text" value="" name="FNAME" className="required" placeholder="First Name" id="mce-FNAME" />
-          <select name="SBTCISTATE" className="" id="mce-SBTCISTATE">
+    <div className="sbtci-mailchimp" id="mc_embed_signup">
+      <form action="https://TaxFoundation.us1.list-manage.com/subscribe/post?u=fefb55dc846b4d629857464f8&amp;id=4b9873a934" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
+        <div className="sbtci-mailchimp-form" id="mc_embed_signup_scroll">
+          <input type="email" name="EMAIL" placeholder="Email" className="sbtci-mailchimp-email required email" id="mce-EMAIL" />
+          <input type="text" name="FNAME" className="sbtci-mailchimp-name required" placeholder="First Name" id="mce-FNAME" />
+          <select name="SBTCISTATE" className="sbtci-mailchimp-state" id="mce-SBTCISTATE">
             <option value=""></option>
             <option value="Alabama">Alabama</option>
             <option value="Alaska">Alaska</option>
@@ -63,17 +63,15 @@ const MailChimp = () => {
             <option value="Wyoming">Wyoming</option>
             <option value="Other">Other</option>
           </select>
-          <div id="mce-responses" className="clear">
-            <div className="response" id="mce-error-response" style="display:none"></div>
-            <div className="response" id="mce-success-response" style="display:none"></div>
-          </div>
-          <div style="position: absolute; left: -5000px;" aria-hidden="true">
-            <input type="text" name="b_fefb55dc846b4d629857464f8_8387957ec9" tabindex="-1" value="" />
-          </div>
-          <div className="clear">
-            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button" />
-          </div>
         </div>
+        <div id="mce-responses" className="clear">
+          <div className="response" id="mce-error-response" style={{display:'none'}}></div>
+          <div className="response" id="mce-success-response" style={{display:'none'}}></div>
+        </div>
+        <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true">
+          <input type="text" name="b_fefb55dc846b4d629857464f8_4b9873a934" tabIndex="-1" value="" />
+        </div>
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="sbtci-button sbtci-mailchimp-submit" />
       </form>
     </div>
   );

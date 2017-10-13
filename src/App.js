@@ -206,7 +206,7 @@ class App extends Component {
           </Switch>
           <Footer />
           <PopIn timeout="3000">
-            <p>Testing</p>
+            <MailChimp />
           </PopIn>
         </div>
       </Router>
