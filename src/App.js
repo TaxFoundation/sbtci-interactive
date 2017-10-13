@@ -205,7 +205,9 @@ class App extends Component {
             <Route component={FourOhFour} />
           </Switch>
           <Footer />
-          <PopIn />
+          <PopIn timeout="3000">
+            <p>Testing</p>
+          </PopIn>
         </div>
       </Router>
     );

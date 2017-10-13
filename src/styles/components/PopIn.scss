@@ -2,10 +2,18 @@
   background-color: #ffffff;
   border-top: solid 3px $tf-blue;
   box-shadow: 0 -2px 4px rgba($dark-gray, 0.2);
-  bottom: 0;
   height: 200px;
   left: 0;
   position: fixed;
   right: 0;
+  transition: bottom 500ms ease-in-out;
   z-index: 1000;
+
+  &--inactive {
+    bottom: -210px;
+  }
+
+  &--active {
+    bottom: 0;
+  }
 }
