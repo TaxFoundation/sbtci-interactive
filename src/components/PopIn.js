@@ -5,21 +5,27 @@ class PopIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: false
+      active: this.props.active
     };
+
+    this.timer;
 
     this.togglePopIn = this.togglePopIn.bind(this);
   }
 
   componentDidMount() {
     const dismissed = JSON.parse(getCookie('sbtci-dismissed')) || false;
-    if (!dismissed) {
-      setTimeout(() => {
+    if (!dismissed && !this.state.active) {
+      this.timer = setTimeout(() => {
         this.togglePopIn();
       }, this.props.timeout);
     }
   }
   
+  componentWillReceiveProps(nextProps) {
+    this.setState({active: nextProps.active});
+    clearTimeout(this.timer);
+  }
 
   togglePopIn() {
     const newState = {...this.state};

@@ -153,6 +153,12 @@ class Header extends Component {
                 <IconTwitter className="sbtci-header-mobile-share" fill="#00b6f1" text="Twitter" />
               </div>
             </div>
+            <div
+              className="sbtci-header-mobile-nav-top-level-item"
+              onClick={() => {this.props.toggleEmailSubscribe();}}
+            >
+              <div className="sbtci-header-mobile-nav-top-link">Subscribe</div>
+            </div>
           </div>
         </div>
       </header>
