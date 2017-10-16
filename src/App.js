@@ -206,6 +206,7 @@ class App extends Component {
           </Switch>
           <Footer />
           <PopIn timeout="3000">
+            <h3 style={{textAlign: 'center'}}>Subscribe to the Tax Foundation Newsletter</h3>
             <MailChimp />
           </PopIn>
         </div>

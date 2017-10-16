@@ -8,7 +8,7 @@ const MailChimp = () => {
           <input type="email" name="EMAIL" placeholder="Email" className="sbtci-mailchimp-email required email" id="mce-EMAIL" />
           <input type="text" name="FNAME" className="sbtci-mailchimp-name required" placeholder="First Name" id="mce-FNAME" />
           <select name="SBTCISTATE" className="sbtci-mailchimp-state" id="mce-SBTCISTATE">
-            <option value=""></option>
+            <option value="" selected disabled>Select Your State</option>
             <option value="Alabama">Alabama</option>
             <option value="Alaska">Alaska</option>
             <option value="Arizona">Arizona</option>
@@ -71,7 +71,13 @@ const MailChimp = () => {
         <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true">
           <input type="text" name="b_fefb55dc846b4d629857464f8_4b9873a934" tabIndex="-1" value="" />
         </div>
-        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="sbtci-button sbtci-mailchimp-submit" />
+        <input
+          type="submit"
+          value="Subscribe"
+          name="subscribe"
+          id="mc-embedded-subscribe"
+          className="sbtci-button sbtci-button--centered sbtci-mailchimp-submit"
+        />
       </form>
     </div>
   );

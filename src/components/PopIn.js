@@ -32,6 +32,12 @@ class PopIn extends Component {
         }
       >
         <div className="container">
+          <div
+            className="sbtci-pop-in-dismiss"
+            onClick={() => this.togglePopIn()}
+          >
+            &otimes;
+          </div>
           {this.props.children}
         </div>
       </div>
