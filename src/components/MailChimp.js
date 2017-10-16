@@ -3,6 +3,7 @@ import React from 'react';
 const MailChimp = () => {
   return (
     <div className="sbtci-mailchimp" id="mc_embed_signup">
+      <h3 style={{textAlign: 'center'}}>Subscribe to Email Updates About Your State</h3>
       <form action="https://TaxFoundation.us1.list-manage.com/subscribe/post?u=fefb55dc846b4d629857464f8&amp;id=4b9873a934" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
         <div className="sbtci-mailchimp-form" id="mc_embed_signup_scroll">
           <input type="email" name="EMAIL" placeholder="Email" className="sbtci-mailchimp-email required email" id="mce-EMAIL" />
