@@ -34,7 +34,7 @@ class PopIn extends Component {
         className={
           this.state.active
             ? 'sbtci-pop-in sbtci-pop-in--active'
-            : 'sbtci-pop-in sbtci-pop-in--inactive'
+            : 'sbtci-pop-in sbtci-pop-in--active'
         }
       >
         <div className="container">

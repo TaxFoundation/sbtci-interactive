@@ -97,6 +97,7 @@
   &-submit {
     border: solid 1px $green !important;
     color: #ffffff !important;
+    margin: 0.5rem auto;
 
     @include tablet-up {
       grid-column: 1 / 4;

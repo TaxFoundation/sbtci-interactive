@@ -60,7 +60,7 @@ const notableChanges = [
   },
   {
     id: 11,
-    text: 'Continuing District of Columbia tax reform, including a corporate rate cut, improved D.C. two places on the Index’s corporate component.'
+    text: 'Continued tax reform efforts in the District of Columbia, including a corporate rate cut, improved D.C. two places on the Index’s corporate component.'
   },
   {
     id: 17,
@@ -91,8 +91,7 @@ class App extends Component {
       menuOpen: false,
       rankingsMenuOpen: false,
       statesMenuOpen: false,
-      shareMenuOpen: false,
-      emailSubscribe: false
+      shareMenuOpen: false
     };
 
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
@@ -124,9 +123,7 @@ class App extends Component {
   }
 
   toggleEmailSubscribe() {
-    let newState = Object.assign(this.state);
-    newState.emailSubscribe = !newState.emailSubscribe;
-    this.setState(newState);
+
   }
 
   render() {
