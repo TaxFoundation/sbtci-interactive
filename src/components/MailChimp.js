@@ -102,6 +102,7 @@ class MailChimp extends React.Component {
     };
 
     this.onSubmit = this.onSubmit.bind(this);
+    this.onSuccess = this.onSuccess.bind(this);
   }
 
   onSubmit(e) {
@@ -112,10 +113,12 @@ class MailChimp extends React.Component {
       });
       return;
     }
+
     const url = getAjaxUrl(this.props.action)
       + `&EMAIL=${encodeURIComponent(this.email.value)}`
       + `&FNAME=${encodeURIComponent(this.fname.value)}`
       + `&SBTCISTATE=${encodeURIComponent(this.stateSelect.value)}`;
+
     this.setState(
       {
         status: 'sending',
@@ -139,9 +142,14 @@ class MailChimp extends React.Component {
             status: 'success',
             msg: data.msg
           });
+          this.onSuccess();
         }
       })
     );
+  }
+
+  onSuccess() {
+    setTimeout(this.props.onSuccess(), 2000);
   }
 
   render() {

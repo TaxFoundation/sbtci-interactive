@@ -34,7 +34,7 @@ class PopIn extends Component {
         className={
           this.state.active
             ? 'sbtci-pop-in sbtci-pop-in--active'
-            : 'sbtci-pop-in sbtci-pop-in--active'
+            : 'sbtci-pop-in sbtci-pop-in--inactive'
         }
       >
         <div className="container">
@@ -44,7 +44,7 @@ class PopIn extends Component {
           >
             &otimes;
           </div>
-          {this.props.children}
+          {React.cloneElement(this.props.children, {onSuccess: this.togglePopIn})}
         </div>
       </div>
     );
