@@ -44,3 +44,17 @@ export const ordinal = (num) => {
 export const fullName = (name) => {
   return name === 'Unemp. Insur. Taxes' ? 'Unemployment Insurance Taxes' : name;
 };
+
+export const setCookie = (name, value, expDays) => {
+  const date = new Date();
+  date.setTime(date.getTime() + (expDays*24*60*60*1000));
+  document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
+};
+
+export const getCookie = (name) => {
+  const cookieString = decodeURIComponent(document.cookie).split(';');
+  const theCookie = cookieString.filter((cookie) => {
+    return cookie.indexOf(name) > 0;
+  })[0];
+  return theCookie.split('=')[1];
+};

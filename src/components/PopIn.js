@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { setCookie, getCookie } from './Helpers';
 
 class PopIn extends Component {
   constructor(props) {
@@ -11,15 +12,20 @@ class PopIn extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.togglePopIn();
-    }, this.props.timeout);
+    const dismissed = JSON.parse(getCookie('dismissed')) || false;
+    if (!dismissed) {
+      setTimeout(() => {
+        this.togglePopIn();
+      }, this.props.timeout);
+    }
   }
+  
 
   togglePopIn() {
     const newState = {...this.state};
     newState.active = !newState.active;
     this.setState(newState);
+    setCookie('dismissed', true, 7);
   }
 
   render() {
