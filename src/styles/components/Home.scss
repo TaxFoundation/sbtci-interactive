@@ -167,7 +167,7 @@
     @include tablet-up {
       align-items: stretch;
       display: grid;
-      grid-template: 36px auto / auto;
+      grid-template: 36px 255px / auto;
     }
 
     &-table {
