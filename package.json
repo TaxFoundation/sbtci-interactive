@@ -8,6 +8,7 @@
     "d3-interpolate": "^1.1.5",
     "d3-scale": "^1.0.6",
     "d3-scale-chromatic": "^1.1.1",
+    "jsonp": "^0.2.1",
     "normalize.css": "^7.0.0",
     "npm-run-all": "^4.0.2",
     "react": "^15.6.1",
@@ -16,7 +17,8 @@
     "react-router-dom": "^4.1.2",
     "react-snapshot": "^1.2.0",
     "react-transition-group": "^2.2.0",
-    "topojson-client": "^3.0.0"
+    "topojson-client": "^3.0.0",
+    "validate.js": "^0.11.1"
   },
   "devDependencies": {
     "eslint": "^4.8.0",

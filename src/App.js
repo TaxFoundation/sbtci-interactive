@@ -60,7 +60,7 @@ const notableChanges = [
   },
   {
     id: 11,
-    text: 'Continuing District of Columbia tax reform, including a corporate rate cut, improved D.C. two places on the Index’s corporate component.'
+    text: 'Continued tax reform efforts in the District of Columbia, including a corporate rate cut, improved D.C. two places on the Index’s corporate component.'
   },
   {
     id: 17,
@@ -92,7 +92,7 @@ class App extends Component {
       rankingsMenuOpen: false,
       statesMenuOpen: false,
       shareMenuOpen: false,
-      emailSubscribe: false
+      emailSubscribe: false,
     };
 
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
@@ -125,7 +125,7 @@ class App extends Component {
 
   toggleEmailSubscribe() {
     let newState = Object.assign(this.state);
-    newState.emailSubscribe = !newState.emailSubscribe;
+    newState.emailSubscribe = true;
     this.setState(newState);
   }
 
@@ -183,7 +183,7 @@ class App extends Component {
             shareMenuOpen={this.state.shareMenuOpen}
             toggleEmailSubscribe={this.toggleEmailSubscribe}
           />
-          { this.state.emailSubscribe ? <MailChimp /> : null }
+          
           <Switch>
             <Route
               exact
@@ -205,7 +205,7 @@ class App extends Component {
             <Route component={FourOhFour} />
           </Switch>
           <Footer />
-          <PopIn timeout="30000">
+          <PopIn timeout="30000" active={ this.state.emailSubscribe }>
             <MailChimp />
           </PopIn>
         </div>
