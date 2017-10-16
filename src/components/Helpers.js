@@ -56,5 +56,5 @@ export const getCookie = (name) => {
   const theCookie = cookieString.filter((cookie) => {
     return cookie.indexOf(name) > 0;
   })[0];
-  return theCookie.split('=')[1];
+  return theCookie ? theCookie.split('=')[1] : null;
 };

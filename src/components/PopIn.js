@@ -12,7 +12,7 @@ class PopIn extends Component {
   }
 
   componentDidMount() {
-    const dismissed = JSON.parse(getCookie('dismissed')) || false;
+    const dismissed = JSON.parse(getCookie('sbtci-dismissed')) || false;
     if (!dismissed) {
       setTimeout(() => {
         this.togglePopIn();
@@ -25,7 +25,7 @@ class PopIn extends Component {
     const newState = {...this.state};
     newState.active = !newState.active;
     this.setState(newState);
-    setCookie('dismissed', true, 7);
+    setCookie('sbtci-dismissed', true, 7);
   }
 
   render() {
