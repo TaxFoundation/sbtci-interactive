@@ -64,7 +64,7 @@ const notableChanges = [
   },
   {
     id: 17,
-    text: 'Illinois hiked both individual (3.75 to 4.95%) and corporate (7.75 to 9.5%) income tax rates, dropping the state to 29th on the Index.'
+    text: 'Illinois hiked both individual (3.75 to 4.95%) and corporate (7.75 to 9.5%) income tax rates, dropping the state from 26th to 29th on the Index.'
   },
   {
     id: 20,
