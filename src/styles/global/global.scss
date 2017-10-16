@@ -65,6 +65,10 @@ hr {
     text-align: center;
     text-decoration: none;
 
+    @include mobile-only {
+      margin-bottom: 1rem;
+    }
+
     &--centered {
       display: block;
       margin: 1rem auto;
