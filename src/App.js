@@ -37,7 +37,7 @@ const taxTypes = [
   },
   {
     name: 'Property Taxes',
-    id: 'propertyTax',
+    id: 'property',
     hex: '#EF4438',
     description: 'The property tax component measures impacts of real and personal property, inventory, estate, inheritance, and other wealth taxes.'
   },

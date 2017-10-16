@@ -54,7 +54,7 @@ import individual from '../images/taxes/individual.jpg';
 import corporate from '../images/taxes/corporate.jpg';
 import sales from '../images/taxes/sales.jpg';
 import unemployment from '../images/taxes/unemployment.jpg';
-import propertyTax from '../images/taxes/property.jpg';
+import property from '../images/taxes/property.jpg';
 
 export const StateImages = {
   State1,
@@ -116,5 +116,5 @@ export const TaxImages = {
   corporate,
   sales,
   unemployment,
-  propertyTax
+  property
 };

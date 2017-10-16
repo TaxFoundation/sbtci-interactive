@@ -26,7 +26,7 @@ const TaxIcons = {
       </svg>
     );
   },
-  propertyTax: (props) => {
+  property: (props) => {
     return (
       <svg {...props} viewBox="0 0 125 125">
         <path fill="#e5e5e5" d="M62.5,0L62.5,0C97,0,125,28,125,62.5l0,0C125,97,97,125,62.5,125l0,0C28,125,0,97,0,62.5l0,0C0,28,28,0,62.5,0z"/>
