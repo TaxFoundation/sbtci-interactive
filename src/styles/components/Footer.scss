@@ -1,20 +1,19 @@
 .sbtci-footer {
   background-color: #eeeeee;
   color: #666666;
-  padding: 2rem 0;
   
-  .container {
+  &-info {
     display: grid;
     grid-template: auto / 1fr 1fr;
-  }
-  @include mobile-only {
-    .container {
+    padding: 2rem 0;
+  
+    @include mobile-only {
       display: block;
     }
   }
 
-  &-info,
-  &-links {
+  &-contact,
+  &-about {
     grid-column: span 1;
     grid-row: span 1;
 
@@ -34,6 +33,41 @@
       &:hover {
         color: $sbtci-blue;
       } 
+    }
+  }
+
+  &-links {
+    background-color: #dddddd;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+  
+    ul {
+      list-style: none;
+      margin: 0 auto;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    li {
+      display: inline-block;
+      padding: 0 0.5rem 0 0;
+
+      &::after {
+        content: "|";
+        margin-left: 0.5rem;
+      }
+
+      &:last-child {
+        &::after {
+          content: "";
+          margin-left: 0;
+        }
+      }
+    }
+
+    a {
+      color: #666666;
+      text-decoration: none;
     }
   }
 }

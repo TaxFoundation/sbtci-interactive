@@ -3,8 +3,8 @@ import React from 'react';
 const Footer = (props) => {
   return (
     <footer className="sbtci-footer">
-      <div className="container">
-        <div className="sbtci-footer-info">
+      <div className="sbtci-footer-info container">
+        <div className="sbtci-footer-contact">
           <a style={{display: 'inline-block'}} href="https://taxfoundation.org">
             <svg x="0px" y="0px" width="228px" height="35px" viewBox="0 0 228 35" style={{display: 'block'}}>
               <polygon fill="#0094FF" points="42.5,26 45.5,26 45.5,12 50.5,12 50.5,9 37.5,9 37.5,12 42.5,12 	"/>
@@ -33,11 +33,19 @@ const Footer = (props) => {
             Washington, DC 20005
           </p>
         </div>
-        <div className="sbtci-footer-links">
+        <div className="sbtci-footer-about">
           <p style={{margin: '0'}}>
             The <a href="https://taxfoundation.org">Tax Foundation</a> is the nation’s leading independent tax policy research organization. Since 1937, our principled research, insightful analysis, and engaged experts have informed smarter tax policy at the federal, state, and local levels. We improve lives through tax policy research and education that leads to greater economic growth and opportunity.
           </p>
         </div>
+      </div>
+      <div className="sbtci-footer-links">
+        <ul className="container">
+          <li>Copyright 2017 Tax Foundation</li>
+          <li><a href="https://www.facebook.com/taxfoundation">Facebook</a></li>
+          <li><a href="https://twitter.com/taxfoundation">Twitter</a></li>
+          <li><a href="https://taxfoundation.org/privacy-policy/">Privacy Policy</a></li>
+        </ul>
       </div>
     </footer>
   );
