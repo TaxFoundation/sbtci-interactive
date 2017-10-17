@@ -149,7 +149,7 @@ class MailChimp extends React.Component {
   }
 
   onSuccess() {
-    setTimeout(this.props.onSuccess(), 2000);
+    setTimeout(this.props.onSuccess(), 3000);
   }
 
   render() {
@@ -268,7 +268,7 @@ MailChimp.defaultProps = {
     fNamePlaceholder: 'First Name',
     btnLabel: 'Submit',
     sending: 'Submitting...',
-    success: 'Success',
+    success: 'Success! Check inbox for confirmation!',
     error: 'There was an error.'
   }
 };
