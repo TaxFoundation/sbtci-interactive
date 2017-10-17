@@ -4,33 +4,25 @@ import { setCookie, getCookie } from './Helpers';
 class PopIn extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      active: this.props.active
-    };
-
+    this.updateActive = this.props.toggle;
     this.timer;
-
-    this.togglePopIn = this.togglePopIn.bind(this);
   }
 
   componentDidMount() {
     const dismissed = JSON.parse(getCookie('sbtci-dismissed')) || false;
-    if (!dismissed && !this.state.active) {
+    if (!dismissed && !this.props.active) {
       this.timer = setTimeout(() => {
-        this.togglePopIn();
+        this.updateActive();
       }, this.props.timeout);
     }
   }
   
   componentWillReceiveProps(nextProps) {
-    this.setState({active: nextProps.active});
     clearTimeout(this.timer);
   }
-
-  togglePopIn() {
-    const newState = {...this.state};
-    newState.active = !newState.active;
-    this.setState(newState);
+  
+  dismissPopIn() {
+    this.updateActive();
     setCookie('sbtci-dismissed', true, 7);
   }
 
@@ -38,7 +30,7 @@ class PopIn extends Component {
     return (
       <div
         className={
-          this.state.active
+          this.props.active
             ? 'sbtci-pop-in sbtci-pop-in--active'
             : 'sbtci-pop-in sbtci-pop-in--inactive'
         }
@@ -46,11 +38,13 @@ class PopIn extends Component {
         <div className="container">
           <div
             className="sbtci-pop-in-dismiss"
-            onClick={() => this.togglePopIn()}
+            onClick={() => {
+              this.dismissPopIn();
+            }}
           >
             &otimes;
           </div>
-          {React.cloneElement(this.props.children, {onSuccess: this.togglePopIn})}
+          {React.cloneElement(this.props.children, {onSuccess: this.dismissPopIn})}
         </div>
       </div>
     );

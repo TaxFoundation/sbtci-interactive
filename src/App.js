@@ -125,7 +125,7 @@ class App extends Component {
 
   toggleEmailSubscribe() {
     let newState = Object.assign(this.state);
-    newState.emailSubscribe = true;
+    newState.emailSubscribe = !newState.emailSubscribe;
     this.setState(newState);
   }
 
@@ -205,7 +205,11 @@ class App extends Component {
             <Route component={FourOhFour} />
           </Switch>
           <Footer />
-          <PopIn timeout="30000" active={ this.state.emailSubscribe }>
+          <PopIn
+            timeout="30000"
+            active={ this.state.emailSubscribe }
+            toggle={ this.toggleEmailSubscribe }
+          >
             <MailChimp />
           </PopIn>
         </div>
