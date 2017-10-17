@@ -64,7 +64,14 @@ class Header extends Component {
                 { stateLinks }
               </nav>
             </div>
-            <Link className="sbtci-header-nav-category" to="/">Methodology</Link>
+            <a
+              className="sbtci-header-nav-category"
+              href="https://files.taxfoundation.org/20171016171625/SBTCI_2018.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Methodology
+            </a>
           </nav>
 
           <div className="sbtci-header-menu">
@@ -129,13 +136,15 @@ class Header extends Component {
               </div>
             </div>
             <div className="sbtci-header-mobile-nav-top-level-item">
-              <Link
+              <a
                 className="sbtci-header-mobile-nav-top-link"
+                href="https://files.taxfoundation.org/20171016171625/SBTCI_2018.pdf"
                 onClick={() => this.props.closeAllMobileMenu()}
-                to="/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Methodology
-              </Link>
+              </a>
             </div>
             <div className="sbtci-header-mobile-nav-top-level-item">
               <div

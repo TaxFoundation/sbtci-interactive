@@ -142,9 +142,14 @@ class Home extends Component {
         <hr/>
         <div className="sbtci-home-categories container container--narrow">
           <h2 style={{textAlign: 'center'}}>Ranked Tax Categories</h2>
-          <Link className="sbtci-button sbtci-button--centered" to="/">
+          <a
+            className="sbtci-button sbtci-button--centered"
+            href="https://files.taxfoundation.org/20171016171625/SBTCI_2018.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Read Full Methodology
-          </Link>
+          </a>
           { this.props.taxTypes.filter(t => t.id !== 'total').map((t) => {
             return (
               <div className="sbtci-home-tax-type" key={`tax-desc-${t.id}`}>
