@@ -55,7 +55,7 @@ class Home extends Component {
               : activeTax.description
           }
           location={ this.props.location.pathname }
-          image={TaxImages[this.props.activeTax]}
+          image={this.props.activeTax === 'total' ? TaxImages['meta'] : TaxImages[this.props.activeTax]}
         />
         <div
           className="sbtci-home-header"
