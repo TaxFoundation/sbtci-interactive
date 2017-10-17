@@ -104,4 +104,13 @@
       grid-row: 2 / 3;
     }
   }
+
+  &-success {
+    text-align: center;
+    
+    @include tablet-up {
+      grid-column: 1 / 4;
+      grid-row: 2 / 3;
+    }
+  }
 }

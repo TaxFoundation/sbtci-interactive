@@ -102,7 +102,6 @@ class MailChimp extends React.Component {
     };
 
     this.onSubmit = this.onSubmit.bind(this);
-    this.onSuccess = this.onSuccess.bind(this);
   }
 
   onSubmit(e) {
@@ -142,14 +141,10 @@ class MailChimp extends React.Component {
             status: 'success',
             msg: data.msg
           });
-          this.onSuccess();
+          setTimeout(() => this.props.onSuccess(), 3000);
         }
       })
     );
-  }
-
-  onSuccess() {
-    setTimeout(this.props.onSuccess(), 3000);
   }
 
   render() {
@@ -239,17 +234,21 @@ class MailChimp extends React.Component {
               <option value="Wyoming">Wyoming</option>
               <option value="Other">Other</option>
             </select>
-            <button
-              disabled={this.state.status === 'sending' || this.state.status === 'success'}
-              onClick={this.onSubmit}
-              type="submit"
-              className="sbtci-button sbtci-button--centered sbtci-mailchimp-submit"
-            >
-              {status === null ? messages.btnLabel : null}
-              {status === 'sending' ? messages.sending : null}
-              {status === 'success' ? messages.success : null}
-              {status === 'error' ? messages.error : null}
-            </button>
+            {status === 'success'
+              ? (<p className="sbtci-mailchimp-success">Success! Check your inbox to confirm you subscription!</p>)
+              : (
+                <button
+                  disabled={this.state.status === 'sending' || this.state.status === 'success'}
+                  onClick={this.onSubmit}
+                  type="submit"
+                  className="sbtci-button sbtci-button--centered sbtci-mailchimp-submit"
+                >
+                  {status === null ? messages.btnLabel : null}
+                  {status === 'sending' ? messages.sending : null}
+                  {status === 'error' ? messages.error : null}
+                </button>
+              )
+            }
           </div>
         </form>
       </div>

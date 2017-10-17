@@ -4,25 +4,28 @@ import { setCookie, getCookie } from './Helpers';
 class PopIn extends Component {
   constructor(props) {
     super(props);
-    this.updateActive = this.props.toggle;
     this.timer;
+    this.dismissed = JSON.parse(getCookie('sbtci-dismissed')) || false;
+
+    this.dismissPopIn = this.dismissPopIn.bind(this);
   }
 
   componentDidMount() {
-    const dismissed = JSON.parse(getCookie('sbtci-dismissed')) || false;
-    if (!dismissed && !this.props.active) {
+    if (!this.dismissed && !this.props.active) {
       this.timer = setTimeout(() => {
-        this.updateActive();
+        this.props.toggle();
       }, this.props.timeout);
     }
   }
   
   componentWillReceiveProps(nextProps) {
-    clearTimeout(this.timer);
+    if (this.props.active) {
+      clearTimeout(this.timer);
+    }
   }
   
   dismissPopIn() {
-    this.updateActive();
+    this.props.toggle();
     setCookie('sbtci-dismissed', true, 7);
   }
 
