@@ -172,7 +172,7 @@ class App extends Component {
 
     return (
       <Router>
-        <div>
+        <div className="sbtci">
           <Header
             taxTypes={taxTypes}
             USStates={SBTCIData.map((s) => { return {name: s.name}; })}

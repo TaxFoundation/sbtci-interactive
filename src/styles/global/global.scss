@@ -55,6 +55,13 @@ hr {
 }
 
 .sbtci {
+  min-height: 100vh;
+
+  @include tablet-up {
+    display: grid;
+    grid-template: 160px auto 234px / auto;
+  }
+
   &-button {
     background-color: #00aa22;
     border-radius: $radius;

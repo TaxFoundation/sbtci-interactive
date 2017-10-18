@@ -1,6 +1,10 @@
 .sbtci-header {
   background-color: $tf-blue;
 
+  @include tablet-up {
+    height: 160px;
+  }
+
   &-container {
     align-items: end;
     display: block;

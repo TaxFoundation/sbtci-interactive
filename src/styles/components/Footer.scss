@@ -9,7 +9,7 @@
   
     @include mobile-only {
       display: block;
-      padding: 0 1rem;
+      padding: 1rem 1rem 0;
     }
   }
 
@@ -50,18 +50,24 @@
     }
 
     li {
-      display: inline-block;
-      padding: 0 0.5rem 0 0;
-
-      &::after {
-        content: "|";
-        margin-left: 0.5rem;
+      @include mobile-only {
+        margin: 0 0 1rem;
       }
 
-      &:last-child {
+      @include tablet-up {
+        display: inline-block;
+        padding: 0 0.5rem 0 0;
+  
         &::after {
-          content: "";
-          margin-left: 0;
+          content: "|";
+          margin-left: 0.5rem;
+        }
+  
+        &:last-child {
+          &::after {
+            content: "";
+            margin-left: 0;
+          }
         }
       }
     }

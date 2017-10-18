@@ -3,10 +3,6 @@ import Metadata from './Metadata';
 import { TaxImages } from './Images';
 
 class Contribute extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const bgImage = {
       backgroundImage: `url(${TaxImages['donate']})`
