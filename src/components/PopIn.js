@@ -19,7 +19,7 @@ class PopIn extends Component {
   }
   
   componentWillReceiveProps(nextProps) {
-    if (this.props.active) {
+    if (nextProps.active) {
       clearTimeout(this.timer);
     }
   }

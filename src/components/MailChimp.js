@@ -101,7 +101,16 @@ class MailChimp extends React.Component {
       msg: null
     };
 
+    this.onSuccess = this.onSuccess.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onSuccess(data) {
+    this.setState({
+      status: 'success',
+      msg: data.msg
+    });
+    setTimeout(() => this.props.onSuccess(), 3000);
   }
 
   onSubmit(e) {
@@ -137,11 +146,7 @@ class MailChimp extends React.Component {
             msg: data.msg
           });
         } else {
-          this.setState({
-            status: 'success',
-            msg: data.msg
-          });
-          setTimeout(() => this.props.onSuccess(), 3000);
+          this.onSuccess(data);
         }
       })
     );
