@@ -87,7 +87,7 @@ class Home extends Component {
             taxTypes={this.props.taxTypes}
           />
 
-          <div className="sbtci-home-social sbtci-box">
+          <div className="sbtci-home-social sbtci-box hide-print">
             <div className="sbtci-home-social-text">
               <h2>Spread the Word!</h2>
               <p>How does your state rank? Brag (or complain) to your friends!</p>

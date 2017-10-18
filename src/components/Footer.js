@@ -39,7 +39,7 @@ const Footer = (props) => {
           </p>
         </div>
       </div>
-      <div className="sbtci-footer-links">
+      <div className="sbtci-footer-links hide-print">
         <ul className="container">
           <li>Copyright 2017 Tax Foundation</li>
           <li><a href="https://www.facebook.com/taxfoundation">Facebook</a></li>

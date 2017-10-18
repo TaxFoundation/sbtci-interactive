@@ -83,6 +83,6 @@ hr {
 
 .hide-print {
   @include print-only {
-    display: none;
+    display: none !important;
   }
 }

@@ -195,6 +195,7 @@
 
   &-tax-type {
     margin-bottom: 4rem;
+    page-break-inside: avoid;  
 
     &-icon {
       float: left;
