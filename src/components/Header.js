@@ -168,6 +168,12 @@ class Header extends Component {
             >
               <div className="sbtci-header-mobile-nav-top-link">Subscribe</div>
             </div>
+            <div
+              className="sbtci-header-mobile-nav-top-level-item"
+              onClick={() => {this.props.closeAllMobileMenu();}}
+            >
+              <Link to="/contribute/" className="sbtci-header-mobile-nav-top-link">Contribute</Link>
+            </div>
           </div>
         </div>
       </header>
