@@ -104,13 +104,31 @@
       grid-row: 2 / 3;
     }
   }
+}
 
+.sbtci-next-steps {
   &-success {
     text-align: center;
-    
+  }
+
+  &-links {
     @include tablet-up {
-      grid-column: 1 / 4;
-      grid-row: 2 / 3;
+      display: grid;
+      grid-gap: 1rem;
+      grid-template: auto / repeat(4, 1fr);
     }
+  }
+
+  &-link {
+    border-radius: $radius;
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    grid-column: span 1;
+    grid-row: span 1;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
   }
 }
