@@ -5,6 +5,7 @@ import Home from './components/Home';
 import USState from './components/USState';
 import Footer from './components/Footer';
 import PopIn from './components/PopIn';
+import Contribute from './components/Contribute';
 import FourOhFour from './components/FourOhFour';
 import SBTCIData from './data/SBTCI.json';
 import USData from './data/us.json';
@@ -202,6 +203,7 @@ class App extends Component {
             />
             { stateRoutes }
             { taxRoutes }
+            <Route path="/contribute/" component={Contribute} />
             <Route component={FourOhFour} />
           </Switch>
           <Footer />

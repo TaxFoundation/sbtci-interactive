@@ -56,6 +56,7 @@ import sales from '../images/taxes/sales.jpg';
 import unemployment from '../images/taxes/unemployment.jpg';
 import property from '../images/taxes/property.jpg';
 import meta from '../images/meta.png';
+import donate from '../images/donate.jpg';
 
 export const StateImages = {
   State1,
@@ -118,5 +119,6 @@ export const TaxImages = {
   sales,
   unemployment,
   property,
-  meta
+  meta,
+  donate
 };
