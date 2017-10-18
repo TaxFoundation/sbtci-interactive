@@ -54,7 +54,7 @@ export const setCookie = (name, value, expDays) => {
 export const getCookie = (name) => {
   const cookieString = decodeURIComponent(document.cookie).split(';');
   const theCookie = cookieString.filter((cookie) => {
-    return cookie.indexOf(name) > 0;
+    return cookie.indexOf(name) > -1;
   })[0];
   return theCookie ? theCookie.split('=')[1] : null;
 };
