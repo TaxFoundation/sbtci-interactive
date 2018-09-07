@@ -119,7 +119,7 @@ const Footer = props => {
           </InfoSection>
         </Info>
       </Container>
-      <div className="sbtci-footer-links hide-print">
+      <FooterLinks>
         <Container>
           <ul>
             <li>Copyright 2017 Tax Foundation</li>
@@ -136,7 +136,7 @@ const Footer = props => {
             </li>
           </ul>
         </Container>
-      </div>
+      </FooterLinks>
     </footer>
   );
 };
