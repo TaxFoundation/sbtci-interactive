@@ -88,7 +88,7 @@ const FooterLinks = styled.div`
 
 const Footer = props => {
   return (
-    <footer className="sbtci-footer">
+    <Footer>
       <Container>
         <Info>
           <InfoSection>
@@ -137,7 +137,7 @@ const Footer = props => {
           </ul>
         </Container>
       </FooterLinks>
-    </footer>
+    </Footer>
   );
 };
 
