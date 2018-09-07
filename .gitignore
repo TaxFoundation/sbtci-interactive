@@ -22,3 +22,4 @@ yarn-error.log*
 *.css
 *.css.map
 .sass-cache
+yarn.lock

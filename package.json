@@ -15,29 +15,25 @@
     "react-dom": "^15.6.1",
     "react-helmet": "^5.2.0",
     "react-router-dom": "^4.1.2",
+    "react-scripts": "1.1.4",
     "react-snapshot": "^1.2.0",
     "react-transition-group": "^2.2.0",
     "topojson-client": "^3.0.0",
     "validate.js": "^0.11.1"
   },
   "devDependencies": {
-    "eslint": "^4.8.0",
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.10.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.4.0",
-    "node-sass": "^4.5.3",
-    "postcss": "^6.0.9",
-    "react-scripts": "1.0.10"
+    "prettier": "^1.12.0"
   },
   "scripts": {
-    "watch-sass": "node-sass src/style.scss src/style.css -w --source-map=src/style.css.map",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-sass start-js",
-    "build-sass": "node-sass src/style.scss src/style.css --output-style=compressed",
-    "build-js": "react-scripts build && react-snapshot",
-    "build": "npm run build-sass && npm run build-js",
+    "start": "react-scripts start",
+    "build": "react-scripts build && react-snapshot",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "update-live": "aws s3 sync --acl public-read --sse --delete --profile sbtci ./build/ s3://statetaxindex.org",
-    "invalidate-cloudfront": "aws cloudfront create-invalidation --profile sbtci --distribution-id E3IOEZ8EK80ZHD --paths '/*'",
-    "deploy": "npm run build && npm run update-live && npm run invalidate-cloudfront"
+    "eject": "react-scripts eject"
   }
 }
