@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Box = styled.div`
+export const Box = styled.div`
   border: 1px solid ${props => props.theme.gray};
   border-radius: ${props => props.theme.radius};
 
@@ -76,4 +76,57 @@ const Box = styled.div`
   }
 `;
 
-export default Box;
+export const SummaryBox = styled(Box)`
+  @media only all and (min-width: ${props => props.theme.tabletWidth}) {
+    grid-column: 2 / 3;
+    grid-row: span 1;
+  }
+
+  .text {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 0 -1px -1px;
+  }
+
+  .button {
+    color: #ffffff;
+    display: block;
+    flex: 1 0 auto;
+    text-align: center;
+    text-decoration: none;
+
+    svg {
+      margin: 12px;
+      width: 20px;
+    }
+
+    &:active,
+    &:hover,
+    &:visited {
+      color: #ffffff;
+    }
+
+    &:first-of-type {
+      border-radius: 0 0 0 ${props => props.theme.radius};
+    }
+
+    &:last-of-type {
+      border-radius: 0 0 ${props => props.theme.radius} 0;
+    }
+  }
+
+  @media print {
+    display: none;
+  }
+`;
+
+export const SocialBox = styled(SummaryBox)`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+`;
