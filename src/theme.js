@@ -1,8 +1,8 @@
 const theme = {
   tfBlue: '#0094ff',
-  tabletWidth: 912,
-  desktopWidth: 1024,
-  maxWidth: 1200,
+  tabletWidth: '912px',
+  desktopWidth: '1024px',
+  maxWidth: '1200px',
   sbtciBlue: '#5fc2ff',
   darkGray: '#333333',
   gray: '#999999',
