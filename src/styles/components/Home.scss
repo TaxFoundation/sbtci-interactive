@@ -104,61 +104,11 @@
 
   &-data-summary,
   &-social {
-    @include tablet-up {
-      grid-column: 2 / 3;
-      grid-row: span 1;
-    }
-
-    &-text {
-      padding: 1rem;
-      text-align: center;
-    }
-
-    &-buttons {
-      display: flex;
-      flex-direction: row;
-      margin: 0 -1px -1px;
-    }
-
-    &-button {
-      color: #ffffff;
-      display: block;
-      flex: 1 0 auto;
-      text-align: center;
-      text-decoration: none;
-
-      svg {
-        margin: 12px;
-        width: 20px;
-      }
-
-      &:active,
-      &:hover,
-      &:visited {
-        color: #ffffff;
-      }
-
-      &:first-of-type {
-        border-radius: 0 0 0 $radius;
-      }
-
-      &:last-of-type {
-        border-radius: 0 0 $radius 0;
-      }
-    }
-
-    @include print-only {
-      display: none;
-    }
+//migrated
   }
 
   &-social {
-    display: flex;
-    flex-direction: column;
-
-    &-text {
-      flex: 1 0 auto;
-    }
+    //migrated
   }
 
   &-data-summary {

@@ -18,6 +18,7 @@
     "react-scripts": "1.1.4",
     "react-snapshot": "^1.2.0",
     "react-transition-group": "^2.2.0",
+    "styled-components": "^3.4.6",
     "topojson-client": "^3.0.0",
     "validate.js": "^0.11.1"
   },

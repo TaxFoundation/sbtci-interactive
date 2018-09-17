@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container } from './Container';
+import Container from './Container';
 import { FooterLogo } from './Images';
 
 const Footer = styled.footer`
@@ -86,7 +86,7 @@ const FooterLinks = styled.div`
   }
 `;
 
-const Footer = props => {
+const theFooter = props => {
   return (
     <Footer>
       <Container>
@@ -141,4 +141,4 @@ const Footer = props => {
   );
 };
 
-export default Footer;
+export default theFooter;

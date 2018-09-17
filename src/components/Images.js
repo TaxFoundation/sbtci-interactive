@@ -55,7 +55,7 @@ import individual from '../images/taxes/individual.jpg';
 import corporate from '../images/taxes/corporate.jpg';
 import sales from '../images/taxes/sales.jpg';
 import unemployment from '../images/taxes/unemployment.jpg';
-import property from '../images/taxes/property.jpg';
+import propertyTax from '../images/taxes/property.jpg';
 import meta from '../images/meta.png';
 import donate from '../images/donate.jpg';
 
@@ -119,12 +119,12 @@ export const TaxImages = {
   corporate,
   sales,
   unemployment,
-  property,
+  propertyTax,
   meta,
   donate,
 };
 
-export const FooterLogo = (
+export const FooterLogo = () => (
   <svg
     x="0px"
     y="0px"

@@ -17,13 +17,13 @@ class PopIn extends Component {
       }, this.props.timeout);
     }
   }
-  
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.active) {
       clearTimeout(this.timer);
     }
   }
-  
+
   dismissPopIn() {
     this.props.toggle();
     setCookie('sbtci-dismissed', true, 7);
@@ -47,7 +47,9 @@ class PopIn extends Component {
           >
             &otimes;
           </div>
-          {React.cloneElement(this.props.children, {onSuccess: this.dismissPopIn})}
+          {React.cloneElement(this.props.children, {
+            onSuccess: this.dismissPopIn,
+          })}
         </div>
       </div>
     );

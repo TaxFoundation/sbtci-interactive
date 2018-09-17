@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-comonents';
+import styled from 'styled-components';
 import Metadata from './Metadata';
 import { TaxImages } from './Images';
 

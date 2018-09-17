@@ -10,3 +10,5 @@ const Container = styled.div`
     ${props => (props.narrow ? `max-width: 600px;` : null)};
   }
 `;
+
+export default Container;
