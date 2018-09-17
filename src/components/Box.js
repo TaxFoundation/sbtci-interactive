@@ -1,15 +1,17 @@
-.sbtci-box {
-  border: 1px solid $gray;
-  border-radius: $radius;
+import styled from 'styled-components';
 
-  @include print-only {
+const Box = styled.div`
+  border: 1px solid ${props => props.theme.gray};
+  border-radius: ${props => props.theme.radius};
+
+  @media print {
     border: 1px solid #000000;
     margin-bottom: 1rem;
   }
 
   &-heading {
-    background-color: $tf-blue;
-    border: 1px solid $tf-blue;
+    background-color: ${props => props.theme.tfBlue};
+    border: 1px solid ${props => props.theme.tfBlue};
     border-radius: 4px 4px 0 0;
     color: #ffffff;
     font-size: 1.1rem;
@@ -18,7 +20,7 @@
     padding: 8px 0;
     text-align: center;
 
-    @include print-only {
+    @media print {
       background-color: #efefef;
       border: 1px solid #000000;
       color: #000000;
@@ -39,7 +41,7 @@
 
     &-item {
       padding: 0.5rem 1rem;
-      
+
       a {
         color: #333333;
         text-decoration: none;
@@ -52,8 +54,8 @@
   }
 
   &-footer {
-    border-top: 1px solid $gray;
-    color: $tf-blue;
+    border-top: 1px solid ${props => props.theme.gray};
+    color: ${props => props.theme.tfBlue};
     display: block;
     font-size: 0.8rem;
     margin: 0;
@@ -64,12 +66,14 @@
 
     &:active,
     &:hover {
-      color: $sbtci-blue;
+      color: ${props => props.theme.sbtciBlue};
       text-decoration: underline;
     }
 
     &:visited {
-      color: $tf-blue;
+      color: ${props => props.theme.tfBlue};
     }
   }
-}
+`;
+
+export default Box;
