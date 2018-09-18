@@ -13,8 +13,8 @@ const theme = {
   facebook: '#3b5998',
   linkedin: '#007bb6',
   email: '#df4a32',
-  fontSize: 16,
-  radius: 4,
+  fontSize: '16px',
+  radius: '4px',
 };
 
 export default theme;

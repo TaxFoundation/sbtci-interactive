@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Button } from './Button';
 import Container from './Container';
 import { IconTwitter, IconFacebook, IconLinkedIn } from './SocialIcons';
 import Logo from '../images/logo.svg';
@@ -11,13 +12,11 @@ const StyledHeader = styled.header`
   width: 100%;
 `;
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled(Container)`
   display: grid;
   grid-template-areas: 'title menu';
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto;
-  margin: 0 auto;
-  max-width: 960px;
   position: relative;
 
   @media screen and (min-width: ${props => props.theme.tabletWidth}) {
@@ -46,9 +45,16 @@ const HeaderLogo = styled(Link)`
 const SocialLinks = styled.div`
   display: none;
   @media screen and (min-width: ${props => props.theme.tabletWidth}) {
+    align-items: center;
     display: grid;
     grid-area: social;
+    grid-auto-flow: column;
+    grid-gap: 1rem;
     justify-content: right;
+
+    svg {
+      width: 24px;
+    }
   }
 `;
 
@@ -70,6 +76,10 @@ const NavLink = styled.div`
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
+
+  &:last-child {
+    padding-right: 0;
+  }
 
   &:active,
   &:hover {
@@ -159,7 +169,18 @@ class Header extends Component {
           <HeaderLogo to="/">
             <img src={Logo} alt="State Business Tax Climate Index" />
           </HeaderLogo>
-          <SocialLinks>stuff</SocialLinks>
+          <SocialLinks>
+            <IconTwitter fill="#ffffff" />
+            <IconFacebook fill="#ffffff" />
+            <IconLinkedIn fill="#ffffff" />
+            <Button
+              onClick={() => {
+                this.props.toggleEmailSubscribe();
+              }}
+            >
+              Subscribe
+            </Button>
+          </SocialLinks>
           <NavLinks>
             <NavLink onClick={() => this.toggleMenu('rankings')}>
               Rankings
