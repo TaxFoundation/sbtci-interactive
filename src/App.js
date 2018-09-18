@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import theme from './theme';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -12,6 +12,10 @@ import FourOhFour from './components/FourOhFour';
 import SBTCIData from './data/SBTCI.json';
 import USData from './data/us.json';
 import MailChimp from './components/MailChimp';
+
+const StyledApp = styled.div`
+  font-family: 'Lato', sans-serif;
+`;
 
 const taxTypes = [
   {
@@ -190,7 +194,7 @@ class App extends Component {
     return (
       <Router>
         <ThemeProvider theme={theme}>
-          <div className="sbtci">
+          <StyledApp>
             <Header
               taxTypes={taxTypes}
               USStates={SBTCIData.map(s => {
@@ -234,7 +238,7 @@ class App extends Component {
             >
               <MailChimp />
             </PopIn>
-          </div>
+          </StyledApp>
         </ThemeProvider>
       </Router>
     );
