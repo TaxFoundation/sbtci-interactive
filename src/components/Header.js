@@ -88,7 +88,6 @@ const SubNavLinks = styled.div`
   box-shadow: 0 2px 2px ${props => props.theme.darkGray};
   padding: 0.5rem;
   background-color: #fff;
-  display: ${props => (props.active ? 'block' : 'none')};
   max-width: 960px;
   position: absolute;
   right: 0%;
@@ -97,12 +96,25 @@ const SubNavLinks = styled.div`
   z-index: 1000;
 `;
 
+const RankingsLinks = styled(SubNavLinks)`
+  display: ${props => (props.active ? 'grid' : 'none')};
+  grid-gap: 1rem;
+  justify-content: space-around;
+`;
+
+const StatesLinks = styled(SubNavLinks)`
+  display: ${props => (props.active ? 'block' : 'none')};
+  column-count: 5;
+  column-gap: 1rem;
+`;
+
 const SubNavLink = styled(Link)`
   color: ${props => props.theme.tfBlue};
   display: block;
   padding: 0.5rem;
   text-align: left;
   text-decoration: none;
+  text-transform: none;
 
   &:hover {
     color: ${props => props.theme.sbtciBlue};
@@ -131,20 +143,19 @@ class Header extends Component {
   };
 
   render() {
-    const RankingsLinks = this.props.taxTypes.map(t => {
+    const RankingLinks = this.props.taxTypes.map(t => {
       let r = `/tax/${t.id}/`;
       if (t.id === 'total') {
         r = '/';
       }
       return (
-        <Link
-          className="sbtci-header-nav-link"
+        <SubNavLink
           key={`nav-tax-${t.id}`}
           onClick={() => this.toggleMenu(null)}
           to={r}
         >
           {t.name}
-        </Link>
+        </SubNavLink>
       );
     });
 
@@ -184,21 +195,24 @@ class Header extends Component {
               onMouseLeave={() => this.toggleMenu(null)}
             >
               Rankings
-              <SubNavLinks active={this.state.openMenu === 'rankings'}>
-                {RankingsLinks}
-              </SubNavLinks>
+              <RankingsLinks
+                active={this.state.openMenu === 'rankings'}
+                style={{ gridAutoFlow: 'column' }}
+              >
+                {RankingLinks}
+              </RankingsLinks>
             </NavLink>
             <NavLink
               onMouseEnter={() => this.toggleMenu('states')}
               onMouseLeave={() => this.toggleMenu(null)}
             >
               States
-              <SubNavLinks
+              <StatesLinks
                 active={this.state.openMenu === 'states'}
                 style={{ columnCount: 5, columnGap: '1rem' }}
               >
                 {StateLinks}
-              </SubNavLinks>
+              </StatesLinks>
             </NavLink>
             <NavLink>Methodology</NavLink>
           </NavLinks>
