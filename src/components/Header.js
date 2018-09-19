@@ -51,6 +51,7 @@ const SocialLinks = styled.div`
     grid-auto-flow: column;
     grid-gap: 1rem;
     justify-content: right;
+    padding-right: 10px;
 
     svg {
       width: 24px;
@@ -76,10 +77,6 @@ const NavLink = styled.div`
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
-
-  &:last-child {
-    padding-right: 0;
-  }
 
   &:active,
   &:hover {
