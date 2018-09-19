@@ -74,7 +74,6 @@ const NavLinks = styled.nav`
 const NavLink = styled.div`
   color: #ffffff;
   padding: 15px 10px;
-  position: relative;
   text-decoration: none;
   text-transform: uppercase;
 
@@ -95,6 +94,7 @@ const SubNavLinks = styled.div`
   right: 0%;
   top: 100%;
   width: 100%;
+  z-index: 1000;
 `;
 
 const SubNavLink = styled(Link)`
@@ -179,21 +179,29 @@ class Header extends Component {
             </Button>
           </SocialLinks>
           <NavLinks>
-            <NavLink onClick={() => this.toggleMenu('rankings')}>
+            <NavLink
+              onMouseEnter={() => this.toggleMenu('rankings')}
+              onMouseLeave={() => this.toggleMenu(null)}
+            >
               Rankings
+              <SubNavLinks active={this.state.openMenu === 'rankings'}>
+                {RankingsLinks}
+              </SubNavLinks>
             </NavLink>
-            <NavLink onClick={() => this.toggleMenu('states')}>States</NavLink>
+            <NavLink
+              onMouseEnter={() => this.toggleMenu('states')}
+              onMouseLeave={() => this.toggleMenu(null)}
+            >
+              States
+              <SubNavLinks
+                active={this.state.openMenu === 'states'}
+                style={{ columnCount: 5, columnGap: '1rem' }}
+              >
+                {StateLinks}
+              </SubNavLinks>
+            </NavLink>
             <NavLink>Methodology</NavLink>
           </NavLinks>
-          <SubNavLinks
-            active={this.state.openMenu === 'states'}
-            style={{ columnCount: 5, columnGap: '1rem' }}
-          >
-            {StateLinks}
-          </SubNavLinks>
-          <SubNavLinks active={this.state.openMenu === 'rankings'}>
-            {RankingsLinks}
-          </SubNavLinks>
         </HeaderContainer>
       </StyledHeader>
     );
