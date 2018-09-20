@@ -16,42 +16,27 @@ import { TaxImages } from './Images';
 import { fullName } from './Helpers';
 import TaxIcons from './TaxIcons';
 import { SocialBox } from './Box';
+import Container from './Container';
 
-const Header = styled.div`
-  align-items: center;
-  background-color: ${props => props.color};
-  background-image: ${props => props.bg};
-  background-position: center;
-  background-size: cover;
-  background-blend-mode: overlay;
-  display: flex;
-  justify-content: center;
-  height: 128px;
-  width: 100%;
+const MapSection = styled(Container)`
+  display: grid;
+  grid-template-areas: 'map' 'states' 'summary' 'share';
+  grid-gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
 
-  @media print {
-    background-color: #ffffff;
-    height: 6rem;
+  @media screen and (min-width: ${props => props.theme.tabletWidth}) {
+    grid-template-areas: 'map summary' 'map share';
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 3fr 2fr;
   }
+`;
 
-  h1 {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #ffffff;
-    display: block;
-    font-family: 'Oswald', sans-serif;
-    font-size: 3rem;
-    font-weight: 400;
-    margin: 0;
-    padding: 1rem 1.6rem;
-    text-align: center;
+const MobileStateSelection = styled.div`
+  grid-area: states;
 
-    @media screen and (max-width: ${props => props.theme.tabletWidth}) {
-      font-size: 2rem;
-    }
-
-    @media print {
-      color: #000000;
-    }
+  @media screen and (min-width: ${props => props.theme.tabletWidth}) {
+    display: none;
   }
 `;
 
@@ -111,31 +96,31 @@ class Home extends Component {
           }
           name={activeTax.name}
         />
-        <div className="sbtci-home-map-section container">
-          <div className="sbtci-home-map">
-            <USMap
-              USData={this.props.USData}
-              SBTCIData={this.props.SBTCIData}
-              updateActiveState={this.updateActiveState}
-              activeTax={this.props.activeTax}
-              activeUSState={this.state.activeUSState}
-            />
-          </div>
-          <div
+        <MapSection>
+          <USMap
+            USData={this.props.USData}
+            SBTCIData={this.props.SBTCIData}
+            updateActiveState={this.updateActiveState}
+            activeTax={this.props.activeTax}
+            activeUSState={this.state.activeUSState}
+            style={{ gridArea: 'map' }}
+          />
+          <MobileStateSelection
             className="sbtci-home-mobile-state-list sbtci-button sbtci-button--centered"
             onClick={() => {
               this.props.openStatesMenu();
             }}
           >
             See Your State
-          </div>
+          </MobileStateSelection>
 
           <USMapDataSummary
             activeUSState={this.state.activeUSState}
             taxTypes={this.props.taxTypes}
+            style={{ gridArea: 'summary' }}
           />
 
-          <SocialBox>
+          <SocialBox style={{ gridArea: 'share' }}>
             <div className="text">
               <h2>Spread the Word!</h2>
               <p>
@@ -161,7 +146,7 @@ class Home extends Component {
               />
             </div>
           </SocialBox>
-        </div>
+        </MapSection>
         <nav className="sbtci-home-tax-nav container">
           {this.props.taxTypes.map(t => {
             let r = `/tax/${t.id}/`;

@@ -147,7 +147,7 @@ class USMap extends React.Component {
     });
 
     return (
-      <div>
+      <div {...this.props}>
         <svg width="100%" viewBox="0 0 600 400">
           <g className="states">{states}</g>
         </svg>
