@@ -8,7 +8,7 @@ import {
   interpolateYlGn,
   interpolateYlOrBr,
   interpolateYlOrRd,
-  interpolateRdPu
+  interpolateRdPu,
 } from 'd3-scale-chromatic';
 import { feature } from 'topojson-client';
 
@@ -25,7 +25,7 @@ class USMap extends React.Component {
       individual: interpolateYlGn,
       sales: interpolateYlOrBr,
       unemployment: interpolateRdPu,
-      property: interpolateYlOrRd
+      propertyTax: interpolateYlOrRd,
     };
 
     this.smallStates = {
@@ -33,27 +33,27 @@ class USMap extends React.Component {
         x: 560,
         y: 160,
         originX: 528,
-        originY: 148
+        originY: 148,
       },
       11: {
         x: 560,
         y: 200,
         originX: 509,
-        originY: 152
+        originY: 152,
       },
       44: {
         x: 560,
         y: 120,
         originX: 557,
-        originY: 104
-      }
+        originY: 104,
+      },
     };
   }
 
   projection() {
     return geoAlbersUsa()
       .scale(800)
-      .translate([600/2, 400/2 - 25]);
+      .translate([600 / 2, 400 / 2 - 25]);
   }
 
   updateHoverData(stateId) {
@@ -62,11 +62,16 @@ class USMap extends React.Component {
 
   render() {
     const path = geoPath().projection(this.projection);
-    const USDataFeatures = feature(this.props.USData, this.props.USData.objects.states).features;
-    const scaleRank = scaleLinear().domain([0, 50]).range([0, 1]);
+    const USDataFeatures = feature(
+      this.props.USData,
+      this.props.USData.objects.states
+    ).features;
+    const scaleRank = scaleLinear()
+      .domain([0, 50])
+      .range([0, 1]);
 
     const states = this.props.SBTCIData.map((d, i) => {
-      let statePath = USDataFeatures.filter((s) => {
+      let statePath = USDataFeatures.filter(s => {
         return +s.id === +d.id;
       })[0];
       let smallStateRect;
@@ -88,10 +93,12 @@ class USMap extends React.Component {
               y={smallState.y}
               height="16"
               width="16"
-              fill={this.gradients[this.props.activeTax](scaleRank(d[this.props.activeTax].rank))}
-              stroke='#ffffff'
-              strokeLinejoin='bevel'
-              strokeWidth={ d.id === this.props.activeUSState.id ? 3 : 1 }
+              fill={this.gradients[this.props.activeTax](
+                scaleRank(d[this.props.activeTax].rank)
+              )}
+              stroke="#ffffff"
+              strokeLinejoin="bevel"
+              strokeWidth={d.id === this.props.activeUSState.id ? 3 : 1}
             />
             <text
               fontSize="12"
@@ -107,16 +114,18 @@ class USMap extends React.Component {
 
       let routePath = `/state/${d.name.replace(/\s/g, '-').toLowerCase()}/`;
       return (
-        <Link key={ `path-${ d.id }` } to={routePath}>
+        <Link key={`path-${d.id}`} to={routePath}>
           <path
             onMouseEnter={() => this.updateHoverData(d.id)}
-            d={ geoPath().projection(this.projection())(statePath) }
+            d={geoPath().projection(this.projection())(statePath)}
             id={`state-${d.id}`}
-            className='state'
-            fill={this.gradients[this.props.activeTax](scaleRank(d[this.props.activeTax].rank))}
-            stroke='#ffffff'
-            strokeLinejoin='bevel'
-            strokeWidth={ d.id === this.props.activeUSState.id ? 3 : 1 }
+            className="state"
+            fill={this.gradients[this.props.activeTax](
+              scaleRank(d[this.props.activeTax].rank)
+            )}
+            stroke="#ffffff"
+            strokeLinejoin="bevel"
+            strokeWidth={d.id === this.props.activeUSState.id ? 3 : 1}
           />
           {smallStateRect}
         </Link>
@@ -124,30 +133,36 @@ class USMap extends React.Component {
     });
 
     const legendCount = 10;
-    const legend = [...Array(legendCount).keys()].map((d) => {
-      let color = this.gradients[this.props.activeTax]((legendCount - d)/10);
+    const legend = [...Array(legendCount).keys()].map(d => {
+      let color = this.gradients[this.props.activeTax]((legendCount - d) / 10);
       return (
         <div
           key={`legend-${d}`}
           style={{
             backgroundColor: color,
-            WebkitPrintColorAdjust: 'exact'
+            WebkitPrintColorAdjust: 'exact',
           }}
-        ></div>
+        />
       );
     });
 
     return (
       <div>
         <svg width="100%" viewBox="0 0 600 400">
-          <g className='states'>
-            { states }
-          </g>
+          <g className="states">{states}</g>
         </svg>
         <div className="sbtci-home-map-legend">
-          <div style={{paddingRight: '1rem', textAlign: 'right'}}>Worse<br />Rank</div>
-          { legend }
-          <div style={{paddingLeft: '1rem'}}>Better<br />Rank</div>
+          <div style={{ paddingRight: '1rem', textAlign: 'right' }}>
+            Worse
+            <br />
+            Rank
+          </div>
+          {legend}
+          <div style={{ paddingLeft: '1rem' }}>
+            Better
+            <br />
+            Rank
+          </div>
         </div>
       </div>
     );

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Metadata from './Metadata';
 import USMap from './USMap';
@@ -14,6 +15,44 @@ import { TaxImages } from './Images';
 import { fullName } from './Helpers';
 import TaxIcons from './TaxIcons';
 import { SocialBox } from './Box';
+
+const Header = styled.div`
+  align-items: center;
+  background-color: ${props => props.color};
+  background-image: ${props => props.bg};
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+  display: flex;
+  justify-content: center;
+  height: 128px;
+  width: 100%;
+
+  @media print {
+    background-color: #ffffff;
+    height: 6rem;
+  }
+
+  h1 {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 0;
+    padding: 1rem 1.6rem;
+    text-align: center;
+
+    @media screen and (min-width: ${props => props.theme.tabletWidth}) {
+      font-size: 2rem;
+    }
+
+    @media print {
+      color: #000000;
+    }
+  }
+`;
 
 class Home extends Component {
   constructor(props) {
@@ -37,13 +76,7 @@ class Home extends Component {
   }
 
   render() {
-    const bgImage = {
-      backgroundImage: `url(${TaxImages[this.props.activeTax]})`,
-      backgroundColor: this.props.taxTypes.filter(
-        t => t.id === this.props.activeTax
-      )[0].hex,
-      backgroundBlendMode: 'overlay',
-    };
+    const bgImage = `url(${TaxImages[this.props.activeTax]})`;
 
     const activeTax = this.props.taxTypes.filter(t => {
       return this.props.activeTax === t.id;
@@ -71,9 +104,15 @@ class Home extends Component {
               : TaxImages[this.props.activeTax]
           }
         />
-        <div className="sbtci-home-header" style={bgImage}>
+        <Header
+          bg={bgImage}
+          color={
+            this.props.taxTypes.filter(t => t.id === this.props.activeTax)[0]
+              .hex
+          }
+        >
           <h1>{activeTax.name}</h1>
-        </div>
+        </Header>
         <div className="sbtci-home-map-section container">
           <div className="sbtci-home-map">
             <USMap
