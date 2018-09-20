@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
-export const Button = styled.div`
+export const Button = styled.button`
   background-color: #00aa22;
+  border: none;
   border-radius: ${props => props.theme.radius};
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
+  font-family: 'Lato', sans-serif;
   margin-bottom: 1rem;
   padding: 0.6rem 1rem;
   text-align: center;
