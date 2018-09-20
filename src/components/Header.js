@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Button } from './Button';
 import Container from './Container';
 import { IconTwitter, IconFacebook, IconLinkedIn } from './SocialIcons';
@@ -20,11 +20,12 @@ const HeaderContainer = styled(Container)`
   position: relative;
 
   @media screen and (min-width: ${props => props.theme.tabletWidth}) {
+    align-content: center;
     align-items: end;
     grid-template-areas:
       'logo social'
       'logo nav';
-    grid-template-rows: 100px 60px;
+    grid-template-rows: 90px 70px;
     grid-template-columns: 360px 1fr;
   }
 `;
@@ -53,6 +54,11 @@ const SocialLinks = styled.div`
     justify-content: right;
     padding-right: 10px;
 
+    a {
+      align-items: center;
+      display: grid;
+    }
+
     svg {
       width: 24px;
     }
@@ -71,7 +77,7 @@ const NavLinks = styled.nav`
   }
 `;
 
-const NavLink = styled.div`
+const NavLinkStyles = css`
   color: #ffffff;
   padding: 15px 10px;
   text-decoration: none;
@@ -81,6 +87,14 @@ const NavLink = styled.div`
   &:hover {
     background-color: ${props => props.theme.sbtciBlue};
   }
+`;
+
+const NavSection = styled.div`
+  ${NavLinkStyles};
+`;
+
+const NavLink = styled(Link)`
+  ${NavLinkStyles};
 `;
 
 const SubNavLinks = styled.div`
@@ -190,7 +204,7 @@ class Header extends Component {
             </Button>
           </SocialLinks>
           <NavLinks>
-            <NavLink
+            <NavSection
               onMouseEnter={() => this.toggleMenu('rankings')}
               onMouseLeave={() => this.toggleMenu(null)}
             >
@@ -201,8 +215,8 @@ class Header extends Component {
               >
                 {RankingLinks}
               </RankingsLinks>
-            </NavLink>
-            <NavLink
+            </NavSection>
+            <NavSection
               onMouseEnter={() => this.toggleMenu('states')}
               onMouseLeave={() => this.toggleMenu(null)}
             >
@@ -213,8 +227,8 @@ class Header extends Component {
               >
                 {StateLinks}
               </StatesLinks>
-            </NavLink>
-            <NavLink>Methodology</NavLink>
+            </NavSection>
+            <NavLink to={this.props.methodology}>Methodology</NavLink>
           </NavLinks>
         </HeaderContainer>
       </StyledHeader>

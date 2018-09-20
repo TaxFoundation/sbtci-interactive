@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import theme from './theme';
+import config from './data/config';
 import taxTypes from './data/taxTypes';
 import notableChanges from './data/notableChanges';
 import Header from './components/Header';
@@ -112,6 +113,7 @@ class App extends Component {
           <StyledApp>
             <Header
               taxTypes={taxTypes}
+              methodology={config.methodology}
               USStates={SBTCIData.map(s => {
                 return { name: s.name };
               })}

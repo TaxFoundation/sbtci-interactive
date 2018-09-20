@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Button = styled.button`
+export const ButtonStyles = css`
   background-color: #00aa22;
   border: none;
   border-radius: ${props => props.theme.radius};
@@ -17,7 +17,8 @@ export const Button = styled.button`
     margin-bottom: 0;
   }
 `;
-export const CenteredButton = styled(Button)`
+
+export const CenteredButtonStyles = css`
   display: block;
   margin: 1rem auto;
   max-width: 80%;
@@ -25,4 +26,12 @@ export const CenteredButton = styled(Button)`
   @include tablet-up {
     max-width: 9rem;
   }
+`;
+
+export const Button = styled.button`
+  ${ButtonStyles};
+`;
+
+export const CenteredButton = styled.button`
+  ${CenteredButtonStyles};
 `;
