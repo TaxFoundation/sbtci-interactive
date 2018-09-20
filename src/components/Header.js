@@ -7,7 +7,7 @@ import { IconTwitter, IconFacebook, IconLinkedIn } from './SocialIcons';
 import Logo from '../images/logo.svg';
 
 const StyledHeader = styled.header`
-  background-color: ${props => props.theme.tfBlue};
+  background-color: ${props => props.theme.sbtciPrimary};
   color: #fff;
   width: 100%;
 `;
