@@ -1,9 +1,9 @@
 const theme = {
-  tfBlue: '#0094ff',
+  sbtciPrimary: '#4cb6ac',
   tabletWidth: '912px',
   desktopWidth: '1024px',
   maxWidth: '1200px',
-  sbtciBlue: '#5fc2ff',
+  sbtciSecondary: '#04897b',
   darkGray: '#333333',
   gray: '#999999',
   lightGray: '#cccccc',

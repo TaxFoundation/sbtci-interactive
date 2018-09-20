@@ -5,7 +5,7 @@ import { TaxImages } from './Images';
 
 const Header = styled.div`
   align-items: center;
-  background-color: ${props => props.theme.tfBlue};
+  background-color: ${props => props.theme.sbtciPrimary};
   background-image: url(${TaxImages['donate']});
   background-position: center;
   background-size: cover;

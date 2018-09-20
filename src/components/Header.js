@@ -85,7 +85,7 @@ const NavLinkStyles = css`
 
   &:active,
   &:hover {
-    background-color: ${props => props.theme.sbtciBlue};
+    background-color: ${props => props.theme.sbtciSecondary};
   }
 `;
 
@@ -123,7 +123,7 @@ const StatesLinks = styled(SubNavLinks)`
 `;
 
 const SubNavLink = styled(Link)`
-  color: ${props => props.theme.tfBlue};
+  color: ${props => props.theme.sbtciPrimary};
   display: block;
   padding: 0.5rem;
   text-align: left;
@@ -131,7 +131,7 @@ const SubNavLink = styled(Link)`
   text-transform: none;
 
   &:hover {
-    color: ${props => props.theme.sbtciBlue};
+    color: ${props => props.theme.sbtciSecondary};
   }
 `;
 

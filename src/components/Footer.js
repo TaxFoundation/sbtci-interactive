@@ -30,12 +30,12 @@ const InfoSection = styled.div`
   }
 
   a {
-    color: ${props => props.theme.tfBlue};
+    color: ${props => props.theme.sbtciPrimary};
     text-decoration: none;
 
     &:active,
     &:visited {
-      color: ${props => props.theme.tfBlue};
+      color: ${props => props.theme.sbtciPrimary};
     }
 
     &:hover {
