@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import styleMedia, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
+import styled, { css } from 'styled-components';
+import config from '../data/config';
 
 const NavLinks = styled.nav`
   display: none;
@@ -72,74 +74,86 @@ const SubNavLink = styled(Link)`
 `;
 
 class NavigationDesktop extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      openMenu: null,
+    };
+  }
+
+  toggleMenu = type => {
+    if (type !== null) {
+      if (this.state.openMenu === type) {
+        this.setState({ openMenu: null });
+      } else {
+        this.setState({ openMenu: type });
+      }
+    } else {
+      this.setState({ openMenu: null });
+    }
+  };
+
   render() {
+    const RankingLinks = this.props.taxTypes.map(t => {
+      let r = `/tax/${t.id}/`;
+      if (t.id === 'total') {
+        r = '/';
+      }
+      return (
+        <SubNavLink
+          key={`nav-tax-${t.id}`}
+          onClick={() => this.toggleMenu(null)}
+          to={r}
+        >
+          {t.name}
+        </SubNavLink>
+      );
+    });
+
+    const StateLinks = this.props.USStates.map(s => {
+      return (
+        <SubNavLink
+          key={`nav-state-${s.name.replace(/\s/g, '-').toLowerCase()}`}
+          onClick={() => this.toggleMenu(null)}
+          to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}/`}
+        >
+          {s.name}
+        </SubNavLink>
+      );
+    });
     return (
-      <SBTCIContext.Consumer>
-        {context => {
-          const USStates = context.SBTCIData.map(s => {
-            return { name: s.name };
-          });
-          const RankingLinks = context.taxTypes.map(t => {
-            let r = `/tax/${t.id}/`;
-            if (t.id === 'total') {
-              r = '/';
-            }
-            return (
-              <SubNavLink
-                key={`nav-tax-${t.id}`}
-                onClick={() => this.toggleMenu(null)}
-                to={r}
-              >
-                {t.name}
-              </SubNavLink>
-            );
-          });
-
-          const StateLinks = USStates.map(s => {
-            return (
-              <SubNavLink
-                key={`nav-state-${s.name.replace(/\s/g, '-').toLowerCase()}`}
-                onClick={() => this.toggleMenu(null)}
-                to={`/state/${s.name.replace(/\s/g, '-').toLowerCase()}/`}
-              >
-                {s.name}
-              </SubNavLink>
-            );
-          });
-
-          return (
-            <Fragment>
-              <NavLinks>
-                <NavSection
-                  onMouseEnter={() => this.toggleMenu('rankings')}
-                  onMouseLeave={() => this.toggleMenu(null)}
-                >
-                  Rankings
-                  <RankingsLinks
-                    active={this.state.openMenu === 'rankings'}
-                    style={{ gridAutoFlow: 'column' }}
-                  >
-                    {RankingLinks}
-                  </RankingsLinks>
-                </NavSection>
-                <NavSection
-                  onMouseEnter={() => this.toggleMenu('states')}
-                  onMouseLeave={() => this.toggleMenu(null)}
-                >
-                  States
-                  <StatesLinks
-                    active={this.state.openMenu === 'states'}
-                    style={{ columnCount: 5, columnGap: '1rem' }}
-                  >
-                    {StateLinks}
-                  </StatesLinks>
-                </NavSection>
-                <NavLink to={this.props.methodology}>Methodology</NavLink>
-              </NavLinks>
-            </Fragment>
-          );
-        }}
-      </SBTCIContext.Consumer>
+      <Fragment>
+        <NavLinks>
+          <NavSection
+            onMouseEnter={() => this.toggleMenu('rankings')}
+            onMouseLeave={() => this.toggleMenu(null)}
+          >
+            Rankings
+            <RankingsLinks
+              active={this.state.openMenu === 'rankings'}
+              style={{ gridAutoFlow: 'column' }}
+            >
+              {RankingLinks}
+            </RankingsLinks>
+          </NavSection>
+          <NavSection
+            onMouseEnter={() => this.toggleMenu('states')}
+            onMouseLeave={() => this.toggleMenu(null)}
+          >
+            States
+            <StatesLinks
+              active={this.state.openMenu === 'states'}
+              style={{ columnCount: 5, columnGap: '1rem' }}
+            >
+              {StateLinks}
+            </StatesLinks>
+          </NavSection>
+          <NavLink to={config.methodology}>Methodology</NavLink>
+        </NavLinks>
+      </Fragment>
     );
   }
 }
+
+export default NavigationDesktop;

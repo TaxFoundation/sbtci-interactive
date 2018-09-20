@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { Button } from './Button';
 import Container from './Container';
+import NavigationDesktop from './NavigationDesktop';
 import { IconTwitter, IconFacebook, IconLinkedIn } from './SocialIcons';
 import Logo from '../images/logo.svg';
 
@@ -68,23 +69,7 @@ const SocialLinks = styled.div`
 class Header extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      openMenu: null,
-    };
   }
-
-  toggleMenu = type => {
-    if (type !== null) {
-      if (this.state.openMenu === type) {
-        this.setState({ openMenu: null });
-      } else {
-        this.setState({ openMenu: type });
-      }
-    } else {
-      this.setState({ openMenu: null });
-    }
-  };
 
   render() {
     return (
@@ -105,6 +90,10 @@ class Header extends Component {
               Subscribe
             </Button>
           </SocialLinks>
+          <NavigationDesktop
+            USStates={this.props.USStates}
+            taxTypes={this.props.taxTypes}
+          />
         </HeaderContainer>
       </StyledHeader>
     );
