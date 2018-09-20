@@ -18,6 +18,7 @@ const HeaderContainer = styled(Container)`
   grid-template-areas: 'title menu';
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto;
+  max-width: 800px;
   position: relative;
 
   @media screen and (min-width: ${props => props.theme.tabletWidth}) {
