@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Metadata from './Metadata';
+import RankingBanner from './RankingBanner';
 import USMap from './USMap';
 import USMapDataSummary from './USMapDataSummary';
 import RankingsTable from './RankingsTable';
@@ -44,7 +45,7 @@ const Header = styled.div`
     padding: 1rem 1.6rem;
     text-align: center;
 
-    @media screen and (min-width: ${props => props.theme.tabletWidth}) {
+    @media screen and (max-width: ${props => props.theme.tabletWidth}) {
       font-size: 2rem;
     }
 
@@ -76,8 +77,6 @@ class Home extends Component {
   }
 
   render() {
-    const bgImage = `url(${TaxImages[this.props.activeTax]})`;
-
     const activeTax = this.props.taxTypes.filter(t => {
       return this.props.activeTax === t.id;
     })[0];
@@ -104,15 +103,14 @@ class Home extends Component {
               : TaxImages[this.props.activeTax]
           }
         />
-        <Header
-          bg={bgImage}
+        <RankingBanner
+          bg={`url(${TaxImages[this.props.activeTax]})`}
           color={
             this.props.taxTypes.filter(t => t.id === this.props.activeTax)[0]
               .hex
           }
-        >
-          <h1>{activeTax.name}</h1>
-        </Header>
+          name={activeTax.name}
+        />
         <div className="sbtci-home-map-section container">
           <div className="sbtci-home-map">
             <USMap

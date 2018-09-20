@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import theme from './theme';
 import config from './data/config';
 import taxTypes from './data/taxTypes';
@@ -15,10 +15,6 @@ import FourOhFour from './components/FourOhFour';
 import SBTCIData from './data/SBTCI.json';
 import USData from './data/us.json';
 import MailChimp from './components/MailChimp';
-
-const StyledApp = styled.div`
-  font-family: 'Lato', sans-serif;
-`;
 
 class App extends Component {
   constructor() {
@@ -110,7 +106,7 @@ class App extends Component {
     return (
       <Router>
         <ThemeProvider theme={theme}>
-          <StyledApp>
+          <Fragment>
             <Header
               taxTypes={taxTypes}
               methodology={config.methodology}
@@ -155,7 +151,7 @@ class App extends Component {
             >
               <MailChimp />
             </PopIn>
-          </StyledApp>
+          </Fragment>
         </ThemeProvider>
       </Router>
     );
