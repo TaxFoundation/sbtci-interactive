@@ -87,9 +87,14 @@ class Home extends Component {
             taxTypes={this.props.taxTypes}
           />
 
-          <div className="sbtci-button sbtci-button--centered mobile-only">
+          <a
+            className="sbtci-button sbtci-button--centered mobile-only"
+            href="/Tax Foundation SBTCI 2019.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Download Full Study
-          </div>
+          </a>
 
           <div className="sbtci-home-social sbtci-box hide-print">
             <div className="sbtci-home-social-text">
@@ -148,7 +153,7 @@ class Home extends Component {
           <h2 style={{textAlign: 'center'}}>Ranked Tax Categories</h2>
           <a
             className="sbtci-button sbtci-button--centered"
-            href="https://files.taxfoundation.org/20171016171625/SBTCI_2018.pdf"
+            href="/Tax Foundation SBTCI 2019.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >

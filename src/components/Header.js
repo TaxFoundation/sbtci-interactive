@@ -66,7 +66,7 @@ class Header extends Component {
             </div>
             <a
               className="sbtci-header-nav-category"
-              href="https://files.taxfoundation.org/20171016171625/SBTCI_2018.pdf"
+              href="/Tax Foundation SBTCI 2019.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
