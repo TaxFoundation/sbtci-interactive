@@ -84,6 +84,8 @@ class Header extends Component {
             <div
               className="sbtci-header-mobile-menu-toggle"
               onClick={() => this.props.toggleMobileMenu('menuOpen')}
+              role="button"
+              aria-pressed={this.props.menuOpen}
             >
               Menu
             </div>
@@ -98,6 +100,7 @@ class Header extends Component {
             <div
               className="sbtci-header-mobile-nav-top-bar"
               onClick={() => this.props.closeAllMobileMenu()}
+              role="button"
             >
               Close Menu
             </div>
@@ -138,7 +141,7 @@ class Header extends Component {
             <div className="sbtci-header-mobile-nav-top-level-item">
               <a
                 className="sbtci-header-mobile-nav-top-link"
-                href="https://files.taxfoundation.org/20171016171625/SBTCI_2018.pdf"
+                href="/Tax Foundation SBTCI 2019.pdf"
                 onClick={() => this.props.closeAllMobileMenu()}
                 target="_blank"
                 rel="noopener noreferrer"
