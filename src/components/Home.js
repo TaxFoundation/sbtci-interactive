@@ -87,6 +87,10 @@ class Home extends Component {
             taxTypes={this.props.taxTypes}
           />
 
+          <div className="sbtci-button sbtci-button--centered mobile-only">
+            Download Full Study
+          </div>
+
           <div className="sbtci-home-social sbtci-box hide-print">
             <div className="sbtci-home-social-text">
               <h2>Spread the Word!</h2>
@@ -148,7 +152,7 @@ class Home extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Read Full Methodology
+            Download Full Study
           </a>
           { this.props.taxTypes.filter(t => t.id !== 'total').map((t) => {
             return (

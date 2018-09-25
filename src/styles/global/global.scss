@@ -93,3 +93,9 @@ hr {
     display: none !important;
   }
 }
+
+.mobile-only {
+  @include tablet-up {
+    display: none;
+  }
+}

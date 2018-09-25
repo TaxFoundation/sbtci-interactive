@@ -70,7 +70,7 @@ class Header extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Methodology
+              Download Full Study
             </a>
           </nav>
 
@@ -143,7 +143,7 @@ class Header extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Methodology
+                Download Full Study
               </a>
             </div>
             <div className="sbtci-header-mobile-nav-top-level-item">
