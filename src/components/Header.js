@@ -141,7 +141,7 @@ class Header extends Component {
             <div className="sbtci-header-mobile-nav-top-level-item">
               <a
                 className="sbtci-header-mobile-nav-top-link"
-                href="/Tax Foundation SBTCI 2019.pdf"
+                href="https://files.taxfoundation.org/20180925174436/2019-State-Business-Tax-Climate-Index.pdf"
                 onClick={() => this.props.closeAllMobileMenu()}
                 target="_blank"
                 rel="noopener noreferrer"
