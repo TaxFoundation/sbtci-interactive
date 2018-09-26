@@ -38,7 +38,7 @@ class MailChimp extends React.Component {
     const url = getAjaxUrl(this.props.action)
       + `&EMAIL=${encodeURIComponent(this.email.value)}`
       + `&FNAME=${encodeURIComponent(this.fname.value)}`
-      + `&SBTCISTATE=${encodeURIComponent(this.stateSelect.value)}`;
+      + `&STATE=${encodeURIComponent(this.stateSelect.value)}`;
       
     this.setState(
       {
@@ -137,10 +137,10 @@ class MailChimp extends React.Component {
                 required={true}
               />
               <select
-                name="SBTCISTATE"
+                name="STATE"
                 className="sbtci-mailchimp-state"
                 defaultValue=""
-                id="mce-SBTCISTATE"
+                id="mce-STATE"
                 ref={node => (this.stateSelect = node)}
               >
                 <option value="" disabled>Select Your State</option>
@@ -221,7 +221,7 @@ MailChimp.propTypes = {
 };
 
 MailChimp.defaultProps = {
-  action: 'https://TaxFoundation.us1.list-manage.com/subscribe/post?u=fefb55dc846b4d629857464f8&amp;id=4b9873a934',
+  action: 'https://taxfoundation.us1.list-manage.com/subscribe/post?u=fefb55dc846b4d629857464f8&amp;id=4b9873a934',
   messages: {
     emailPlaceholder: 'Email',
     fNamePlaceholder: 'First Name',
