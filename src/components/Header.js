@@ -66,11 +66,11 @@ class Header extends Component {
             </div>
             <a
               className="sbtci-header-nav-category"
-              href="https://files.taxfoundation.org/20171016171625/SBTCI_2018.pdf"
+              href="https://files.taxfoundation.org/20180925174436/2019-State-Business-Tax-Climate-Index.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Methodology
+              Download Full Study
             </a>
           </nav>
 
@@ -84,6 +84,8 @@ class Header extends Component {
             <div
               className="sbtci-header-mobile-menu-toggle"
               onClick={() => this.props.toggleMobileMenu('menuOpen')}
+              role="button"
+              aria-pressed={this.props.menuOpen}
             >
               Menu
             </div>
@@ -98,6 +100,7 @@ class Header extends Component {
             <div
               className="sbtci-header-mobile-nav-top-bar"
               onClick={() => this.props.closeAllMobileMenu()}
+              role="button"
             >
               Close Menu
             </div>
@@ -138,12 +141,12 @@ class Header extends Component {
             <div className="sbtci-header-mobile-nav-top-level-item">
               <a
                 className="sbtci-header-mobile-nav-top-link"
-                href="https://files.taxfoundation.org/20171016171625/SBTCI_2018.pdf"
+                href="https://files.taxfoundation.org/20180925174436/2019-State-Business-Tax-Climate-Index.pdf"
                 onClick={() => this.props.closeAllMobileMenu()}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Methodology
+                Download Full Study
               </a>
             </div>
             <div className="sbtci-header-mobile-nav-top-level-item">

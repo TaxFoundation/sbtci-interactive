@@ -45,11 +45,23 @@ class RankingsTable extends Component {
       : 'sbtci-box sbtci-table--condensed';
     return (
       <div className="sbtci-rankings-table">
-        <div
-          className="sbtci-rankings-table-expand sbtci-button sbtci-button--centered hide-print"
-          onClick={() => this.expandToggle()}
-        >
-          { this.state.expanded ? 'Collapse Table' : 'Expand Table' }
+        <div style={{display: 'grid', gridGap: '1rem', gridAutoFlow: 'column', marginBottom: '1rem'}}>
+          <div
+            aria-pressed={this.state.expanded}
+            className="sbtci-rankings-table-expand sbtci-button hide-print"
+            onClick={() => this.expandToggle()}
+            role="button"
+          >
+            { this.state.expanded ? 'Collapse Table' : 'Expand Table' }
+          </div>
+          <a
+            className="sbtci-button hide-print"
+            href="https://files.taxfoundation.org/20180925174436/2019-State-Business-Tax-Climate-Index.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download Full Study
+          </a>
         </div>
         <div className={ currentTableClass }>
           <table className="sbtci-table sbtci-table--compact">

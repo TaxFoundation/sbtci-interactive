@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Oswald:300,400');
 
-$tf-blue: #0094ff;
-$sbtci-blue: #5fc2ff;
+$tf-blue: #04897b;
+$sbtci-blue: #4cb6ac;
 $dark-gray: #333333;
 $gray: #999999;
 $light-gray: #cccccc;
@@ -64,6 +64,7 @@ hr {
 
   &-button {
     background-color: #00aa22;
+    border: none;
     border-radius: $radius;
     color: #ffffff;
     cursor: pointer;
@@ -91,5 +92,11 @@ hr {
 .hide-print {
   @include print-only {
     display: none !important;
+  }
+}
+
+.mobile-only {
+  @include tablet-up {
+    display: none;
   }
 }

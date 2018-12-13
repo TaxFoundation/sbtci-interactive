@@ -87,6 +87,15 @@ class Home extends Component {
             taxTypes={this.props.taxTypes}
           />
 
+          <a
+            className="sbtci-button sbtci-button--centered mobile-only"
+            href="https://files.taxfoundation.org/20180925174436/2019-State-Business-Tax-Climate-Index.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download Full Study
+          </a>
+
           <div className="sbtci-home-social sbtci-box hide-print">
             <div className="sbtci-home-social-text">
               <h2>Spread the Word!</h2>
@@ -144,11 +153,11 @@ class Home extends Component {
           <h2 style={{textAlign: 'center'}}>Ranked Tax Categories</h2>
           <a
             className="sbtci-button sbtci-button--centered"
-            href="https://files.taxfoundation.org/20171016171625/SBTCI_2018.pdf"
+            href="https://files.taxfoundation.org/20180925174436/2019-State-Business-Tax-Climate-Index.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Read Full Methodology
+            Download Full Study
           </a>
           { this.props.taxTypes.filter(t => t.id !== 'total').map((t) => {
             return (
