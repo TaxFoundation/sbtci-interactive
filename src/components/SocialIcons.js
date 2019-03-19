@@ -24,12 +24,10 @@ const IconTwitter = (props) => {
 const IconFacebook = (props) => {
   return (
     <a
-      href={
-        'https://www.facebook.com/dialog/share?app_id=123259711705584&display=page&href='
-        + encodeURI(window.location.href)
-        + '&redirect_uri='
-        + encodeURI(window.location.href)
-      }
+      onClick={() => {
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(window.location.href)}`, 'pop', 'width=600, height=400, scrollbars=no');
+        return false;
+      }}
       className={ props.className }
       target="_blank"
     >
