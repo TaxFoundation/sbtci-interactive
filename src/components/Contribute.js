@@ -7,15 +7,6 @@ class Contribute extends Component {
     const bgImage = {
       backgroundImage: `url(${TaxImages['donate']})`
     };
-  
-    const qgiv = (w, d, s, id) => {
-      let js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://secure.qgiv.com/resources/core/js/embed.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    };
 
     return (
       <div>
@@ -40,10 +31,11 @@ class Contribute extends Component {
               <p>It's due to the generosity of people like you that we're able to make the sometimes tricky topic of tax policy fun and accessible.</p>
               <p>Help us continue this work and more by making a small contribution by filling out the form on this page.</p>
             </div>
-            <div className="sbtci-contribute-form">
-              <div className="qgiv-embed-container" data-qgiv-embed="true" data-embed-id="49350" data-embed="https://secure.qgiv.com/for/sid/embed/49350/" data-width="300"></div>
-              {qgiv(window, document, 'script', 'qgiv-embedjs')}
-            </div>
+            <iframe height="1077" title="Donate" allowtransparency="true" frameborder="0" scrolling="no" style={{width: '100%', border: 'none'}} src="https://taxfoundation.wufoo.com/embed/m1fh471e0nk0j4e/">
+              <a class="sbtci-button" href="https://taxfoundation.wufoo.com/forms/m1fh471e0nk0j4e/">
+                Donate to the Tax Foundation
+              </a>
+            </iframe>
           </div>
         </div>
       </div>
