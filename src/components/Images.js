@@ -55,7 +55,7 @@ import corporate from '../images/taxes/corporate.jpg';
 import sales from '../images/taxes/sales.jpg';
 import unemployment from '../images/taxes/unemployment.jpg';
 import property from '../images/taxes/property.jpg';
-import meta from '../images/meta.png';
+import meta from '../images/meta.jpg';
 import donate from '../images/donate.jpg';
 
 export const StateImages = {
