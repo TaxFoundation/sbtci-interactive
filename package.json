@@ -35,9 +35,6 @@
     "build-js": "react-scripts build && react-snapshot",
     "build": "npm run build-sass && npm run build-js",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "update-live": "aws s3 sync --acl public-read --sse --delete --profile sbtci ./build/ s3://statetaxindex.org",
-    "invalidate-cloudfront": "aws cloudfront create-invalidation --profile sbtci --distribution-id E3IOEZ8EK80ZHD --paths '/*'",
-    "deploy": "npm run build && npm run update-live && npm run invalidate-cloudfront"
+    "eject": "react-scripts eject"
   }
 }
