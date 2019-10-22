@@ -138,11 +138,11 @@
         color: #ffffff;
       }
 
-      &:first-of-type {
+      &:first-child {
         border-radius: 0 0 0 $radius;
       }
 
-      &:last-of-type {
+      &:last-child {
         border-radius: 0 0 $radius 0;
       }
     }

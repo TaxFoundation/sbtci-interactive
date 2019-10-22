@@ -4,7 +4,7 @@ import { setCookie, getCookie } from './Helpers';
 class PopIn extends Component {
   constructor(props) {
     super(props);
-    this.timer;
+    this.timer = null;
     this.dismissed = JSON.parse(getCookie('sbtci-dismissed')) || false;
 
     this.dismissPopIn = this.dismissPopIn.bind(this);
