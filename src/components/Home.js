@@ -89,7 +89,7 @@ class Home extends Component {
 
           <a
             className="sbtci-button sbtci-button--centered mobile-only"
-            href="https://files.taxfoundation.org/20180925174436/2019-State-Business-Tax-Climate-Index.pdf"
+            href="https://taxfoundation.org/publications/state-business-tax-climate-index/"
             target="_blank"
             rel="noopener noreferrer"
           >
