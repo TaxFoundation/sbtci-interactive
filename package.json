@@ -3,29 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "d3-format": "^1.2.0",
-    "d3-geo": "^1.6.4",
+    "d3-format": "^1.4.1",
+    "d3-geo": "^1.11.6",
     "d3-interpolate": "^1.1.5",
-    "d3-scale": "^1.0.6",
-    "d3-scale-chromatic": "^1.1.1",
+    "d3-scale": "^3.1.0",
+    "d3-scale-chromatic": "^1.5.0",
     "jsonp": "^0.2.1",
-    "normalize.css": "^7.0.0",
+    "normalize.css": "^8.0.1",
     "npm-run-all": "^4.0.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-helmet": "^5.2.0",
-    "react-router-dom": "^4.1.2",
-    "react-scripts": "1.1.4",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-helmet": "^5.2.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
     "react-snapshot": "^1.2.0",
-    "react-transition-group": "^2.2.0",
-    "topojson-client": "^3.0.0",
-    "validate.js": "^0.11.1"
+    "react-transition-group": "^4.3.0",
+    "topojson-client": "^3.0.1",
+    "validate.js": "^0.13.1"
   },
   "devDependencies": {
-    "eslint": "^4.8.0",
-    "eslint-plugin-react": "^7.4.0",
-    "node-sass": "^4.9.3",
-    "postcss": "^6.0.9"
+    "eslint": "^6.5.1",
+    "eslint-plugin-react": "^7.16.0",
+    "node-sass": "^4.12.0",
+    "postcss": "^7.0.18"
   },
   "scripts": {
     "watch-sass": "node-sass src/style.scss src/style.css -w --source-map=src/style.css.map",
@@ -36,5 +36,17 @@
     "build": "npm run build-sass && npm run build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
