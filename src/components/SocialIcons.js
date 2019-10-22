@@ -1,6 +1,8 @@
 import React from 'react';
+import {useLocation} from 'react-router-dom';
 
 const IconTwitter = (props) => {
+  const location = useLocation();
   return (
     <a
       href={
@@ -8,7 +10,7 @@ const IconTwitter = (props) => {
         + 'text=' + (props.message ? encodeURI(props.message) : encodeURI('Have you seen the Tax Foundation\'s 2020 State Business Tax Climate Index? Check it out here:'))
         + (props.hashtags ? '&hashtags=' + props.hashtags : '')
         + (props.noVia ? '' : '&via=taxfoundation')
-        + '&url=' + encodeURI(window.location.href)
+        + '&url=' + encodeURI(`https://statetaxindex.org${location.pathname}`)
       }
       className={ props.className }
       target="_blank"
@@ -23,10 +25,11 @@ const IconTwitter = (props) => {
 };
 
 const IconFacebook = (props) => {
+  const location = useLocation();
   return (
     <div
       onClick={() => {
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(window.location.href)}`, 'pop', 'width=600, height=400, scrollbars=no');
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(`https://statetaxindex.org${location.pathname}`)}`, 'pop', 'width=600, height=400, scrollbars=no');
         return false;
       }}
       className={ props.className }
@@ -41,11 +44,12 @@ const IconFacebook = (props) => {
 };
 
 const IconLinkedIn = (props) => {
+  const location = useLocation();
   return (
     <a
       href={
         'https://www.linkedin.com/shareArticle?mini=true&url='
-        + encodeURI(window.location.href)
+        + encodeURI(`https://statetaxindex.org${location.pathname}`)
         + (props.message ? '&summary=' + encodeURI(props.message) : '')
       }
       className={ props.className }
@@ -63,8 +67,9 @@ const IconLinkedIn = (props) => {
 };
 
 const IconEmail = (props) => {
+  const location = useLocation();
   let emailSubject = props.emailSubject || 'Check out the State Business Tax Climate Index';
-  let emailBody = props.emailBody || `You can see it here: ${encodeURI(window.location.href)}`;
+  let emailBody = props.emailBody || `You can see it here: ${encodeURI(`https://statetaxindex.org${location.pathname}`)}`;
   return (
     <a
       href={ `mailto:?subject=${emailSubject}&body=${emailBody}` }
