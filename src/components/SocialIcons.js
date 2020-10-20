@@ -7,7 +7,7 @@ const IconTwitter = (props) => {
     <a
       href={
         'https://twitter.com/intent/tweet?'
-        + 'text=' + (props.message ? encodeURI(props.message) : encodeURI('Have you seen the Tax Foundation\'s 2020 State Business Tax Climate Index? Check it out here:'))
+        + 'text=' + (props.message ? encodeURI(props.message) : encodeURI('Have you seen the Tax Foundation\'s 2021 State Business Tax Climate Index? Check it out here:'))
         + (props.hashtags ? '&hashtags=' + props.hashtags : '')
         + (props.noVia ? '' : '&via=taxfoundation')
         + '&url=' + encodeURI(`https://statetaxindex.org${location.pathname}`)
@@ -76,7 +76,7 @@ const IconEmail = (props) => {
       className={ props.className }
     >
       <svg id="email" viewBox="0 0 64 64">
-        <path fill={props.fill} d="M3.5,25l12.1,8.8l16.8-9.1c0.5-0.3,1,0.4,0.6,0.8L19,37v19.4c0,0.9,1.1,1.4,1.7,0.7L31,45.5L49.5,59c0.6,0.4,1.4,0.1,1.6-0.6l10-54c0.1-0.8-0.6-1.4-1.3-1.1l-56,20C3,23.6,2.9,24.6,3.5,25z"/>      
+        <path fill={props.fill} d="M3.5,25l12.1,8.8l16.8-9.1c0.5-0.3,1,0.4,0.6,0.8L19,37v19.4c0,0.9,1.1,1.4,1.7,0.7L31,45.5L49.5,59c0.6,0.4,1.4,0.1,1.6-0.6l10-54c0.1-0.8-0.6-1.4-1.3-1.1l-56,20C3,23.6,2.9,24.6,3.5,25z"/>
       </svg>
       { props.text ? <span>{ props.text }</span> : null }
     </a>
