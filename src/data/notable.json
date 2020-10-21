@@ -1,49 +1,30 @@
-[{
-    "id": 4,
-    "text": "As part of the state’s belated conformity with the new federal tax law, Arizona trimmed its income tax rates, bringing the top rate down from 4.54 to 4.5 percent and consolidating the two lowest brackets. The reduction was too modest to improve Arizona’s overall rank, but drove a two-place improvement in Arizona’s rank on the individual income tax component of the Index, from 19th to 17th."
-  },
+[
   {
-    "id": 11,
-    "text": "The federal district slid eight places on the sales tax component of the Index when it raised its sales tax rate from 5.75 to 6 percent, reversing a reduction made in 2013.  This significant movement is reflective of how many states with similar sales tax structures are tightly bunched around a 6 percent rate. The District of Columbia remains 47th overall, although D.C. is given “phantom” ranks in the Index, meaning that its ranks are given by way of example and do not affect the rankings of the 50 states."
-  },
-  {
-    "id": 13,
-    "text": "In 2018, in response to base broadening from federal tax reform, Georgia lawmakers adopted a tax cut package which reduces individual and corporate income tax rates from 6.0 to 5.5 percent in two phases, beginning with reductions to 5.75 percent for tax year 2019. Rates are scheduled to revert after 2025, when the federal changes are currently expected to sunset. These rate reductions helped Georgia improve four places on this year’s Index, from 36th to 32nd overall, while going from 8th to 6th on the corporate tax component, where the lower rate complements an already competitive overall tax structure, and from 38th to 36th on the individual income tax component. The state’s corporate tax component score, in both the 2019 and 2020 Index, also benefits from the state’s decision to decouple from GILTI, which was newly introduced as an Index variable this year."
+    "id": 12,
+    "text": "Florida’s corporate income tax declined from 5.5 to 4.4458 percent in September 2019, effective for tax years 2019-2021. This temporary reduction is the result of revenue triggers adopted in 2018, and enhanced revenue from corporate base broadening—the result of the federal Tax Cuts and Jobs Act (TCJA)—quickly met the 7 percent excess collections threshold required for a rate reduction. The lower rate does not change Florida’s already enviable rank of 4th overall but does improve the state’s corporate tax component rank from 9th to 6th."
   },
   {
     "id": 18,
-    "text": "The only state to make midyear rate adjustments, Indiana made another scheduled adjustment to its corporate income tax rate on July 1, 2019, the Index’s snapshot date, bringing the rate from 5.75 to 5.5 percent. This reduction was not enough to improve the state’s already highly competitive overall rank, but, along with modestly negative corporate tax changes in similarly ranked states, helped Indiana improve from 18th to 11th on the corporate tax component of the Index."
+    "text": "The only state to make midyear rate adjustments, Indiana made another scheduled adjustment to its corporate income tax rate on July 1, 2020, the Index’s snapshot date, bringing the rate from 5.5 to 5.25 percent. The rate reduction—two more are scheduled, ultimately bringing the rate to 4.9 percent in 2022—was enough to improve Indiana’s rank from 10th to 9th overall."
   },
   {
     "id": 19,
-    "text": "This year marked the first phase of Iowa’s tax reform package, which will ultimately convert the state’s nine-bracket individual income tax, with a top rate of 8.98 percent, to a four-bracket tax with a top rate of 6.5 percent, while increasing Section 179 small business expensing and eliminating the state’s unusual policy of federal deductibility. Modest sales tax base broadening also features in the package, and the corporate rate will decline from 12 to 9.8 percent, though that rate reduction remains several years out. This year, the top marginal individual income tax rate was cut from 8.98 to 8.53 percent and the Section 179 expensing allowance rose from $70,000 to $100,000, yielding an improvement of one place on the Index overall, from 43rd to 42nd. Further improvements can be anticipated once additional reforms phase in."
+    "text": "On the corporate tax front, Iowa policymakers decoupled from IRC § 163(j), the net interest limitation, and fully decoupled from the Global Intangible Low-Taxed Income (GILTI) provision, which, when incorporated into state tax codes, leads to state taxation of international income. These changes improved Iowa’s corporate component rank by two places. The state also, as part of the ongoing implementation of a larger tax reform package, increased the Section 179 expensing allowance from $100,000 to $1 million, matching the federal level, leading to a two-place improvement on the individual component rank as well. These reforms, taken together, drove Iowa’s improvement from 45th to 40th on the Index overall. "
   },
   {
     "id": 20,
-    "text": "Through a combination of legislative inaction, vetoes, and agency actions, Kansas has taken an aggressive stance on the taxation of international income and is moving forward with sales tax collection requirements for remote sellers without adopting a safe harbor for small sellers. Because many of its peers have taken a less aggressive approach to the taxation of international income, and no other state has adopted a remote sales tax regime without a de minimis threshold, Kansas dropped seven places on the Index overall, from 27th to 34th."
-  },
-  {
-    "id": 25,
-    "text": "Massachusetts adopted a payroll tax of 0.63 percent in addition to its individual income tax, which phased down from a 5.1 to a 5.05 percent flat rate. (We consider the 0.63 percent tax an increase in the rate on wage income for purposes of the Index.) The state also increased unemployment insurance rates, reestablished a sales tax holiday, and made other changes which resulted in a decline from 33rd to 36th overall on the Index."
+    "text": "Although Kansas has largely resisted tax conformity changes that would forgo any of the additional revenue associated with TCJA base broadening, the state’s existing tax conformity laws led to the temporary adoption of the five-year net operating loss carryback provisions afforded by the Coronavirus Aid, Relief and Economic Security (CARES) Act, dramatically—if temporarily—improving the state’s otherwise stingy treatment of business losses. With this change, the state’s corporate component rank rose from 35th to 31st, though the state’s overall rank remains unchanged at 35th."
   },
   {
     "id": 29,
-    "text": "A reduction in the state’s top individual income tax rate, from 5.9 to 5.4 percent, along with the consolidation of an income tax bracket, improved the state two places on the individual income tax component, from 26th to 24th. Reforms adopted in 2018 will see the individual income tax rate continue to phase down in future years, with a target of 5.1 percent. Next year, the state will no longer give companies the option of choosing the apportionment formula most favorable to them, but this consolidation into a single apportionment formula will pay down a significant corporate income tax rate reduction, from 6.25 to 4 percent, which will further improve the state’s rank."
+    "text": "In 2018, Missouri adopted individual and corporate income tax reforms, set to phase in over time. Last year saw a significant reduction in the top rate of the individual income tax, from 5.9 to 5.4 percent, with smaller triggered reductions scheduled for future years until the rate declines to 5.1 percent. No additional rate cut has been triggered thus far. The corporate income tax reform package did, however, go into effect in 2020. The state no longer gives companies the option of choosing the apportionment formula most favorable to them, but this consolidation into a single apportionment formula paid down a significant corporate income tax rate reduction, from 6.25 to 4 percent, improving the state’s rank on the corporate tax component from 5th to 3rd and allowing the state to improve from 15th to 12th on the Index overall."
   },
   {
-    "id": 33,
-    "text": "The Granite State climbed from 7th to 6th overall, and from 46th to 43rd on the corporate tax component, by trimming the rates of both its Business Profits Tax, a corporate income tax, and its Business Enterprise Tax, a value-added tax. The Business Profits Tax rate is now 7.7 percent, down from 7.9 percent in 2018 and 8.2 percent before that, while the Business Enterprise Tax now stands at 0.6 percent, having phased down from 0.675 percent last year and 0.72 percent before that."
+    "id": 34,
+    "text": "Two years ago, New Jersey lawmakers adopted a temporary corporate surtax, imposing an additional 2.5 percent atop the existing corporate income tax rate for companies with income of $1 million or more, applicable for tax years 2018 and 2019, before dropping to 1.5 percent for 2020 and 2021. This year’s partial rollback of the surtax, yielding a top rate of 10.5 percent (down from 11.5 percent), improved New Jersey one place on the corporate tax component, from 49th to 48th. The state remains 50th on the Index overall."
   },
   {
-    "id": 37,
-    "text": "North Carolina’s individual income tax rate decreased from 5.499 to 5.25 percent, while the corporate income tax rate—already the nation’s lowest—was cut from 3 to 2.5 percent, completing the latest in several rounds of tax reforms and rate reductions in North Carolina in recent years. These improvements, however, did not help the state on the Index overall, because they failed to leapfrog any states on the corporate or individual income tax components, while changes to the state’s unemployment insurance tax regime, along with improvements in other highly competitive states, slid the state three places from 12th to 15th."
-  },
-  {
-    "id": 49,
-    "text": "Utah slid from 8th to 9th on the Index as the state increased its sales tax by 0.15 percentage points in support of Medicaid expansion, but barring new developments, the state is likely to reclaim its old position next year, when Oregon (now in 8th place) implements its newly-adopted gross receipts tax."
-  },
-  {
-    "id": 55,
-    "text": "The culmination of a tax package adopted in 2017, Wisconsin repealed its alternative minimum tax for individual filers effective January 2019 and improved two places on the individual component of the Index. The state also benefited greatly from other states shifting around it, increasing its overall rank dramatically, to 26th from 34th."
+    "id": 41,
+    "text": "In May 2019, the Oregon legislature adopted a modified gross receipts tax, imposed at $250 plus a rate of 0.57 percent on Oregon gross receipts above $1 million. Taxpayers are permitted to subtract 35 percent of the greater of compensation or the cost of goods sold, putting it somewhere between Ohio’s commercial activity tax and Texas’ franchise (“margin”) tax.  For comparison, Ohio’s tax is imposed at a rate of 0.26 percent and the higher of Texas’s two rates on its narrower-based tax is 0.75 percent. Oregon, which straddles the difference between the two rates, is now one of only two states, with Delaware, to impose both a corporate income tax and a gross receipts tax. The new tax dropped the state 16 places on the corporate tax component, from 33rd to 49th, while the state’s overall rank slipped from 8th to 15th."
   }
 ]
