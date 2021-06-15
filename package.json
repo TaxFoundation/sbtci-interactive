@@ -25,7 +25,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-react": "^7.17.0",
     "node-sass": "^4.13.1",
-    "postcss": "^7.0.24"
+    "postcss": "^7.0.36"
   },
   "scripts": {
     "watch-sass": "node-sass src/style.scss src/style.css -w --source-map=src/style.css.map",
