@@ -43,13 +43,13 @@ class Header extends Component {
             <IconTwitter className="sbtci-header-social-icon" fill="#ffffff" />
             <IconFacebook className="sbtci-header-social-icon" fill="#ffffff" />
             <IconLinkedIn className="sbtci-header-social-icon" fill="#ffffff" />
-            <div
+            <a
               style={{marginLeft: '1rem'}}
+              href="https://taxfoundation.org/tax-newsletter/"
               className="sbtci-button"
-              onClick={() => {this.props.toggleEmailSubscribe();}}
             >
               Subscribe
-            </div>
+            </a>
           </div>
           <nav className="sbtci-header-nav">
             <div className="sbtci-header-nav-category" to="/">
@@ -167,9 +167,11 @@ class Header extends Component {
             </div>
             <div
               className="sbtci-header-mobile-nav-top-level-item"
-              onClick={() => {this.props.toggleEmailSubscribe();}}
             >
-              <div className="sbtci-header-mobile-nav-top-link">Subscribe</div>
+              <a href="https://taxfoundation.org/tax-newsletter/"
+                 className="sbtci-header-mobile-nav-top-link">
+                Subscribe
+              </a>
             </div>
             <div
               className="sbtci-header-mobile-nav-top-level-item"
