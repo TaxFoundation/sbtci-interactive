@@ -5,9 +5,9 @@
   "dependencies": {
     "d3-format": "^1.4.2",
     "d3-geo": "^1.11.9",
-    "d3-interpolate": "^1.4.0",
-    "d3-scale": "^3.2.1",
-    "d3-scale-chromatic": "^1.5.0",
+    "d3-interpolate": "^3.0.1",
+    "d3-scale": "^4.0.2",
+    "d3-scale-chromatic": "^3.0.0",
     "jsonp": "^0.2.1",
     "normalize.css": "^8.0.1",
     "npm-run-all": "^4.0.2",
