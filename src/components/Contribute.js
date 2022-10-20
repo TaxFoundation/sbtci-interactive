@@ -32,7 +32,7 @@ class Contribute extends Component {
               <p>Help us continue this work and more by making a small contribution by filling out the form on this page.</p>
             </div>
             <iframe height="1077" title="Donate" allowtransparency="true" frameborder="0" scrolling="no" style={{width: '100%', border: 'none'}} src="https://taxfoundation.wufoo.com/embed/m1fh471e0nk0j4e/">
-              <a class="sbtci-button" href="https://taxfoundation.wufoo.com/forms/m1fh471e0nk0j4e/">
+              <a class="sbtci-button" href="https://taxfoundation.org/donate">
                 Donate to the Tax Foundation
               </a>
             </iframe>
