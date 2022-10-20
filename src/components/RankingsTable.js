@@ -60,7 +60,7 @@ class RankingsTable extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-             Study
+            Download Full Study
           </a>
         </div>
         <div className={ currentTableClass }>

@@ -93,7 +93,7 @@ class Home extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-             Study
+            Download Full Study
           </a>
 
           <div className="sbtci-home-social sbtci-box hide-print">
