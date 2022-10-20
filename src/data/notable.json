@@ -1,50 +1,44 @@
 [
-  {
-    "id": 1,
-    "text": "Alabama policymakers eliminated the state’s throwback rule—a complex and uncompetitive corporate income tax provision that throws “nowhere” income back into the sales factor of the source state—and decoupled from the Global Intangible Low-Taxed Income (GILTI) provision, which, when incorporated into state tax codes, leads to state taxation of international income. These significant corporate changes drove a six-place improvement in Alabama’s corporate income tax ranking, and improved the state’s ranking one place overall, from 40th to 39th."
-  },
-  {
-    "id": 5,
-    "text": "As a part of ongoing reform efforts, Arkansas reduced both its individual and corporate rates this year. Within the highest rate schedule, the top rate for individuals lowered from 6.6 percent to 6.2 percent, and the top rate for businesses dropped from 6.6 percent to 5.9 percent. These changes drove an improvement of four places in the corporate component and three places in the individual component, bringing Arkansas from 46th to 44th overall."
-  },
-  {
-    "id": 6,
-    "text": "Previously, California followed the federal treatment of net operating losses (NOLs), allowing uncapped carryforwards for 20 years. However, due to ill-placed coronavirus-related budget concerns (the state posted a $76 billion surplus), the state has suspended NOLs completely for companies with income over $1 million. That dramatically—if temporarily—alters the state’s treatment of business losses for the worse, and makes it the only state without NOLs, which are an integral part of corporate income taxation. This major shift caused the state’s corporate income tax ranking to fall from 28th to 46th, although California remained at 48th overall."
-  },
-  {
-    "id": 16,
-    "text": "Idaho recently enacted tax reforms that retroactively consolidated the state’s seven individual income tax brackets into five and lowered the top rate from 6.925 percent to 6.5 percent beginning in tax year 2021. These changes improved the state’s individual income tax ranking by four places and likewise yielded a four-place improvement on its overall score, raising the state from 21st to 17th."
-  },
-  {
-    "id": 17,
-    "text": "Citing budget concerns due to the pandemic, Illinois temporarily changed its treatment of NOLs to be less favorable toward businesses, capping NOL carryforwards at $100,000 for tax years 2021 through 2024. This new treatment caused the state’s corporate ranking to drop six places, although its overall ranking of 36th is unaffected."
-  },
-  {
-    "id": 19,
-    "text": "As part of the implementation of a larger tax reform package, Iowa reduced its top corporate income tax from 12 percent to 9.8 percent—paid for through the repeal of corporate federal deductibility—and eliminated its corporate alternative minimum tax. These reforms improved the state’s corporate ranking by eight places and resulted in the overall rank improving from 41st to 38th."
-  },
-  {
-    "id": 20,
-    "text": "Kansas improved markedly, from 34th to 24th place overall, due to significant reforms to both its sales tax and corporate income tax. Following the Wayfair decision, Kansas was the only state without a safe harbor for smaller remote sellers. In 2021, Kansas established a $100,000 threshold for remote sellers. Additionally, the state replaced its limited NOL regime with conformity to federal provisions and decoupled from GILTI, causing its corporate rank to improve from 31st to 21st."
-  },
-  {
-    "id": 35, 
-    "text": "Legislators in New Mexico created an additional individual income tax bracket on income above $210,000, bringing the state’s top rate from 4.9 percent to 5.9 percent. This dramatic increase caused a 10-place drop in the state’s individual income tax ranking and dropped New Mexico’s overall rank from 22nd to 28th."
-  },
-  {
-    "id": 36, 
-    "text": "New York was one of the rare states to raise taxes in 2021, citing revenue concerns. Previously, New York levied a flat 6.5 percent corporate income tax, but lawmakers created what is functionally a second bracket with a 7.25 percent rate for companies making over $5 million. The top marginal individual income tax rate, meanwhile, has risen from 8.82 percent to 10.9 percent. The legislature also reversed the phaseout of the state’s capital stock tax, reinstating the tax at 0.1875 percent, which lowered the state’s property tax ranking by one place. Despite these changes, New York’s overall rank remained at 49th."
-  },
-  {
-    "id": 41, 
-    "text": "Oregon’s decline from 15th to 22nd overall stems from changes to its unemployment tax system, with higher minimum rates and a larger taxable wage base, as well as the implementation of new municipal income taxes in Portland and improvements in other states."
-  },
-  {
-    "id": 42, 
-    "text": "Pennsylvania made a range of improvements to its unemployment insurance taxes. The Commonwealth used to levy a minimum tax rate of 2.39 percent, the highest among states, but now levies a far more competitive 1.29 percent. A surtax was also repealed. These significant changes helped yield an improvement from 32nd to 29th overall."
-  },
-  {
-    "id": 47, 
-    "text": "This year, Tennessee finished the phaseout of its Hall Tax, which was levied solely on interest and dividends income, since the state already elected not to tax wage income. With this change, the only remaining vestiges of non-corporate income tax treatment is in the state’s treatment of S Corporations and a low-rate gross receipts tax that applies to passthrough businesses, improving the state to sixth best on the income tax component. When combined with other states’ worsening treatment of unemployment insurance, this change brought the state’s overall score from 17th to 8th."
-  }
-]
+    {
+      "id": 4,
+      "text": "Arizona transitioned from a four-bracket individual income tax with a top rate of 4.5 percent to a two-bracket system with a top rate of 2.98 percent, a waypoint on the state’s transition to a 2.5 percent single-rate tax. Initially scheduled for 2024, robust revenue growth has led to the certification of the 2.5 percent rate for January 1, 2023, a significant development that will further improve Arizona’s ranking in next year’s Index. This year’s changes, however, were sufficient for Arizona to improve five places overall, from 24th to 19th."
+    },
+    {
+      "id": 5,
+      "text": "Like many states, Arkansas adopted both corporate and individual income tax rate reductions. In Arkansas’s case, these rate reductions—to a top individual income tax rate of 4.9 percent, down from 5.9 percent, and a corporate rate reduced from 6.2 to 5.9 percent—went into effect for the 2022 tax year. The corporate income tax rate reduction also resulted in the consolidation of an existing bracket. These changes were the primary driver of the state’s improvement from 43rd to 40th overall."
+    },
+    {
+      "id": 13,
+      "text": "Under legislation adopted in 2022, Georgia will adopt a 5.49 percent flat-rate income tax in 2024 and ultimately phase that rate down to 4.99 percent. These changes, however, lie in the future, and for now, improvements in the tax policies of three other states—Mississippi, Nebraska, and South Carolina—saw Georgia slide three places by standing still."
+    },
+    {
+      "id": 16,
+      "text": "Idaho improved two places overall, from 17th to 15th, due to the implementation of individual and corporate income tax rate reductions which took the individual income tax’s top rate, and the corporate income tax’s flat rate, from 6.5 to 6.0 percent. A ballot measure that would have created a new top rate of 10.925 percent to raise additional revenue for public education was taken off the ballot, and a deal was struck instead to provide additional education funding while implanting a 5.8 percent flat individual income tax rate in 2023. This change, which will be reflected in next year’s Index, will result in a further improvement in Idaho’s ranking."
+    },
+    {
+      "id": 22,
+      "text": "The Bayou state implemented a package of tax reforms resulting in an improvement of three places on the Index, from 42nd to 39th, while improving the state’s individual income tax component by nine places and the corporate and property tax components by two places each. Reforms approved by voters in November 2021 yielded the repeal of the deduction for federal taxes paid, replaced by lower statutory tax rates. The top rate of the individual income tax was cut from 6.0 to 4.25 percent, while the state’s five corporate income tax brackets were consolidated into three, with a reduction in the top rate from 8 to 7.5 percent. Additionally, the capital stock tax rate was reduced from 0.3 percent to 0.275 percent, with the goal of eventual repeal through tax triggers."
+    },
+    {
+      "id": 31,
+      "text": "Legislative Bill 432, signed into law in 2021, reduced Nebraska’s top marginal corporate income tax rate from 7.81 percent to 7.5 percent on January 1, 2022, and will further reduce the rate to 7.25 percent in January 2023. Additional legislation (LB 873) enacted in 2022 will reduce the state’s top marginal individual income tax rate from 6.84 to 5.84 percent over five years, beginning in 2023. This year’s corporate tax reduction contributed to Nebraska improving one place overall, from 30th to 29th."
+    },
+    {
+      "id": 35,
+      "text": "Alone among states, New Mexico used recent revenue growth to facilitate a state sales tax rate reduction, from 5.125 to 5.0 percent. New Mexico’s sales tax is a hybrid tax, which the state calls a gross receipts tax, with an overly broad base that includes more business-to-business transactions than most states’ sales taxes. Combined with a modest improvement in unemployment insurance taxes relative to changes in other states, this rate cut propelled New Mexico five places on the Index, from 27th to 22nd overall."
+    },
+    {
+      "id": 40, 
+      "text": "In a tax package that may be just the beginning, Oklahoma trimmed its top marginal individual income tax rate from 5 to 4.75 percent, cut the corporate rate from 6 to 4 percent (tied for second lowest), and became the first state to make its full expensing policy permanent. Since Oklahoma already had full expensing, the latter policy does not impact the state’s score for now, but with federal bonus depreciation scheduled to phase down beginning in 2023, if other states do not make their own adjustments, their provisions will become less generous while Oklahoma’s pro-investment policies remain intact.   Oklahoma improved five places on the Index, from 28th to 23rd."
+    },
+    {
+      "id": 45, 
+      "text": "South Carolina income tax reforms—retroactive to the first of the year—reduced   the top rate from 7.0 to 6.5 percent while consolidating several brackets. The state has long had the highest top rate in the southeast, and while it maintains that distinction under this recent rate reduction, the gap between South Carolina and its neighbors has narrowed. The state improved two places on the Index, from 33rd to 31st, with further improvements anticipated in future years as the tax rate continues to phase down."
+    },
+    {
+      "id": 53, 
+      "text": "Washington experienced the worst slide in Index ranking this year, falling 13 places from 15th to 28th, primarily due to giving up its status as a state without an income tax. The state adopted a capital gains income tax on high earners which contains a sizeable marriage penalty and is not adjusted for inflation. Washington, with its unenviably aggressive gross receipts tax and high-rate sales tax, has always been buoyed on the Index by forgoing an income tax. With the loss of this distinctive, the state plummeted in our rankings."
+    }
+  ]
+
+  
