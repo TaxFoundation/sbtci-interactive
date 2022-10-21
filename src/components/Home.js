@@ -157,7 +157,7 @@ class Home extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-             Study
+            Download Full Study
           </a>
           { this.props.taxTypes.filter(t => t.id !== 'total').map((t) => {
             return (
