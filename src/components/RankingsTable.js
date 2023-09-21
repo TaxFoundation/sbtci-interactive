@@ -56,7 +56,7 @@ class RankingsTable extends Component {
           </div>
           <a
             className="sbtci-button hide-print"
-            href=" https://taxfoundation.org/publications/state-business-tax-climate-index"
+            href="https://taxfoundation.org/research/all/state/2024-state-business-tax-climate-index/"
             target="_blank"
             rel="noopener noreferrer"
           >

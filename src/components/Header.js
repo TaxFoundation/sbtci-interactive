@@ -66,7 +66,7 @@ class Header extends Component {
             </div>
             <a
               className="sbtci-header-nav-category"
-              href=" https://taxfoundation.org/publications/state-business-tax-climate-index"
+              href=" https://taxfoundation.org/research/all/state/2024-state-business-tax-climate-index/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -141,7 +141,7 @@ class Header extends Component {
             <div className="sbtci-header-mobile-nav-top-level-item">
               <a
                 className="sbtci-header-mobile-nav-top-link"
-                href=" https://taxfoundation.org/publications/state-business-tax-climate-index"
+                href="https://taxfoundation.org/research/all/state/2024-state-business-tax-climate-index/"
                 onClick={() => this.props.closeAllMobileMenu()}
                 target="_blank"
                 rel="noopener noreferrer"

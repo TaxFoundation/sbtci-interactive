@@ -7,7 +7,7 @@ const IconTwitter = (props) => {
     <a
       href={
         'https://twitter.com/intent/tweet?'
-        + 'text=' + (props.message ? encodeURI(props.message) : encodeURI('Have you seen the Tax Foundation\'s 2023 State Business Tax Climate Index? Check it out here:'))
+        + 'text=' + (props.message ? encodeURI(props.message) : encodeURI('Have you seen the Tax Foundation\'s 2024 State Business Tax Climate Index? Check it out here:'))
         + (props.hashtags ? '&hashtags=' + props.hashtags : '')
         + (props.noVia ? '' : '&via=taxfoundation')
         + '&url=' + encodeURI(`https://statetaxindex.org${location.pathname}`)
