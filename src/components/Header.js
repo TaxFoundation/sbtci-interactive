@@ -46,7 +46,7 @@ class Header extends Component {
             <a
               style={{marginLeft: '1rem'}}
               href="https://taxfoundation.org/tax-newsletter/"
-              className="sbtci-button"
+              className="sbtci-yellowButton"
             >
               Subscribe
             </a>
