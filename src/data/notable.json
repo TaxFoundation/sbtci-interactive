@@ -1,11 +1,11 @@
 [
     {
       "id": 4,
-      "text": "Arizona transitioned from a four-bracket individual income tax with a top rate of 4.5 percent to a two-bracket system with a top rate of 2.98 percent, a waypoint on the state’s transition to a 2.5 percent single-rate tax. Initially scheduled for 2024, robust revenue growth has led to the certification of the 2.5 percent rate for January 1, 2023, a significant development that will further improve Arizona’s ranking in next year’s Index. This year’s changes, however, were sufficient for Arizona to improve five places overall, from 24th to 19th."
+      "text": "Arizona transitioned from a two-bracket, graduated-rate individual income tax system with a top rate of 2.98 percent to a flat tax rate of 2.5 percent, becoming one of the 11 states with a flat individual income tax structure. Among those 11 states, Arizona now has the lowest individual income tax rate. This major development helped the state improve seven places on the individual income tax component and five places overall, from 19th to 14th."
     },
     {
-      "id": 5,
-      "text": "Like many states, Arkansas adopted both corporate and individual income tax rate reductions. In Arkansas’s case, these rate reductions—to a top individual income tax rate of 4.9 percent, down from 5.9 percent, and a corporate rate reduced from 6.2 to 5.9 percent—went into effect for the 2022 tax year. The corporate income tax rate reduction also resulted in the consolidation of an existing bracket. These changes were the primary driver of the state’s improvement from 43rd to 40th overall."
+      "id": 8,
+      "text": "Colorado maintained its already competitive 7th-place standing on the individual tax component by reducing the flat rate to 4.4 percent, but the state’s overall ranking fell from 21st to 27th due to notable improvements in other states, including Mississippi and Wisconsin."
     },
     {
       "id": 13,
@@ -13,32 +13,56 @@
     },
     {
       "id": 16,
-      "text": "Idaho improved two places overall, from 17th to 15th, due to the implementation of individual and corporate income tax rate reductions which took the individual income tax’s top rate, and the corporate income tax’s flat rate, from 6.5 to 6.0 percent. A ballot measure that would have created a new top rate of 10.925 percent to raise additional revenue for public education was taken off the ballot, and a deal was struck instead to provide additional education funding while implanting a 5.8 percent flat individual income tax rate in 2023. This change, which will be reflected in next year’s Index, will result in a further improvement in Idaho’s ranking."
+      "text": "In January 2023, Idaho moved to a flat individual income tax structure, consolidating four brackets with a top marginal rate of 6 percent into a single rate of 5.8 percent while also reducing its corporate income tax rate to 5.8 percent. This was enough to improve Idaho’s individual tax component ranking by two places, but Idaho’s overall ranking fell by one due to Arizona improving from 19th to 14th."
+    },
+    {
+      "id": 19,
+      "text": "Iowa witnessed significant changes in its tax landscape this year. Notably, the state reduced its top marginal individual income tax rate from 8.53 to 6.0 percent and simplified its rate schedule by consolidating nine brackets into four. The state is on its way to further reduce individual income tax rates and transition to a flat rate of 3.9 percent by 2026. Additionally, Iowa eliminated the marriage penalty in its individual income tax brackets by doubling the bracket widths for married couples filing jointly. On the corporate side, Iowa’s three-bracket corporate income tax was consolidated into a two-bracket tax, with the top rate decreasing from 9.8 to 8.4 percent. Subject to revenue availability, future reforms target a flat corporate income tax rate of 5.5 percent. These reforms signify a concerted effort by Iowa lawmakers to provide tax relief to residents and enhance the overall competitiveness of the tax system. As a result, Iowa’s overall ranking improved from 38th to 33rd."
     },
     {
       "id": 22,
-      "text": "The Bayou state implemented a package of tax reforms resulting in an improvement of three places on the Index, from 42nd to 39th, while improving the state’s individual income tax component by nine places and the corporate and property tax components by two places each. Reforms approved by voters in November 2021 yielded the repeal of the deduction for federal taxes paid, replaced by lower statutory tax rates. The top rate of the individual income tax was cut from 6.0 to 4.25 percent, while the state’s five corporate income tax brackets were consolidated into three, with a reduction in the top rate from 8 to 7.5 percent. Additionally, the capital stock tax rate was reduced from 0.3 percent to 0.275 percent, with the goal of eventual repeal through tax triggers."
+      "text": "In June 2023, Louisiana lawmakers passed legislation that would have phased out the state’s franchise tax, which is a capital stock tax that disincentivizes investment in the state. Phasing out this inefficient tax would have been a positive development, but the measure was vetoed by the governor. Nevertheless, S.B. 161, enacted in 2021, reduced the franchise tax rate from 0.3 to 0.275 percent this year, improving the state’s ranking on the property tax component from 22nd to 21st. Other recently enacted reforms, described elsewhere, are not reflected in this year’s Index due to effective dates after July 1, 2023."
     },
     {
-      "id": 31,
-      "text": "Legislative Bill 432, signed into law in 2021, reduced Nebraska’s top marginal corporate income tax rate from 7.81 percent to 7.5 percent on January 1, 2022, and will further reduce the rate to 7.25 percent in January 2023. Additional legislation (LB 873) enacted in 2022 will reduce the state’s top marginal individual income tax rate from 6.84 to 5.84 percent over five years, beginning in 2023. This year’s corporate tax reduction contributed to Nebraska improving one place overall, from 30th to 29th."
+      "id": 25,
+      "text": "Massachusetts fell further than any other state in the overall rankings this year, sliding 12 places since last year. This decline in tax competitiveness is due to the adoption of Question 1 in November 2022, which amended the state's constitution to move from a single-rate to a graduated-rate income tax by imposing a 4 percent surtax on income over $1 million, raising the top marginal individual income tax rate from 5 to 9 percent. While the $1 million threshold at which the surtax kicks in is indexed to inflation, the surtax imposes a sizeable marriage penalty that the Commonwealth lacked previously. This policy change represents a stark contrast from the recent reforms to reduce rates while consolidating brackets in many other states. Simultaneously, a new payroll tax—the implementation of which had previously been postponed—went into effect this year. Massachusetts’s decline in tax competitiveness is evidenced by its 33-place decline in the individual tax component ranking, falling from 11th to 44th in just one year."
     },
     {
-      "id": 35,
-      "text": "Alone among states, New Mexico used recent revenue growth to facilitate a state sales tax rate reduction, from 5.125 to 5.0 percent. New Mexico’s sales tax is a hybrid tax, which the state calls a gross receipts tax, with an overly broad base that includes more business-to-business transactions than most states’ sales taxes. Combined with a modest improvement in unemployment insurance taxes relative to changes in other states, this rate cut propelled New Mexico five places on the Index, from 27th to 22nd overall."
+      "id": 27, 
+      "text": "Minnesota ranks in the bottom half of states on each component of the Index. The state’s corporate income tax score is, in part, weighed down by the new election to add Global Intangible Low-Taxed Income (GILTI) to the corporate tax base. Generally, states should avoid taxing GILTI, as state taxation should stop at the water’s edge, and taxing GILTI makes it more expensive for corporations to operate in a state for reasons having nothing to do with their activities in that state. Now, Minnesota ranks 47th on the corporate tax component, a loss of four positions compared to last year, and 44th overall."
+    },
+    {
+      "id": 28, 
+      "text": "Mississippi’s ranking improved from 27th to 20th overall. The state improved from 13th to 8th on the corporate tax component, due to the adoption of permanent full expensing for qualified investments in machinery and equipment. This policy change, which thus far has been adopted only in Oklahoma and Mississippi, is the result of H.B. 1733, which was enacted in March 2023 and is retroactively effective as of January 1, 2023. The implementation of a flat individual income tax drove an 7-place improvement on the individual income tax component, from 26th to 19th. The Magnolia State will begin reducing the rate of its individual income tax next year, which will yield further improvements in the Index, and is slowly phasing out its franchise tax."
+    },
+    {
+      "id": 29, 
+      "text": "With the enactment of S.B. 3 in October 2022, Missouri reformed its individual income tax structure to provide tax relief to residents, reducing the top marginal rate from 5.3 to 4.95 percent while consolidating nine brackets into seven. As a result, Missouri’s individual tax component ranking improved by one place, from 21st to 20th. If certain conditions regarding the state’s net revenues are satisfied in future years, the rates will be further reduced."
+    }
+    {
+      "id": 38, 
+      "text": "North Dakota reduced its top marginal individual income tax rate from 2.9 to 2.5 percent and established a wide zero-tax bracket. The state now has the lowest top marginal rate among those states that tax wage and salary income. As a result, North Dakota became more competitive on the individual income tax component and improved seven places, from 28th to 21st."
     },
     {
       "id": 40, 
-      "text": "In a tax package that may be just the beginning, Oklahoma trimmed its top marginal individual income tax rate from 5 to 4.75 percent, cut the corporate rate from 6 to 4 percent (tied for second lowest), and became the first state to make its full expensing policy permanent. Since Oklahoma already had full expensing, the latter policy does not impact the state’s score for now, but with federal bonus depreciation scheduled to phase down beginning in 2023, if other states do not make their own adjustments, their provisions will become less generous while Oklahoma’s pro-investment policies remain intact.   Oklahoma improved five places on the Index, from 28th to 23rd."
+      "text": "Oklahoma improved in the rankings again this year, thanks to a continued emphasis on tax reform. Specifically, the state saw gains on the individual tax component by eliminating the marriage penalty.  On the property tax front, Oklahoma’s split roll ratio has narrowed, and the state repealed its capital stock tax, causing the property tax component ranking to soar from 30th to 15th. By adopting permanent full expensing in 2022, Oklahoma maintained its 4th-place standing on the corporate tax component while other states became less competitive by remaining conformed to the phaseout of the federal bonus depreciation allowance under Section 168(k), with only 80 percent bonus depreciation offered in 2023, down from 100 percent in 2022. Overall, Oklahoma now ranks 19th, a gain of four positions compared to last year. The governor has called for a special session to commence in October 2023. Any changes that may result could be reflected in the next Index."
     },
     {
-      "id": 45, 
-      "text": "South Carolina income tax reforms—retroactive to the first of the year—reduced   the top rate from 7.0 to 6.5 percent while consolidating several brackets. The state has long had the highest top rate in the southeast, and while it maintains that distinction under this recent rate reduction, the gap between South Carolina and its neighbors has narrowed. The state improved two places on the Index, from 33rd to 31st, with further improvements anticipated in future years as the tax rate continues to phase down."
+      "id": 42, 
+      "text": "Pennsylvania’s corporate net income tax was reduced by one percentage point, from 9.99 to 8.99 percent, effective January 1, 2023. This change is the result of H.B. 1342, enacted in July 2022, which also prescribes future reductions of 0.5 percentage points each year until the rate reaches 4.99 percent in 2031. This year’s rate reduction helped Pennsylvania improve from 33rd to 31st overall and from 42nd to 41st on the corporate tax component."
     },
     {
-      "id": 53, 
-      "text": "Washington experienced the worst slide in Index ranking this year, falling 13 places from 15th to 28th, primarily due to giving up its status as a state without an income tax. The state adopted a capital gains income tax on high earners which contains a sizeable marriage penalty and is not adjusted for inflation. Washington, with its unenviably aggressive gross receipts tax and high-rate sales tax, has always been buoyed on the Index by forgoing an income tax. With the loss of this distinctive, the state plummeted in our rankings."
-    }
+      "id": 44, 
+      "text": "S.B. 928, enacted in June 2023, exempts from taxation the first $50,000 of each taxpayer’s otherwise taxable tangible personal property for calendar year 2023. As a result, Rhode Island’s property tax component ranking improved from 41st to 35th, and the state’s overall ranking improved from 42nd to 41st."
+    },
+    {
+      "id": 46, 
+      "text": "South Dakota, which does not have an individual or corporate income tax, enacted H.B. 1137 in March 2023, trimming its sales tax rate from 4.5 to 4.2 percent, effective July 1, 2023. This change improved South Dakota’s sales tax component ranking by seven places, from 34th to 27th, but this change was not enough to improve the state’s overall ranking, which is already 2nd in the country."
+    },
+    {
+      "id": 54, 
+      "text": "In March 2023, H.B. 2526 was enacted in West Virginia, reducing the state’s individual income tax rates across the board, including reducing the top marginal rate from 6.5 to 5.12 percent, retroactive to January 1, 2023. This law also established triggers to reduce future tax rates, subject to revenue availability. These changes helped improve the state’s ranking on the individual income tax component from 29th to 25th. However, with other states continuing to improve, West Virginia has fallen two places overall, from 20th to 22nd."
+    },
   ]
 
   
