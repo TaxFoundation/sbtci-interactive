@@ -213,12 +213,6 @@
 
   &-notable-changes {
     margin-bottom: 2rem;
-
-    @include tablet-up {
-      display: grid;
-      grid-column-gap: 2rem;
-      grid-template-columns: 1fr 1fr;
-    }
   }
 
   &-notable-change {
