@@ -89,7 +89,7 @@ class Home extends Component {
 
           <a
             className="sbtci-button sbtci-button--centered mobile-only"
-            href="https://taxfoundation.org/publications/state-business-tax-climate-index/"
+            href="https://taxfoundation.org/research/all/state/2024-state-business-tax-climate-index/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -153,7 +153,7 @@ class Home extends Component {
           <h2 style={{textAlign: 'center'}}>Ranked Tax Categories</h2>
           <a
             className="sbtci-button sbtci-button--centered"
-            href=" https://taxfoundation.org/publications/state-business-tax-climate-index"
+            href="https://taxfoundation.org/research/all/state/2024-state-business-tax-climate-index/"
             target="_blank"
             rel="noopener noreferrer"
           >
